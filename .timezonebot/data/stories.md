@@ -52,3 +52,17 @@
 * thanks
   - utter_you_are_welcome
   - utter_goodbye 
+## interactive_story_1
+* greet
+    - utter_greet
+* find_time_zone
+    - utter_ask_location
+* city_info{"city": "Austin"}
+    - slot{"city": "Austin"}
+    - utter_finding-time_zone
+    - action_show_time_zone
+* thanks
+    - utter_you_are_welcome
+    - utter_goodbye
+* goodbye
+    - utter_goodbye

@@ -5,12 +5,14 @@
 - good morning
 - good evening
 - hey there
+- Hello
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- Goodbye
 
 ## intent:affirm
 - yes
@@ -62,6 +64,7 @@
 - can you find me a time zone?
 - what time is it?
 - tell me the time zone
+- Can you tell me the time zone?
 
 ## intent:find_time_zone_for_location
 - what is the time zone of [London](city)?
@@ -73,13 +76,15 @@
 
 ## intent:city_info
 - [London](city)
-- San [Francisco](city)
+- [San Francisco](city)
 - [Toronto](city)
 - [New Delhi](city)
 - [Auckland](city)
 - [Oslo](city)
+- [Austin](city)
 
 ## intent:thanks
 - thank you
 - thanks
 - great, thanks
+- Thanks a lot
