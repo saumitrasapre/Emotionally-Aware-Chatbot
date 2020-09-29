@@ -1,12 +1,12 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
-language: en  # your two-letter language code
+language: "en"  # your two-letter language code
 
 pipeline:
-  - name: HFTransformersNLP
-  - name: LanguageModelTokenizer
-  - name: LanguageModelFeaturizer
-  - name: RegexFeaturizer
+  - name: SpacyNLP
+  - name: SpacyTokenizer
+  - name: SpacyFeaturizer
+  #- name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer

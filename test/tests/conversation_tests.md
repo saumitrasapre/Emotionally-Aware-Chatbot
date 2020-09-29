@@ -31,7 +31,12 @@
   - utter_cheer_up
   - utter_did_that_help
 * deny: not really
+  - action_hello_world
+  - utter_did_that_help
+* deny: Nope
+  - utter_sorry
   - utter_goodbye
+  
 
 ## sad path 3
 * greet: hi
@@ -40,7 +45,12 @@
   - utter_cheer_up
   - utter_did_that_help
 * deny: no
-  - utter_goodbye
+  - action_hello_world
+  - utter_did_that_help
+* affirm: yup
+  -utter_happy
+  
+  
 
 ## say goodbye
 * goodbye: bye-bye!

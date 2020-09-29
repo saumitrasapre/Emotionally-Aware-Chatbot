@@ -5,12 +5,19 @@
 - good morning
 - good evening
 - hey there
+- Henlo
+- Hello!
+- Howdy
+- Hello
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- Bye!
+- Bye
+- Thanks! Bye
 
 ## intent:affirm
 - yes
@@ -18,6 +25,9 @@
 - of course
 - that sounds good
 - correct
+- Yes
+- Yes Thanks
+- Yup
 
 ## intent:deny
 - no
@@ -26,28 +36,39 @@
 - don't like that
 - no way
 - not really
+- No
 
 ## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
+- [perfect](Mood)
+- very [good](Mood)
+- [great](Mood)
+- [amazing](Mood)
+- [wonderful](Mood)
+- I am feeling [very good](Mood)
+- I am [great](Mood)
+- I'm [good](Mood)
+- I'm [awesome](Mood)
 
 ## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
+- [sad](Mood)
+- [very sad](Mood)
+- [unhappy](Mood)
+- [bad](Mood)
+- [very bad](Mood)
+- [awful](Mood)
+- [terrible](Mood)
+- [not very good](Mood)
+- extremely [sad](Mood)
+- so [sad](Mood)
+- Im feeling [down](Mood)
+- I'm feeling [sad](Mood)
+- im [sad](Mood)
+- I'm [sad](Mood)
+- Im feeling [sad](Mood)
+- Im [not okay](Mood)
+- Im feeling [low](Mood)
+- [Not good](Mood)
+- I'm [awful](Mood)
 
 ## intent:bot_challenge
 - are you a bot?

@@ -1,32 +1,45 @@
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+
+entities:
+- Mood
+
+slots:
+  Mood:
+    type: text
+    auto_fill: True
+
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  utter_cheer_up:
+  - image: https://media1.tenor.com/images/d0c0b6b941c7c10cde2a58ce6d10d937/tenor.gif
+    text: 'Here is something to cheer your {Mood} mood up:'
+  utter_did_that_help:
+  - buttons:
+    - payload: Yes
+      title: Yes
+    - payload: No
+      title: No
+    text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_enchanced_cheer_up:
+  - text: Go to (this) {link}
+  utter_sorry:
+  - text: I'm sorry to hear that...
+actions:
+- action_hello_world
