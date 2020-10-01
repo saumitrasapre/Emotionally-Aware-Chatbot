@@ -9,6 +9,7 @@
 - Hello!
 - Howdy
 - Hello
+- Hi
 
 ## intent:goodbye
 - bye
@@ -18,6 +19,7 @@
 - Bye!
 - Bye
 - Thanks! Bye
+- Okay, goodbye!
 
 ## intent:affirm
 - yes
@@ -69,6 +71,7 @@
 - Im feeling [low](Mood)
 - [Not good](Mood)
 - I'm [awful](Mood)
+- I'm feeling [very](Mood) [sad](Mood)
 
 ## intent:bot_challenge
 - are you a bot?
