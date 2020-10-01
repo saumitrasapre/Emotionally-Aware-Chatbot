@@ -39,6 +39,7 @@
 - no way
 - not really
 - No
+- Nope
 
 ## intent:mood_great
 - [perfect](Mood)
@@ -46,10 +47,13 @@
 - [great](Mood)
 - [amazing](Mood)
 - [wonderful](Mood)
+- [happy](Mood)
 - I am feeling [very good](Mood)
 - I am [great](Mood)
 - I'm [good](Mood)
 - I'm [awesome](Mood)
+- I'm [happy](Mood)
+- I'm feeling [happy] (Mood)
 
 ## intent:mood_unhappy
 - [sad](Mood)
@@ -71,7 +75,9 @@
 - Im feeling [low](Mood)
 - [Not good](Mood)
 - I'm [awful](Mood)
-- I'm feeling [very](Mood) [sad](Mood)
+- I'm feeling [very sad](Mood)
+- [depressed](Mood)
+- I'm [depressed](Mood)
 
 ## intent:bot_challenge
 - are you a bot?
