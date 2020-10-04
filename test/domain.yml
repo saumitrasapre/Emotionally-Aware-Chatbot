@@ -1,19 +1,35 @@
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-intents:
-- mood_unhappy
-- greet
-- goodbye
-- affirm
-- deny
-- mood_great
-- bot_challenge
+actions:
+- action_custom_fallback
+- action_hello_world
+- utter_cheer_up
+- utter_custom
+- utter_did_that_help
+- utter_goodbye
+- utter_greet
+- utter_happy
 entities:
 - Mood
+- Name
 slots:
   Mood:
     type: text
+
+  Person_Name:
+    type: unfeaturized
+
+intents:
+- greet
+- affirm
+- mood_unhappy
+- deny
+- goodbye
+- mood_great
+- bot_challenge
+- out_of_domain
+- thank
+- provide_name
+forms:
+- submit_name_form
 responses:
   utter_cheer_up:
   - image: https://i.kym-cdn.com/photos/images/original/001/882/620/2c0
@@ -22,6 +38,11 @@ responses:
     text: 'Feeling {Mood}, are we? Here is something to cheer you up:'
   - image: https://i.kym-cdn.com/photos/images/original/001/882/620/2c0
     text: "{Mood}? That's too bad... Here's something to cheer you right up:"
+  utter_custom:
+  - text: I'm sorry, but I didnt get that... I'm learning, you see. Could you try again?
+  - text: I'm sorry, but I could'nt understand what you're trying to say...
+  utter_default:
+  - text: I'm sorry, but I could not understand what you're trying to say...
   utter_did_that_help:
   - buttons:
     - payload: Yes
@@ -46,18 +67,24 @@ responses:
   - text: Great, carry on!
   - text: Awesome!
   - text: Glad to hear that! Carry On!
+  - text: Fantastic!
+  - text: Fabulous!
   utter_iamabot:
-  - text: I'm your friendly personal robot buddy!
-  - text: I'm a robot, here to cheer you up!
-  - text: Beep-Boop... I'm your bot-buddy... If I may say so...
+  - text: I'm Whoabot, your friendly personal chat buddy! I'm here to help you supercharge your awful mood!
+  - text: Humans call me Whoabot, here to cheer you up! I was developed by humans such as yourself and designed to make your day ever-so brighter!
+  - text: Beep-Boop... I'm whoabot! Your bot-buddy, ever ready to chat your problems away!
+  - text: The name's 'bot'... Whoa-bot! I eliminate the pineapple of sadness from the pizza of life!
+  - text: You can call me Whoabot! Think of me as your chat buddy with whom you can speak your mind away!
+  utter_ask_Person_Name:
+  - text: By the way, what's your name?
+  - text: That was me... How 'bout you? What's your name?
+  - text: Whats do other humans know you by?
+  - text: What shall I call you, dearest human?
+  utter_appreciate_name:
+  - text: "{Person_Name}... That's a nice name!"
   utter_sorry:
   - text: I'm sorry to hear that...
-  utter_default:
-  - text: I'm sorry, but I could not understand what you're trying to say...
-actions:
-- action_hello_world
-- utter_cheer_up
-- utter_did_that_help
-- utter_goodbye
-- utter_greet
-- utter_happy
+  - text: I'm so sorry to hear that...
+session_config:
+  carry_over_slots_to_new_session: true
+  session_expiration_time: 60

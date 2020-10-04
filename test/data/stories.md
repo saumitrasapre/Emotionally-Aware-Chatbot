@@ -13,9 +13,6 @@
 * affirm
   - utter_happy
   
-## default_fallback
-* bot_challenge
-  - action_default_fallback
 
 ## sad path 2
 * greet
@@ -46,10 +43,6 @@
 * goodbye
   - utter_goodbye
 
-## bot challenge
-* bot_challenge
-  - utter_iamabot
-
 ## interactive_story_1
 * greet
     - utter_greet
@@ -61,3 +54,34 @@
     - utter_happy
 * goodbye
     - utter_goodbye
+
+
+## initial_interaction
+* bot_challenge
+    - utter_iamabot
+    - submit_name_form
+    - form{"name":"submit_name_form"}
+    - form{"name":null}  
+ * thank
+    - utter_goodbye
+
+## interactive_story_2
+* greet
+    - utter_greet
+* mood_unhappy{"Mood": "uneasy"}
+    - slot{"Mood": "uneasy"}
+    - utter_cheer_up
+    - utter_did_that_help
+* deny
+    - action_hello_world
+    - utter_did_that_help
+* affirm
+    - utter_happy
+* goodbye
+    - utter_goodbye
+
+## out_of_domain
+* out_of_domain
+    - action_custom_fallback
+    
+    

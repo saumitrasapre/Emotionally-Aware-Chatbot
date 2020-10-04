@@ -20,6 +20,7 @@
 - Bye
 - Thanks! Bye
 - Okay, goodbye!
+- Arrivederci
 
 ## intent:affirm
 - yes
@@ -40,6 +41,12 @@
 - not really
 - No
 - Nope
+- Nah
+
+## intent: thank
+- thanks
+- thank you
+- thanks a lot!
 
 ## intent:mood_great
 - [perfect](Mood)
@@ -53,7 +60,7 @@
 - I'm [good](Mood)
 - I'm [awesome](Mood)
 - I'm [happy](Mood)
-- I'm feeling [happy] (Mood)
+- I'm feeling [happy](Mood)
 
 ## intent:mood_unhappy
 - [sad](Mood)
@@ -78,9 +85,27 @@
 - I'm feeling [very sad](Mood)
 - [depressed](Mood)
 - I'm [depressed](Mood)
+- I'm [uneasy](Mood)
 
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+- Who are you?
+- Who am I talking to?
+- What's your name?
+- Who am I speaking to?
+
+## intent:out_of_domain
+- I want to book a cab
+- I want to order a pizza
+- Order a cake
+- I'm facing technical difficulties
+
+## intent:provide_name
+- My name is [Saumitra](Name)
+- Oh okay, I'm [Shraddha](Name)
+- You can call me [Mihir](Name)
+- Hey you can call me [Ved](Name)
+- Hi, my name is [Saumitra](Name)
