@@ -9,12 +9,52 @@
 
 from typing import Any, Text, Dict, List, Union
 
+from rasa.core.events import Event
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
 from database_connectivity import dataupdate, dataverify
 from rasa_sdk.forms import FormAction
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
+
+
+class ActionSessionStart(Action):
+    def name(self) -> Text:
+        return "action_session_start"
+
+    @staticmethod
+    def fetch_slots(dispatcher: CollectingDispatcher, tracker: Tracker) -> List[EventType]:
+        """Collect slots that contain the user's name and phone number."""
+
+        slots = []
+        value = tracker.get_slot("Person_Name")
+        if value is not None:
+            slots.append(SlotSet(key="Person_Name", value=value))
+        return slots
+
+    async def run(
+            self,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> List[EventType]:
+        # the session should begin with a `session_started` event
+        if str(tracker.get_slot("Person_Name")) == "None":
+            dispatcher.utter_message(template="utter_iamabot")
+            dispatcher.utter_message(template="utter_ask_Person_Name")
+        else:
+            dispatcher.utter_message("Pleased to meet you, {}!".format(str(tracker.get_slot("Person_Name"))))
+            dispatcher.utter_message("How're you doing today?")
+        events = [SessionStarted()]
+
+        # any slots that should be carried over should come after the
+        # `session_started` event
+        events.extend(self.fetch_slots(dispatcher, tracker))
+
+        # an `action_listen` should be added at the end as a user message follows
+        events.append(ActionExecuted("action_listen"))
+
+        return events
 
 
 class ActionHelloWorld(Action):
@@ -33,6 +73,27 @@ class ActionHelloWorld(Action):
         # dispatcher.utter_message(text="Hello World!")
 
         return []
+
+
+class ActionCheckName(Action):
+
+    def name(self) -> Text:
+        return "action_check_name"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        rows = dataverify(str(tracker.latest_message['entities'][0]['value']))
+        if rows == 0:
+            dataupdate(str(tracker.latest_message['entities'][0]['value']))
+            dispatcher.utter_message(
+                "{}... That's a nice name!".format(str(tracker.latest_message['entities'][0]['value'])))
+        else:
+            dispatcher.utter_message(
+                "Pleased to meet you, {}!".format(str(tracker.latest_message['entities'][0]['value'])))
+
+        return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value']))]
 
 
 class ActionCustomFallback(Action):
@@ -88,12 +149,15 @@ class SubmitNameForm(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
-        # SlotSet("Person_Name":)
-        rows= dataverify(str(tracker.get_slot("Person_Name")))
+        rows = dataverify(value)
+        print(value)
+        print(rows)
         if rows == 0:
-            dataupdate(str(tracker.get_slot("Person_Name")))
-            dispatcher.utter_message(template="utter_appreciate_name")
+            dataupdate(value)
+            print(tracker.get_slot("Person_Name"))
+            # SlotSet("Person_Name", value=tracker.get_slot("Person_Name"))
+            dispatcher.utter_message("{}... That's a nice name!".format(value))
         else:
-            dispatcher.utter_message("Hey! I know you, {}! Pardon my forgetfulness...".format(value))
+            dispatcher.utter_message("Pleased to meet you, {}!".format(value))
 
         return {"Person_Name": value}

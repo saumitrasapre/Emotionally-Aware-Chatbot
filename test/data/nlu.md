@@ -43,12 +43,15 @@
 - Nope
 - Nah
 
-## intent: thank
+## intent:thank
 - thanks
 - thank you
 - thanks a lot!
+- aww... thanks!
+- Thanks!
 
 ## intent:mood_great
+- [fine](Mood)
 - [perfect](Mood)
 - very [good](Mood)
 - [great](Mood)
@@ -61,6 +64,7 @@
 - I'm [awesome](Mood)
 - I'm [happy](Mood)
 - I'm feeling [happy](Mood)
+- I'm [fine](Mood)
 
 ## intent:mood_unhappy
 - [sad](Mood)
@@ -86,6 +90,7 @@
 - [depressed](Mood)
 - I'm [depressed](Mood)
 - I'm [uneasy](Mood)
+- Actually I'm [not fine](Mood)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -96,6 +101,11 @@
 - Who am I talking to?
 - What's your name?
 - Who am I speaking to?
+- Identify yourself!
+- Who are you? I'm [Saumitra](Name)
+- Are you a robot? My name is [Shraddha](Name)
+- Who are you? [Ved](Name) this side
+- Who's this? I'm [Saumitra](Name)
 
 ## intent:out_of_domain
 - I want to book a cab

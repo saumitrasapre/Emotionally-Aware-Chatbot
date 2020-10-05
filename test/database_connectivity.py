@@ -1,10 +1,8 @@
 import mysql.connector
-import sqlalchemy
-
 
 def dataupdate(name):
     name = name.lower()
-    if name!='none':
+    if name != 'none':
         mydb = mysql.connector.connect(
             host="localhost",
             user="root",
@@ -49,8 +47,6 @@ def dataverify(name):
         return 1
 
 
-
-
 if __name__ == "__main__":
     # dataupdate("saumitra")
     rows = dataverify("adam")
@@ -58,4 +54,3 @@ if __name__ == "__main__":
         print("It Does Not Exist")
     else:
         print("number of rows: {}".format(rows))
-
