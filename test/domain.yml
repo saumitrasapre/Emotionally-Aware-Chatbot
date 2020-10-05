@@ -9,22 +9,24 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_happy
+- utter_smile
+- utter_sorry
 entities:
 - Mood
 - Name
 forms:
 - submit_name_form
 intents:
+- deny
 - mood_unhappy
+- thank
+- provide_name
+- mood_great
 - goodbye
 - affirm
 - greet
-- mood_great
-- deny
 - bot_challenge
 - out_of_domain
-- thank
-- provide_name
 responses:
   utter_ask_Person_Name:
   - text: By the way, what's your name?
@@ -59,11 +61,11 @@ responses:
   - text: Arrivederci!
   - text: G'day and bye!
   utter_greet:
-  - text: Hey! How are you?
-  - text: Hey! How's it hanging?
+  - text: How are you?
+  - text: How's it hanging?
   - text: What's up, buddy?
-  - text: Hey! Whaddup?
-  - text: Hello there! How ya doin'?
+  - text: Whaddup?
+  - text: How ya doin'?
   utter_happy:
   - text: Great, carry on!
   - text: Awesome!
@@ -82,13 +84,13 @@ responses:
   - text: You can call me Whoabot! Think of me as your chat buddy with whom you can
       speak your mind away!
   utter_smile:
-  - text: "😊"
-  - text: "😀"
-  - text: "😃"
-  - text: "😄"
-  - text: "😁"
-  - text: "😉"
-  - text: "😇"
+  - text: 😊
+  - text: 😀
+  - text: 😃
+  - text: 😄
+  - text: 😁
+  - text: 😉
+  - text: 😇
   utter_sorry:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...

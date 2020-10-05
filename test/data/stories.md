@@ -83,15 +83,6 @@
 ## out_of_domain
 * out_of_domain
     - action_custom_fallback
-
-# name_response
-* provide_name
-    - action_check_name
-
-# thanks_response
-* thank
-    - utter_smile
-    
     
 ## interactive_story_3
 * greet
@@ -110,3 +101,23 @@
     - utter_happy
 * goodbye
     - utter_goodbye
+
+## name_response
+* provide_name
+    - action_check_name
+    - utter_greet
+* mood_great
+    - utter_happy
+* mood_unhappy
+    - utter_cheer_up
+    - utter_did_that_help
+* deny
+    - action_hello_world
+    - utter_did_that_help
+* deny
+    - utter_sorry
+    - utter_goodbye
+
+## thanks_response
+* thank
+    - utter_smile

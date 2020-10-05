@@ -91,6 +91,8 @@
 - I'm [depressed](Mood)
 - I'm [uneasy](Mood)
 - Actually I'm [not fine](Mood)
+- Actually no... I'm [not fine](Mood)
+- I'm [not good](Mood)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -119,3 +121,4 @@
 - You can call me [Mihir](Name)
 - Hey you can call me [Ved](Name)
 - Hi, my name is [Saumitra](Name)
+- I'm [Saumitra](Name)
