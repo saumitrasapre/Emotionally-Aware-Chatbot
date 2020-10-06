@@ -49,6 +49,32 @@
 - thanks a lot!
 - aww... thanks!
 - Thanks!
+- 😊
+- 😀
+- 😃
+- 😄
+- 😁
+- 😉
+- 😇
+
+## intent:provide_hobby
+- I like to [dance](Hobby)
+- I like [reading](Hobby) books
+- [Dancing](Hobby)
+- [Painting](Hobby)
+- [Cooking](Hobby)
+- [Photography](Hobby)
+- [Trekking](Hobby)
+- Watching [movies](Hobby)
+- [Football](Hobby)
+- [Chess](Hobby)
+- [Basketball](Hobby)
+- [Writing](Hobby)
+- [Drawing](Hobby)
+- Listening to [music](Hobby)
+
+
+
 
 ## intent:mood_great
 - [fine](Mood)
@@ -117,8 +143,12 @@
 
 ## intent:provide_name
 - My name is [Saumitra](Name)
+- My name's [Ved](Name)
 - Oh okay, I'm [Shraddha](Name)
 - You can call me [Mihir](Name)
 - Hey you can call me [Ved](Name)
 - Hi, my name is [Saumitra](Name)
 - I'm [Saumitra](Name)
+- I'm [Mihir](Name)
+- I'm [Ved](Name)
+- I'm called [Shraddha](Name)

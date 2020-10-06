@@ -46,8 +46,7 @@
 ## interactive_story_1
 * greet
     - utter_greet
-* mood_unhappy{"Mood": "sad"}
-    - slot{"Mood": "sad"}
+* mood_unhappy
     - utter_cheer_up
     - utter_did_that_help
 * affirm
@@ -56,12 +55,15 @@
     - utter_goodbye
 
     
-## initial_interaction
+## initial_challenge_interaction
 * bot_challenge
     - utter_iamabot
     - submit_name_form
     - form{"name":"submit_name_form"}
-    - form{"name":null}  
+    - form{"name":null} 
+    - submit_hobby_form
+    - form{"name":"submit_hobby_form"}
+    - form{"name":null} 
  * thank
     - utter_smile
 
@@ -105,6 +107,9 @@
 ## name_response
 * provide_name
     - action_check_name
+    - submit_hobby_form
+    - form{"name":"submit_hobby_form"}
+    - form{"name":null}
     - utter_greet
 * mood_great
     - utter_happy

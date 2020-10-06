@@ -14,13 +14,29 @@ actions:
 entities:
 - Mood
 - Name
+- Hobby
+slots:
+  Mood:
+    type: text
+  Person_Name:
+    type: unfeaturized
+  Hobby1:
+    type: unfeaturized
+  Hobby2:
+    type: unfeaturized
+  Hobby3:
+    type: unfeaturized
+  requested_slot:
+    type: unfeaturized
 forms:
 - submit_name_form
+- submit_hobby_form
 intents:
 - deny
 - mood_unhappy
 - thank
 - provide_name
+- provide_hobby
 - mood_great
 - goodbye
 - affirm
@@ -43,7 +59,7 @@ responses:
   utter_custom:
   - text: I'm sorry, but I didnt get that... I'm learning, you see. Could you try
       again?
-  - text: I'm sorry, but I could'nt understand what you're trying to say...
+  - text: I'm sorry, but I couldn't understand what you're trying to say...
   utter_default:
   - text: I'm sorry, but I could not understand what you're trying to say...
   utter_did_that_help:
@@ -72,6 +88,17 @@ responses:
   - text: Glad to hear that! Carry On!
   - text: Fantastic!
   - text: Fabulous!
+  - text: Cool!
+  utter_ask_Hobby1:
+  - text: Let's get to know you a little better... Tell me one of your hobbies
+  - text: Awesome! I'd like to know more about you... Type in one of your hobbies
+  utter_ask_Hobby2:
+  - text: That's so cool! Tell me one more!
+  - text: Amazing! One more hobby!
+  - text: Interesting... What else do you like to do?
+  utter_ask_Hobby3:
+  - text: Last one, I promise! Type in another one of your interests!
+  - text: Third time's the charm! Gimme another one!
   utter_iamabot:
   - text: I'm Whoabot, your friendly personal chat buddy! I'm here to help you supercharge
       your awful mood!
@@ -97,10 +124,4 @@ responses:
 session_config:
   carry_over_slots_to_new_session: true
   session_expiration_time: 60
-slots:
-  Mood:
-    type: text
-  Person_Name:
-    type: unfeaturized
-  requested_slot:
-    type: unfeaturized
+

@@ -13,9 +13,15 @@ pipeline:
     analyzer: "char_wb"
     min_ngram: 1
     max_ngram: 4
+  - name: CRFEntityExtractor
   - name: DIETClassifier
     epochs: 100
   - name: EntitySynonymMapper
+#  - name: "DucklingHTTPExtractor"
+#    url: "http://localhost:8000"
+#    dimensions: ["time", "number", "amount-of-money", "distance"]
+#    timezone: "India/Kolkata"
+#    timeout: 3
   - name: ResponseSelector
     epochs: 100
 
