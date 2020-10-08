@@ -9,6 +9,7 @@
   - utter_greet
 * mood_unhappy
   - utter_cheer_up
+  - action_cheer_up_gif
   - utter_did_that_help
 * affirm
   - utter_happy
@@ -19,9 +20,10 @@
   - utter_greet
 * mood_unhappy
   - utter_cheer_up
+  - action_cheer_up_gif
   - utter_did_that_help
 * deny
-  - action_hello_world
+  - action_cheer_up_gif
   - utter_did_that_help
 * deny
   - utter_sorry
@@ -32,9 +34,10 @@
   - utter_greet
 * mood_unhappy
   - utter_cheer_up
+  - action_cheer_up_gif
   - utter_did_that_help
 * deny
-  - action_hello_world
+  - action_cheer_up_gif
   - utter_did_that_help
 * affirm
   -utter_happy
@@ -48,6 +51,7 @@
     - utter_greet
 * mood_unhappy
     - utter_cheer_up
+    - action_cheer_up_gif
     - utter_did_that_help
 * affirm
     - utter_happy
@@ -73,9 +77,10 @@
 * mood_unhappy{"Mood": "uneasy"}
     - slot{"Mood": "uneasy"}
     - utter_cheer_up
+    - action_cheer_up_gif
     - utter_did_that_help
 * deny
-    - action_hello_world
+    - action_cheer_up_gif
     - utter_did_that_help
 * affirm
     - utter_happy
@@ -95,9 +100,10 @@
 * mood_unhappy{"Mood": "not fine"}
     - slot{"Mood": "not fine"}
     - utter_cheer_up
+    - action_cheer_up_gif
     - utter_did_that_help
 * deny
-    - action_hello_world
+    - action_cheer_up_gif
     - utter_did_that_help
 * affirm
     - utter_happy
@@ -115,9 +121,10 @@
     - utter_happy
 * mood_unhappy
     - utter_cheer_up
+    - action_cheer_up_gif
     - utter_did_that_help
 * deny
-    - action_hello_world
+    - action_cheer_up_gif
     - utter_did_that_help
 * deny
     - utter_sorry

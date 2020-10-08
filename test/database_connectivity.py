@@ -106,8 +106,8 @@ def hobbyretrieve(name):
         return hobby1, hobby2, hobby3
 
 
-if __name__ == "__main__":
-    hobbyretrieve("mihir")
+# if __name__ == "__main__":
+#     hobbyretrieve("mihir")
     # hobbyupdate("Painting", 1, "saumitra")
     # dataupdate("saumitra")
     # rows = dataverify("adam")

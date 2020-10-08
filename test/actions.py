@@ -6,16 +6,17 @@
 
 
 # This is a simple example for a custom action which utters "Hello World!"
-
+import random
 from typing import Any, Text, Dict, List, Union
-
+from datetime import date
 from rasa.core.events import Event
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
-from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
+from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
+from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact
 
 
 class ActionSessionStart(Action):
@@ -60,17 +61,16 @@ class ActionSessionStart(Action):
         return events
 
 
-class ActionHelloWorld(Action):
+class ActionCheerUpGif(Action):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "action_cheer_up_gif"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        mylink = "https://belarr.com/bakercat/"
-        print("Mood", tracker.get_slot('Mood'))
-        dispatcher.utter_template("utter_enchanced_cheer_up", tracker, link=mylink)
+        meow = fetchgif("cute cat")
+        dispatcher.utter_message(json_message={"animation": meow})
 
         return []
 
@@ -98,10 +98,10 @@ class ActionCheckName(Action):
                 return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value']))]
             else:
                 return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value'])),
-                    SlotSet("Hobby1", value=str(hobby1)),
-                    SlotSet("Hobby2", value=str(hobby2)),
-                    SlotSet("Hobby3", value=str(hobby3)),
-                    ]
+                        SlotSet("Hobby1", value=str(hobby1)),
+                        SlotSet("Hobby2", value=str(hobby2)),
+                        SlotSet("Hobby3", value=str(hobby3)),
+                        ]
 
 
 class ActionCustomFallback(Action):
@@ -261,3 +261,27 @@ class SubmitHobbyForm(FormAction):
         else:
             print("validate_Hobby3")
             return {"Hobby1": tracker.get_slot("Hobby1"), "Hobby2": tracker.get_slot("Hobby2"), "Hobby3": value}
+
+
+class ActionCureBoredom(Action):
+
+    def name(self) -> Text:
+        return "action_cure_boredom"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        # dispatcher.utter_message(json_message={"animation":"https://media3.giphy.com/media/H4DjXQXamtTiIuCcRU/giphy-downsized.gif?cid=ac92730c368j5vpcpw66knr02x3eizba55ht8u69mgu75hdf&rid=giphy-downsized.gif"})
+        num = random.randint(1, 3)
+        if num == 1:
+            dispatcher.utter_message("Did you know that?")
+            dispatcher.utter_message(fetchfact())
+        elif num == 2:
+            dispatcher.utter_message("Nothing like a joke to lighten the mood!")
+            dispatcher.utter_message(fetchjoke())
+        elif num == 3:
+            today = date.strftime(date.today(), '%d %B')
+            dispatcher.utter_message("Today is {} isn't it?".format(today))
+            dispatcher.utter_message(fetchdatefact())
+
+        return []

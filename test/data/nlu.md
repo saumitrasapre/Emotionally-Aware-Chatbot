@@ -135,6 +135,28 @@
 - Who are you? [Ved](Name) this side
 - Who's this? I'm [Saumitra](Name)
 
+## intent:user_bored
+- soo bored
+- that was boring
+- I'm bored
+- bored
+- boring
+- I am getting bored
+- Staying at home is boring
+- very boring
+- it bores me
+- i had a slow day
+- i am very bored
+- Im kinda bored today 
+- I've never been more bored
+- I was bored
+- It's boring
+- This is boring
+- We're all bored
+- It's very boring
+- I'm already bored
+- I'm bored out of my mind
+
 ## intent:out_of_domain
 - I want to book a cab
 - I want to order a pizza
