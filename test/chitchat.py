@@ -1,4 +1,7 @@
-import random, urllib.request, json, requests
+import json
+import random
+import requests
+import urllib.request
 from datetime import date
 
 
@@ -18,7 +21,6 @@ def fetchdatefact():
     """Get a random fact about current day and utter it as a response."""
     today = date.strftime(date.today(), '%m/%d')
     day_fact = requests.get(f'http://numbersapi.com/{today}/date')
-    print(day_fact.text)
     return day_fact.text
 
 
@@ -35,7 +37,6 @@ def fetchjoke():
         result = requests.get(url, headers={"Accept": "application/json"}).json()
         joke_text = result["joke"]
 
-    print(joke_text)
     return joke_text
 
 
@@ -51,9 +52,7 @@ def fetchfact():
         fact = requests.get('https://cat-fact.herokuapp.com/facts').json()["all"][fact_num]["text"]
     elif num == 4:
         fact = requests.get('http://numbersapi.com/random/trivia').text
-    print(fact)
     return fact
-
 
 # if __name__ == "__main__":
     # fetchgif("cute cat")

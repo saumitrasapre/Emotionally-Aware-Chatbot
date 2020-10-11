@@ -5,7 +5,6 @@
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
 
 
-# This is a simple example for a custom action which utters "Hello World!"
 import random
 from typing import Any, Text, Dict, List, Union
 from datetime import date
@@ -15,8 +14,9 @@ from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
-from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
+from mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
 from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact
+# from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
 
 
 class ActionSessionStart(Action):
@@ -84,14 +84,14 @@ class ActionCheckName(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        rows = dataverify(str(tracker.latest_message['entities'][0]['value']))
+        rows = mongodataverify(str(tracker.latest_message['entities'][0]['value']))
         if rows == 0:
-            dataupdate(str(tracker.latest_message['entities'][0]['value']))
+            mongodataupdate(str(tracker.latest_message['entities'][0]['value']))
             dispatcher.utter_message(
                 "{}... That's a nice name!".format(str(tracker.latest_message['entities'][0]['value'])))
             return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value']))]
         else:
-            hobby1, hobby2, hobby3 = hobbyretrieve(str(tracker.latest_message['entities'][0]['value']))
+            hobby1, hobby2, hobby3 = mongohobbyretrieve(str(tracker.latest_message['entities'][0]['value']))
             dispatcher.utter_message(
                 "Pleased to meet you, {}!".format(str(tracker.latest_message['entities'][0]['value'])))
             if hobby1 == "None" or hobby2 == "None" or hobby3 == "None":
@@ -157,17 +157,17 @@ class SubmitNameForm(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
-        rows = dataverify(value)
+        rows = mongodataverify(value)
         print(value)
         print(rows)
         if rows == 0:
-            dataupdate(value)
+            mongodataupdate(value)
             print(tracker.get_slot("Person_Name"))
             # SlotSet("Person_Name", value=tracker.get_slot("Person_Name"))
             dispatcher.utter_message("{}... That's a nice name!".format(value))
             return {"Person_Name": value}
         else:
-            hobby1, hobby2, hobby3 = hobbyretrieve(value)
+            hobby1, hobby2, hobby3 = mongohobbyretrieve(value)
             dispatcher.utter_message("Pleased to meet you, {}!".format(value))
             if hobby1 == "None" or hobby2 == "None" or hobby3 == "None":
                 return {"Person_Name": value}
@@ -215,9 +215,9 @@ class SubmitHobbyForm(FormAction):
     def submit(self, dispatcher: CollectingDispatcher,
                tracker: Tracker,
                domain: Dict[Text, Any]) -> List[Dict]:
-        hobbyupdate(str(tracker.get_slot("Hobby1")), 1, str(tracker.get_slot("Person_Name")))
-        hobbyupdate(str(tracker.get_slot("Hobby2")), 2, str(tracker.get_slot("Person_Name")))
-        hobbyupdate(str(tracker.get_slot("Hobby3")), 3, str(tracker.get_slot("Person_Name")))
+        mongohobbyupdate(str(tracker.get_slot("Hobby1")), 1, str(tracker.get_slot("Person_Name")))
+        mongohobbyupdate(str(tracker.get_slot("Hobby2")), 2, str(tracker.get_slot("Person_Name")))
+        mongohobbyupdate(str(tracker.get_slot("Hobby3")), 3, str(tracker.get_slot("Person_Name")))
         dispatcher.utter_message(template="utter_smile")
         return []
 
