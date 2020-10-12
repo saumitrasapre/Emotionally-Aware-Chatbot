@@ -16,6 +16,8 @@ from rasa_sdk.forms import FormAction
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
 from mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
 from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact
+
+
 # from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
 
 
@@ -113,7 +115,6 @@ class ActionCustomFallback(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_template("utter_custom", tracker)
-        # dispatcher.utter_message("utter_enchanced_cheer_up", tracker, link=mylink)
 
         return [UserUtteranceReverted()]
 
@@ -163,7 +164,6 @@ class SubmitNameForm(FormAction):
         if rows == 0:
             mongodataupdate(value)
             print(tracker.get_slot("Person_Name"))
-            # SlotSet("Person_Name", value=tracker.get_slot("Person_Name"))
             dispatcher.utter_message("{}... That's a nice name!".format(value))
             return {"Person_Name": value}
         else:
@@ -215,9 +215,8 @@ class SubmitHobbyForm(FormAction):
     def submit(self, dispatcher: CollectingDispatcher,
                tracker: Tracker,
                domain: Dict[Text, Any]) -> List[Dict]:
-        mongohobbyupdate(str(tracker.get_slot("Hobby1")), 1, str(tracker.get_slot("Person_Name")))
-        mongohobbyupdate(str(tracker.get_slot("Hobby2")), 2, str(tracker.get_slot("Person_Name")))
-        mongohobbyupdate(str(tracker.get_slot("Hobby3")), 3, str(tracker.get_slot("Person_Name")))
+        mongohobbyupdate(str(tracker.get_slot("Hobby1")), str(tracker.get_slot("Hobby2")),
+                         str(tracker.get_slot("Hobby3")), str(tracker.get_slot("Person_Name")))
         dispatcher.utter_message(template="utter_smile")
         return []
 
@@ -271,7 +270,6 @@ class ActionCureBoredom(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        # dispatcher.utter_message(json_message={"animation":"https://media3.giphy.com/media/H4DjXQXamtTiIuCcRU/giphy-downsized.gif?cid=ac92730c368j5vpcpw66knr02x3eizba55ht8u69mgu75hdf&rid=giphy-downsized.gif"})
         num = random.randint(1, 3)
         if num == 1:
             dispatcher.utter_message("Did you know that?")

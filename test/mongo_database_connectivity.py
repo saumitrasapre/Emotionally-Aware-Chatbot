@@ -46,24 +46,17 @@ def mongodataverify(name):
         return 1
 
 
-def mongohobbyupdate(hobby, number, name):
-    hobby = hobby.lower()
+def mongohobbyupdate(hobby1,hobby2,hobby3, name):
+    hobby1 = hobby1.lower()
+    hobby2 = hobby2.lower()
+    hobby3 = hobby3.lower()
     name = name.lower()
-    if hobby != 'none':
+    if hobby1 != 'none' or hobby2!='none' or hobby3!='none':
         myclient = MongoClient('localhost', 27017)
         mydb = myclient["rasa"]
         mycollection = mydb["users"]
-
-        if number == 1:
-            query = {"name": name}
-            values = {"$set": {"hobby1": hobby}}
-        elif number == 2:
-            query = {"name": name}
-            values = {"$set": {"hobby2": hobby}}
-        elif number == 3:
-            query = {"name": name}
-            values = {"$set": {"hobby3": hobby}}
-
+        query = {"name": name}
+        values = {"$set": {"hobby1": hobby1,"hobby2":hobby2,"hobby3":hobby3}}
         try:
             mycollection.update_one(query, values)
         except errors.DuplicateKeyError as e:
