@@ -15,7 +15,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType
 from mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
-from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact
+from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
 
 
 # from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
@@ -270,9 +270,10 @@ class ActionCureBoredom(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        num = random.randint(1, 3)
+        # num = random.randint(1, 4)
+        num = 4
         if num == 1:
-            dispatcher.utter_message("Did you know that?")
+            dispatcher.utter_message("Did you know?")
             dispatcher.utter_message(fetchfact())
         elif num == 2:
             dispatcher.utter_message("Nothing like a joke to lighten the mood!")
@@ -281,5 +282,20 @@ class ActionCureBoredom(Action):
             today = date.strftime(date.today(), '%d %B')
             dispatcher.utter_message("Today is {} isn't it?".format(today))
             dispatcher.utter_message(fetchdatefact())
+        elif num == 4:
+            dispatcher.utter_message("In the mood for some songs?")
+            mydict = fetchmusic(2)
+            album_name = mydict["album_name"]
+            artist_name = mydict["artist_name"]
+            track_name = mydict["track_name"]
+            url = mydict["url"]
+            genre = mydict["genre"]
+            dispatcher.utter_message("I just found this awesome {} song called '{}' !".format(genre, track_name))
+            if album_name == track_name:
+                dispatcher.utter_message("It's from an album with the same name and is performed by {}".format(artist_name))
+            else:
+                dispatcher.utter_message("It's from an album called {}, performed by {}".format(album_name,artist_name))
+            dispatcher.utter_message("Check it out here! {}".format(url))
+
 
         return []

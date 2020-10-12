@@ -2,6 +2,7 @@ import json
 import random
 import requests
 import urllib.request
+from newsapi import NewsApiClient
 from datetime import date
 
 
@@ -54,10 +55,106 @@ def fetchfact():
         fact = requests.get('http://numbersapi.com/random/trivia').text
     return fact
 
+
+def fetchtrends():
+    # Init
+    newsapi = NewsApiClient(api_key='KEY')
+
+    # /v2/top-headlines
+    top_headlines = newsapi.get_top_headlines(q='bitcoin',
+                                              category='business',
+                                              language='en',
+                                              country='us')
+    print(top_headlines)
+
+    # /v2/everything
+    # all_articles = newsapi.get_everything(q='bitcoin',
+    #                                       sources='bbc-news,the-verge',
+    #                                       domains='bbc.co.uk,techcrunch.com',
+    #                                       language='en',
+    #                                       sort_by='relevancy',
+    #                                       page=1)
+    # print(all_articles)
+
+    # print(result)
+    # /v2/sources
+    # sources = newsapi.get_sources()
+
+
+def fetchspotifyaccesstoken():
+    file = open("creds.txt", "r+")
+    token = file.readline()
+    file.close()
+    if token == "":
+        result = requests.post("https://accounts.spotify.com/api/token", data=
+        {"grant_type": "client_credentials", "client_id": "CLIENT ID",
+         "client_secret": "SECRET KEY"},
+                               headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
+        token = result["access_token"]
+        open("creds.txt", "w").write(token)
+        return token
+    else:
+        myresult = requests.get("https://api.spotify.com/v1/browse/new-releases?country=IN&limit=10",
+                                headers={"Content-Type": "application/json",
+                                         "Authorization": "Bearer {}".format(token)})
+        code = myresult.status_code
+        if code == 401:
+            result = requests.post("https://accounts.spotify.com/api/token", data=
+            {"grant_type": "client_credentials", "client_id": "CLIENT ID",
+             "client_secret": "SECRET KEY"},
+                                   headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
+            token = result["access_token"]
+            open("creds.txt", "w").write(token)
+            return token
+        else:
+            return token
+
+
+def fetchmusic(num):
+    key = fetchspotifyaccesstoken()
+    if num == 1:
+        # Gets a list a new releases
+        mynum = random.randint(1, 10)
+        myresult = requests.get("https://api.spotify.com/v1/browse/new-releases?country=IN&limit=10",
+                                headers={"Content-Type": "application/json",
+                                         "Authorization": "Bearer {}".format(key)})
+        mylist = myresult.json()
+        myalbum = mylist["albums"]["items"][mynum]
+        mydict = {"album_type": myalbum["album_type"],
+                  "artist_name": myalbum["artists"][0]["name"],
+                  "album_name": myalbum["name"],
+                  "url": myalbum["external_urls"]["spotify"]}
+        return mydict
+
+    if num == 2:
+        # Gets a random track of a random genre
+        mynum = random.randint(1, 10)
+        mygenrenum = random.randint(1, 23)
+        genre = ["acoustic", "ambient", "blues", "chill", "club", "dance", "disney", "disco", "drum-and-bass",
+                 "dubstep", "edm",
+                 "electro", "electronic", "rap", "guitar", "happy", "hip-hop", "indian", "jazz", "piano", "pop", "rock",
+                 "work-out"
+                 ]
+        mygenre = genre[mygenrenum]
+        print(mygenre)
+        mylist = requests.get(
+            "https://api.spotify.com/v1/search?q=genre%3A{}&type=track&market=IN&limit=10".format(mygenre),
+            headers={"Accept": "application/json", "Content-Type": "application/json",
+                     "Authorization": "Bearer {}".format(key)}).json()
+        mytrack = mylist["tracks"]["items"][mynum]
+        mydict = {"album_name": mytrack["album"]["name"],
+                  "artist_name": mytrack["artists"][0]["name"],
+                  "track_name": mytrack["name"],
+                  "url": mytrack["external_urls"]["spotify"],
+                  "genre": mygenre}
+        return mydict
+
 # if __name__ == "__main__":
-    # fetchgif("cute cat")
-    # fetchdatefact()
-    # fetchjoke()
-    # fetchfact()
-    # today = date.strftime(date.today(),'%d %B')
-    # print(today)
+#     fetchmusic(2)
+# fetchtrends()
+# fetchgif("cute cat")
+# fetchdatefact()
+# fetchjoke()
+# fetchfact()
+# today = date.strftime(date.today(),'%d %B')
+# print(today)

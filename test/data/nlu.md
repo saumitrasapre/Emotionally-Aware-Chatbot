@@ -141,6 +141,7 @@
 - soo bored
 - that was boring
 - I'm bored
+- meh
 - bored
 - boring
 - I am getting bored
