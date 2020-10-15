@@ -65,16 +65,16 @@
 - [Cooking](Hobby)
 - [Photography](Hobby)
 - [Trekking](Hobby)
-- Watching [movies](Hobby)
+- [Watching movies](Hobby)
 - [Football](Hobby)
 - [Chess](Hobby)
 - [Basketball](Hobby)
 - [Writing](Hobby)
 - [Drawing](Hobby)
-- Listening to [music](Hobby)
-
-
-
+- [Singing](Hobby)
+- [Swimming](Hobby)
+- [Listening to music](Hobby)
+- [Playing Guitar](Hobby)
 
 ## intent:mood_great
 - [fine](Mood)
@@ -133,7 +133,15 @@
 - Who are you? I'm [Saumitra](Name)
 - Are you a robot? My name is [Shraddha](Name)
 - Who are you? [Ved](Name) this side
-- Who's this? I'm [Saumitra](Name)
+- Who's this? I'm [Mihir](Name)
+
+## intent:user_request_music
+- play me some tunes
+- music
+- I want to listen to music
+- I want music
+- Play some songs
+- Play music
 
 ## intent:user_bored
 - Tell me something fun

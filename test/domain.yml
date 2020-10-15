@@ -15,6 +15,8 @@ intents:
 - out_of_domain
 - user_bored:
     triggers: action_cure_boredom
+- user_request_music:
+    triggers: action_play_music
 entities:
 - Mood
 - Name
@@ -103,6 +105,7 @@ responses:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
 actions:
+- action_play_music
 - action_check_name
 - action_session_start
 - action_custom_fallback

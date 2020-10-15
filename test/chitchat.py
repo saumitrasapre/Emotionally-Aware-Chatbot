@@ -7,7 +7,7 @@ from datetime import date
 
 
 def fetchgif(query):
-    API_KEY = "LXbY5N7DLj7jIWWhZoz3nw46KHEHTGGy"
+    API_KEY = "API_KEY"
     num = random.randint(1, 10)
     query = query.replace(" ", "+")
     url = "http://api.giphy.com/v1/gifs/search?q={}&api_key={}&offset={}&rating=pg&limit=10".format(query, API_KEY, num)
@@ -58,17 +58,17 @@ def fetchfact():
 
 def fetchtrends():
     # Init
-    newsapi = NewsApiClient(api_key='KEY')
+    newsapi = NewsApiClient(api_key='api_key')
 
     # /v2/top-headlines
-    top_headlines = newsapi.get_top_headlines(q='bitcoin',
-                                              category='business',
-                                              language='en',
-                                              country='us')
-    print(top_headlines)
+    # top_headlines = newsapi.get_top_headlines(q='bitcoin',
+    #                                           category='business',
+    #                                           language='en',
+    #                                           country='us')
+    # print(top_headlines)
 
     # /v2/everything
-    # all_articles = newsapi.get_everything(q='bitcoin',
+    # all_articles = newsapi.get_everything(q='photography',
     #                                       sources='bbc-news,the-verge',
     #                                       domains='bbc.co.uk,techcrunch.com',
     #                                       language='en',
@@ -78,7 +78,8 @@ def fetchtrends():
 
     # print(result)
     # /v2/sources
-    # sources = newsapi.get_sources()
+    sources = newsapi.get_sources(language="en")
+    print(sources)
 
 
 def fetchspotifyaccesstoken():
@@ -87,8 +88,8 @@ def fetchspotifyaccesstoken():
     file.close()
     if token == "":
         result = requests.post("https://accounts.spotify.com/api/token", data=
-        {"grant_type": "client_credentials", "client_id": "CLIENT ID",
-         "client_secret": "SECRET KEY"},
+        {"grant_type": "client_credentials", "client_id": "client_id",
+         "client_secret": "client_secret"},
                                headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
         token = result["access_token"]
         open("creds.txt", "w").write(token)
@@ -100,8 +101,8 @@ def fetchspotifyaccesstoken():
         code = myresult.status_code
         if code == 401:
             result = requests.post("https://accounts.spotify.com/api/token", data=
-            {"grant_type": "client_credentials", "client_id": "CLIENT ID",
-             "client_secret": "SECRET KEY"},
+            {"grant_type": "client_credentials", "client_id": "client_id",
+             "client_secret": "client_secret"},
                                    headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
             token = result["access_token"]
             open("creds.txt", "w").write(token)
@@ -129,10 +130,10 @@ def fetchmusic(num):
     if num == 2:
         # Gets a random track of a random genre
         mynum = random.randint(1, 10)
-        mygenrenum = random.randint(1, 23)
+        mygenrenum = random.randint(1, 22)
         genre = ["acoustic", "ambient", "blues", "chill", "club", "dance", "disney", "disco", "drum-and-bass",
                  "dubstep", "edm",
-                 "electro", "electronic", "rap", "guitar", "happy", "hip-hop", "indian", "jazz", "piano", "pop", "rock",
+                 "electro", "electronic", "rap", "guitar", "hip-hop", "indian", "jazz", "piano", "pop", "rock",
                  "work-out"
                  ]
         mygenre = genre[mygenrenum]
@@ -150,8 +151,8 @@ def fetchmusic(num):
         return mydict
 
 # if __name__ == "__main__":
-#     fetchmusic(2)
 # fetchtrends()
+# fetchmusic(2)
 # fetchgif("cute cat")
 # fetchdatefact()
 # fetchjoke()
