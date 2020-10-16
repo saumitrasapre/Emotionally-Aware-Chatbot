@@ -1,6 +1,7 @@
 import spotipy
 import random
 
+
 def authenticate_spotify(token):
     print('...connecting to Spotify')
     sp = spotipy.Spotify(auth=token)
@@ -101,7 +102,8 @@ def create_playlist(sp, selected_tracks_uri, mood):
     user_all_data = sp.current_user()
     user_id = user_all_data["id"]
 
-    playlist_all_data = sp.user_playlist_create(user_id, "Whoabot's Curated Music Mix " + str(mood))
+    playlist_all_data = sp.user_playlist_create(user_id, "Whoabot's Curated Music Mix " + str(mood),
+                                                description="A mix of some awesome songs personally curated by yours truly!")
     print(playlist_all_data["external_urls"]["spotify"])
     playlist_id = playlist_all_data["id"]
     playlist_uri = playlist_all_data["uri"]

@@ -64,6 +64,18 @@ class ActionSessionStart(Action):
         return events
 
 
+class ActionSetSentiment(Action):
+
+    def name(self) -> Text:
+        return "action_set_sentiment"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        return [SlotSet("Sentiment", value=[tracker.latest_message['entities'][0]['value'],
+                                            tracker.latest_message['entities'][0]['confidence']])]
+
+
 class ActionCheerUpGif(Action):
 
     def name(self) -> Text:
@@ -74,7 +86,7 @@ class ActionCheerUpGif(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         meow = fetchgif("cute cat")
         dispatcher.utter_message(json_message={"animation": meow})
-
+        print(tracker.latest_message['entities'][0]['value'])
         return []
 
 
@@ -87,7 +99,12 @@ class ActionPlayMusic(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message("Here's a playlist that I've prepared for you!")
-        url = createplaylist()
+        user_sentiment = tracker.slots["Sentiment"]
+        if user_sentiment[0] == 'neg':
+            mood = (1 - user_sentiment[1]) + 0.01
+        else:
+            mood = float("{:.2f}".format(random.uniform(0.0, 1.0)))
+        url = createplaylist(mood)
         dispatcher.utter_message(url)
         return []
 
@@ -101,20 +118,20 @@ class ActionCheckName(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        rows = mongodataverify(str(tracker.latest_message['entities'][0]['value']))
+        rows = mongodataverify(str(tracker.latest_message['entities'][1]['value']))
         if rows == 0:
-            mongodataupdate(str(tracker.latest_message['entities'][0]['value']))
+            mongodataupdate(str(tracker.latest_message['entities'][1]['value']))
             dispatcher.utter_message(
-                "{}... That's a nice name!".format(str(tracker.latest_message['entities'][0]['value'])))
-            return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value']))]
+                "{}... That's a nice name!".format(str(tracker.latest_message['entities'][1]['value'])))
+            return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][1]['value']))]
         else:
-            hobby1, hobby2, hobby3 = mongohobbyretrieve(str(tracker.latest_message['entities'][0]['value']))
+            hobby1, hobby2, hobby3 = mongohobbyretrieve(str(tracker.latest_message['entities'][1]['value']))
             dispatcher.utter_message(
-                "Pleased to meet you, {}!".format(str(tracker.latest_message['entities'][0]['value'])))
+                "Pleased to meet you, {}!".format(str(tracker.latest_message['entities'][1]['value'])))
             if hobby1 == "None" or hobby2 == "None" or hobby3 == "None":
-                return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value']))]
+                return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][1]['value']))]
             else:
-                return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][0]['value'])),
+                return [SlotSet("Person_Name", value=str(tracker.latest_message['entities'][1]['value'])),
                         SlotSet("Hobby1", value=str(hobby1)),
                         SlotSet("Hobby2", value=str(hobby2)),
                         SlotSet("Hobby3", value=str(hobby3)),

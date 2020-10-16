@@ -130,7 +130,7 @@ def fetchmusic(num):
     if num == 2:
         # Gets a random track of a random genre
         mynum = random.randint(1, 10)
-        mygenrenum = random.randint(1, 22)
+        mygenrenum = random.randint(0, 21)
         genre = ["acoustic", "ambient", "blues", "chill", "club", "dance", "disney", "disco", "drum-and-bass",
                  "dubstep", "edm",
                  "electro", "electronic", "rap", "guitar", "hip-hop", "indian", "jazz", "piano", "pop", "rock",
@@ -151,7 +151,7 @@ def fetchmusic(num):
         return mydict
 
 # if __name__ == "__main__":
-# fetchtrends()
+#     fetchtrends()
 # fetchmusic(2)
 # fetchgif("cute cat")
 # fetchdatefact()

@@ -2,12 +2,14 @@
 * greet
   - utter_greet
 * mood_great
+  - action_set_sentiment
   - utter_happy
 
 ## sad path 1
 * greet
   - utter_greet
 * mood_unhappy
+  - action_set_sentiment
   - utter_cheer_up
   - action_cheer_up_gif
   - utter_did_that_help
@@ -19,25 +21,26 @@
 * greet
   - utter_greet
 * mood_unhappy
+  - action_set_sentiment
   - utter_cheer_up
   - action_cheer_up_gif
   - utter_did_that_help
 * deny
-  - action_cheer_up_gif
+  - action_play_music
   - utter_did_that_help
 * deny
   - utter_sorry
-  - utter_goodbye
 
 ## sad path 3
 * greet
   - utter_greet
 * mood_unhappy
+  - action_set_sentiment
   - utter_cheer_up
   - action_cheer_up_gif
   - utter_did_that_help
 * deny
-  - action_cheer_up_gif
+  - action_play_music
   - utter_did_that_help
 * affirm
   -utter_happy
@@ -50,6 +53,7 @@
 * greet
     - utter_greet
 * mood_unhappy
+    - action_set_sentiment
     - utter_cheer_up
     - action_cheer_up_gif
     - utter_did_that_help
@@ -75,12 +79,13 @@
 * greet
     - utter_greet
 * mood_unhappy{"Mood": "uneasy"}
+    - action_set_sentiment
     - slot{"Mood": "uneasy"}
     - utter_cheer_up
     - action_cheer_up_gif
     - utter_did_that_help
 * deny
-    - action_cheer_up_gif
+    - action_play_music
     - utter_did_that_help
 * affirm
     - utter_happy
@@ -95,15 +100,17 @@
 * greet
     - utter_greet
 * mood_great{"Mood": "fine"}
+    - action_set_sentiment
     - slot{"Mood": "fine"}
     - utter_happy
 * mood_unhappy{"Mood": "not fine"}
+    - action_set_sentiment
     - slot{"Mood": "not fine"}
     - utter_cheer_up
     - action_cheer_up_gif
     - utter_did_that_help
 * deny
-    - action_cheer_up_gif
+    - action_play_music
     - utter_did_that_help
 * affirm
     - utter_happy
@@ -118,17 +125,18 @@
     - form{"name":null}
     - utter_greet
 * mood_great
+    - action_set_sentiment
     - utter_happy
 * mood_unhappy
+    - action_set_sentiment
     - utter_cheer_up
     - action_cheer_up_gif
     - utter_did_that_help
 * deny
-    - action_cheer_up_gif
+    - action_play_music
     - utter_did_that_help
 * deny
     - utter_sorry
-    - utter_goodbye
 
 ## thanks_response
 * thank
