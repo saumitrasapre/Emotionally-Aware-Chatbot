@@ -96,6 +96,25 @@
 * out_of_domain
     - action_custom_fallback
     
+## mad_lib_story_happy
+* play_mad_libs
+    - utter_happy
+    - action_pre_madlibs
+    - form{"name":null}
+    - utter_did_that_help
+* affirm
+    - utter_happy
+    
+## mad_lib_story_sad
+* play_mad_libs
+    - utter_happy
+    - action_pre_madlibs
+    - form{"name":null}
+    - utter_did_that_help
+* deny
+    - utter_sorry
+    
+    
 ## interactive_story_3
 * greet
     - utter_greet

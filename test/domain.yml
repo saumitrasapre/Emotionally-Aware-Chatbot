@@ -13,10 +13,12 @@ intents:
 - greet
 - bot_challenge
 - out_of_domain
+- play_mad_libs
 - user_bored:
     triggers: action_cure_boredom
 - user_request_music:
     triggers: action_play_music
+
 entities:
 - Mood
 - Name
@@ -38,6 +40,9 @@ slots:
   Sentiment:
     type: unfeaturized
     auto_fill: false
+  MadLib:
+    type: text
+    auto_fill: false
 responses:
   utter_ask_Person_Name:
   - text: By the way, what's your name?
@@ -57,7 +62,7 @@ responses:
       title: Yes
     - payload: No
       title: No
-    text: Did that help you?
+    text: Was that awesome?
   utter_goodbye:
   - text: Bye!
   - text: Goodbye!
@@ -70,9 +75,9 @@ responses:
   - text: Whaddup?
   - text: How ya doin'?
   utter_happy:
-  - text: Great, carry on!
+  - text: Great!
   - text: Awesome!
-  - text: Glad to hear that! Carry On!
+  - text: Glad to hear that!
   - text: Fantastic!
   - text: Fabulous!
   - text: Cool!
@@ -109,6 +114,7 @@ responses:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
 actions:
+- action_pre_madlibs
 - action_set_sentiment
 - action_play_music
 - action_check_name
@@ -127,3 +133,4 @@ actions:
 forms:
 - submit_name_form
 - submit_hobby_form
+- mad_lib_input

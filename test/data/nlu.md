@@ -172,6 +172,11 @@
 - Order a cake
 - I'm facing technical difficulties
 
+## intent:play_mad_libs
+- Play mad libs
+- Let's play some mad libs
+- I want to play some mad libs
+
 ## intent:provide_name
 - My name is [Saumitra](Name)
 - My name's [Ved](Name)
@@ -183,3 +188,4 @@
 - I'm [Mihir](Name)
 - I'm [Ved](Name)
 - I'm called [Shraddha](Name)
+- I'm [Aditi](Name)

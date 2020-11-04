@@ -33,8 +33,8 @@ policies:
   - name: TEDPolicy
     max_history: 5
     epochs: 100
+  - name: FormPolicy
   - name: MappingPolicy
-  - name: FormPolicy  
   - name: FallbackPolicy
     nlu_threshold: 0.4
     core_threshold: 0.4
