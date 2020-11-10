@@ -113,7 +113,22 @@
     - utter_did_that_help
 * deny
     - utter_sorry
+
+## tic_tac_toe_story_happy
+* play_tic_tac_toe
+    - action_play_tictactoe
+    - form{"name":null}
+    - utter_did_that_help
+* affirm
+    - utter_happy 
     
+## tic_tac_toe_story_sad
+* play_tic_tac_toe
+    - action_play_tictactoe
+    - form{"name":null}
+    - utter_did_that_help
+* deny
+    - utter_sorry  
     
 ## interactive_story_3
 * greet

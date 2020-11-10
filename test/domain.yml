@@ -14,6 +14,7 @@ intents:
 - bot_challenge
 - out_of_domain
 - play_mad_libs
+- play_tic_tac_toe
 - user_bored:
     triggers: action_cure_boredom
 - user_request_music:
@@ -41,6 +42,9 @@ slots:
     type: unfeaturized
     auto_fill: false
   MadLib:
+    type: text
+    auto_fill: false
+  TicTacToe:
     type: text
     auto_fill: false
 responses:
@@ -114,6 +118,7 @@ responses:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
 actions:
+- action_play_tictactoe
 - action_pre_madlibs
 - action_set_sentiment
 - action_play_music
@@ -134,3 +139,4 @@ forms:
 - submit_name_form
 - submit_hobby_form
 - mad_lib_input
+- tictactoe_input

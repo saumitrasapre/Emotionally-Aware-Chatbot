@@ -7,7 +7,6 @@ import os
 import random
 from typing import Any, Text, Dict, List, Union
 from datetime import date
-from rasa.core.events import Event
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
@@ -17,8 +16,9 @@ from mongo_database_connectivity import mongodataupdate, mongodataverify, mongoh
 from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
 from create_playlist import createplaylist
 from madlibs import generate_text, generate_madlib, generate_audio
+from tictactoe import *
 
-# from database_connectivity import dataupdate, dataverify, hobbyupdate, hobbyretrieve
+# Global Variables for Mad Libs
 y = 0
 count = 0
 fieldss = []
@@ -28,6 +28,9 @@ titles = ""
 texts = ""
 madlibs = ""
 final_sentences = ""
+
+# Global Variables for TicTacToe
+boards = [' ' for x in range(10)]
 
 
 class ActionSessionStart(Action):
@@ -152,6 +155,7 @@ class MadLibInput(FormAction):
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         global fieldss, nums, titles, texts, madlibs, replacementss, final_sentences, y, count
+        print(y)
         if nums == 1 or nums == 2:
             if y != len(fieldss):
                 replacementss.append(tracker.latest_message["text"])
@@ -195,10 +199,10 @@ class MadLibInput(FormAction):
                 else:
                     dispatcher.utter_message("Let's see what we have!")
                 dispatcher.utter_message(final_sentences)
-                # dispatcher.utter_message("Let's listen to it!")
-                # file_name = generate_audio(final_sentences)
-                # dispatcher.utter_message(json_message={"audio": open(file_name, 'rb')})
-                # os.remove(file_name)
+                output = generate_audio(final_sentences)
+                if output != "Error":
+                    dispatcher.utter_message("Let's listen to it... Shall we?")
+                    dispatcher.utter_message(json_message={"audio": output})
                 y = 0
                 count = 0
                 fieldss = []
@@ -215,10 +219,10 @@ class MadLibInput(FormAction):
             if y == len(fieldss):
                 dispatcher.utter_message("This Mad Lib is titled: {}".format(titles))
                 dispatcher.utter_message(final_sentences)
-                # dispatcher.utter_message("Let's listen to it!")
-                # file_name = generate_audio(final_sentences)
-                # dispatcher.utter_message(json_message={"audio": open(file_name, 'rb')})
-                # os.remove(file_name)
+                output = generate_audio(str(final_sentences))
+                if output != "Error":
+                    dispatcher.utter_message("Let's listen to it... Shall we?")
+                    dispatcher.utter_message(json_message={"audio": output})
                 y = 0
                 count = 0
                 fieldss = []
@@ -231,6 +235,83 @@ class MadLibInput(FormAction):
                 return []
             else:
                 return [SlotSet("MadLib", None)]
+
+
+class ActionPlayTictactoe(Action):
+
+    def name(self) -> Text:
+        return "action_play_tictactoe"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        global boards
+
+        dispatcher.utter_message(text="Alright! Let's get our game faces on!")
+        dispatcher.utter_message(text="Here's our board...")
+        dispatcher.utter_message(printBoard(boards))
+        dispatcher.utter_message(text="You'll have to fill in the board positions with numbers...")
+        dispatcher.utter_message(text="Type in a number between 1-9 for the appropriate position")
+        return [FollowupAction('tictactoe_input'), SlotSet("TicTacToe", None)]
+
+
+class TicTacToeInput(FormAction):
+    def name(self) -> Text:
+        return "tictactoe_input"
+
+    @staticmethod
+    def required_slots(tracker: "Tracker") -> List[Text]:
+        return ["TicTacToe"]
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return {
+            "TicTacToe": [
+                self.from_text(intent=None)
+            ]
+        }
+
+    def validate_TicTacToe(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        global boards
+        if not isBoardFull(boards):
+            if not isWinner(boards, 'O'):
+                num = tracker.latest_message.get('text')
+                boards, move = playerMove(boards, str(num))
+                dispatcher.utter_message(str(move))
+                strs = printBoard(boards)
+                dispatcher.utter_message(strs)
+                if move != 'Oops...This space is already occupied! Try again':
+                    if not isBoardFull(boards):
+                        if not isWinner(boards, 'X'):
+                            boards, num = compMove(boards)
+                            boards = insertLetter(boards, 'O', num)
+                            dispatcher.utter_message('I placed an \'O\' at position number {}... Your turn! :'.format(str(num)))
+                            dispatcher.utter_message(printBoard(boards))
+                            return {"TicTacToe": None}
+                        else:
+                            dispatcher.utter_message('You won! Good Job!')
+                            return {"TicTacToe": tracker.latest_message.get('text')}
+                    else:
+                        dispatcher.utter_message("Awww dang! It's a tie!")
+                        return {"TicTacToe": tracker.latest_message.get('text')}
+            else:
+                dispatcher.utter_message('Sorry! I won ! Better luck next time, buddy')
+                return {"TicTacToe": tracker.latest_message.get('text')}
+        else:
+            dispatcher.utter_message("Awww dang! It's a tie!")
+            return {"TicTacToe": tracker.latest_message.get('text')}
+
+    def submit(self, dispatcher: CollectingDispatcher,
+               tracker: Tracker,
+               domain: Dict[Text, Any]) -> List[Dict]:
+        global boards
+        boards = [' ' for x in range(10)]
+        return [SlotSet("TicTacToe", None)]
 
 
 class ActionPlayMusic(Action):

@@ -177,6 +177,11 @@
 - Let's play some mad libs
 - I want to play some mad libs
 
+## intent:play_tic_tac_toe
+- Play tictactoe
+- Let's play some tictactoe
+- I want to play some tictactoe
+
 ## intent:provide_name
 - My name is [Saumitra](Name)
 - My name's [Ved](Name)
