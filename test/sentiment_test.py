@@ -3,7 +3,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import flair
 
 flair_sentiment = flair.models.TextClassifier.load('en-sentiment')
-text = "I've never been more bored"
+text = "I'm furious"
 
 sid = SentimentIntensityAnalyzer()
 res = sid.polarity_scores(text)
@@ -34,8 +34,32 @@ else:
     model_dict["Text2emotion"] = {"Emotion": key, 'Score': value}
 
 print(model_dict)
-# for item in model_dict.items():
-#     if item[1]["Emotion"]
+pos =0
+neg =0
+neu= 0
+totposscore = 0
+totnegscore = 0
+totneuscore = 0
+for item in model_dict.items():
+    if item[1]["Emotion"] == "Positive" or item[1]["Emotion"] == "Happy" or item[1]["Emotion"] == "Surprise":
+        pos+=1
+        totposscore += item[1]["Score"]
+    elif item[1]["Emotion"] == "Negative" or item[1]["Emotion"] == "Angry" or item[1]["Emotion"] == "Sad" or item[1]["Emotion"] == "Fear":
+        neg+=1
+        totnegscore += abs(item[1]["Score"])
+    elif item[1]["Emotion"] == 'Neutral':
+        neu+=1
+        totneuscore = abs(item[1]["Score"])
+print("Pos: {}, Neg: {}, Neu: {}, PosScore: {}, NegScore: {}".format(pos,neg,neu,totposscore,totnegscore))
+print(model_dict["Text2emotion"]["Emotion"])
+if pos>=2:
+    print(totposscore/pos)
+elif neg>=2:
+    print(totnegscore/neg)
+elif neu>=2:
+    print(totneuscore / neu)
+else:
+    print(model_dict["Text2emotion"]["Score"])
 # print()
 # print(key)
 # print(value)
