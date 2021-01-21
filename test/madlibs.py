@@ -1,6 +1,6 @@
 import requests
 import time
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
@@ -39,6 +39,7 @@ def generate_text():
         # html = requests.get(url_text)
         # soup = BeautifulSoup(html.content,'html.parser')
         # text = soup.find(name="textarea",class_="chisel_d normal", id="ta").text
+        driver.close()
         return [], num, title, text
 
     elif num == 2:

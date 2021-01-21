@@ -83,8 +83,7 @@ class ActionSetSentiment(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        return [SlotSet("Sentiment", value=[tracker.latest_message['entities'][0]['value'],
-                                            tracker.latest_message['entities'][0]['confidence']])]
+        return [SlotSet("Sentiment", value=[tracker.latest_message['entities'][0]['value']])]
 
 
 class ActionCheerUpGif(Action):
@@ -199,10 +198,10 @@ class MadLibInput(FormAction):
                 else:
                     dispatcher.utter_message("Let's see what we have!")
                 dispatcher.utter_message(final_sentences)
-                output = generate_audio(final_sentences)
-                if output != "Error":
-                    dispatcher.utter_message("Let's listen to it... Shall we?")
-                    dispatcher.utter_message(json_message={"audio": output})
+                # output = generate_audio(final_sentences)
+                # if output != "Error":
+                #     dispatcher.utter_message("Let's listen to it... Shall we?")
+                #     dispatcher.utter_message(json_message={"audio": output})
                 y = 0
                 count = 0
                 fieldss = []
@@ -219,10 +218,10 @@ class MadLibInput(FormAction):
             if y == len(fieldss):
                 dispatcher.utter_message("This Mad Lib is titled: {}".format(titles))
                 dispatcher.utter_message(final_sentences)
-                output = generate_audio(str(final_sentences))
-                if output != "Error":
-                    dispatcher.utter_message("Let's listen to it... Shall we?")
-                    dispatcher.utter_message(json_message={"audio": output})
+                # output = generate_audio(str(final_sentences))
+                # if output != "Error":
+                #     dispatcher.utter_message("Let's listen to it... Shall we?")
+                #     dispatcher.utter_message(json_message={"audio": output})
                 y = 0
                 count = 0
                 fieldss = []
