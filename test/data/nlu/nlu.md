@@ -31,6 +31,12 @@
 - Yes
 - Yes Thanks
 - Yup
+- Sure
+- yuppers
+- okay
+- 👍
+- 👌
+- 🆗
 
 ## intent:deny
 - no
@@ -42,6 +48,15 @@
 - No
 - Nope
 - Nah
+- Maybe some other time
+- forget it
+- rain check on that
+- No thanks
+- No thank you
+- 👎
+- ❌
+- 🙅
+- 🙅‍♂️
 
 ## intent:thank
 - thanks

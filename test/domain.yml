@@ -19,6 +19,7 @@ intents:
     triggers: action_cure_boredom
 - user_request_music
 - user_request_games
+- user_insomnia
 
 entities:
 - Mood
@@ -97,11 +98,6 @@ responses:
 
   utter_happy_pipeline_games:
     - text: Yeah, I really want to… But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
-      buttons:
-        - title: YES
-          payload: /affirm
-        - title: NO
-          payload: /deny
 
   utter_happy_pipeline_games_1:
     - text: Fantastic ! Did you know that playing any kind of game helps to keep your mood uplifted for long, and also increases brain activity?
@@ -113,11 +109,6 @@ responses:
 
   utter_happy_pipeline_games_2:
     - text: I know right! I have some cool things that we could do together, whaddya say, shall we get our game face on?
-      buttons:
-        - title: GAME ON!
-          payload: /affirm
-        - title: YEAH! ALRIGHT!
-          payload: /affirm
 
   utter_happy_pipeline_games_ask_games:
     - text: What do you want to play?
@@ -127,14 +118,8 @@ responses:
         - title: MAD LIBS
           payload: /play_mad_libs
 
-
   utter_happy_pipeline_music:
     - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into oblivion. Wanna join me in the journey?
-      buttons:
-        - title: YUP, TAKE ME
-          payload: /affirm
-        - title: RAIN CHECK ON THAT
-          payload: /deny
 
   utter_happy_pipeline_music_affirm:
     - text: Alright, fasten your seatbelt, I’m cooking up an awesome mix now!
@@ -144,6 +129,18 @@ responses:
     - text: Sure! No problem! Enjoy yourself, and remember that you’re loved!
     - text: No worries! Have a good one!
     - text: Gotcha! Have a good day!
+
+
+  utter_insomnia_pipeline_start:
+    - text: "The world looks sunny after a great night's rest doesn’t it? \n\n
+    But it becomes a whole different ball game when your sleep is frequently interrupted.\n\n
+    A lack of Zs makes it harder to think and easier to become irritated and anxious.\n\n
+    No worries tho. \n\n
+    I am here to help you get through it.\n\n
+    Do you think that sleep is a problem for you at the moment?\n\n
+    Is it something that is constantly troubling you, and therefore distracts you from other things?\n\n
+    I simply ask because I have some tools that I can help you with."
+
 
   utter_ask_Hobby1:
   - text: Let's get to know you a little better... Tell me one of your hobbies

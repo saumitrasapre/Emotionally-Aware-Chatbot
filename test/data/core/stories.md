@@ -100,7 +100,7 @@
 * mood_great
     - action_set_sentiment
     - utter_happy_pipeline_start
-> check_user_choice
+> check_user_choice_happy
 
 ## thanks_response
 * thank

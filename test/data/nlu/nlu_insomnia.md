@@ -1,0 +1,23 @@
+## intent:user_insomnia
+- I’m not able to sleep
+- I can't sleep
+- I think I am suffering from insomnia.
+- Help me sleep
+- I simply cannot sleep these days.
+- I'm sleepless
+- I can't get any sleep
+- I can't fall asleep
+- I can't get to sleep
+- I'm an insomniac
+- I'm wide awake
+- I can't seem to fall asleep
+- I couldn't sleep
+- I just can't sleep
+- I can't sleep at all
+- I didn't go to sleep
+- I just couldn't sleep
+- I'm not sleeping well
+- Trying to get some sleep
+- I can't sleep at night
+- I couldn't get to sleep
+- I didn't get much sleep
