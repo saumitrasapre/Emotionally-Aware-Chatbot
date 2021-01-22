@@ -1,10 +1,3 @@
-## happy path
-* greet
-  - utter_greet
-* mood_great
-  - action_set_sentiment
-  - utter_happy
-
 ## sad path 1
 * greet
   - utter_greet
@@ -95,61 +88,7 @@
 ## out_of_domain
 * out_of_domain
     - action_custom_fallback
-    
-## mad_lib_story_happy
-* play_mad_libs
-    - utter_happy
-    - action_pre_madlibs
-    - form{"name":null}
-    - utter_did_that_help
-* affirm
-    - utter_happy
-    
-## mad_lib_story_sad
-* play_mad_libs
-    - utter_happy
-    - action_pre_madlibs
-    - form{"name":null}
-    - utter_did_that_help
-* deny
-    - utter_sorry
-
-## tic_tac_toe_story_happy
-* play_tic_tac_toe
-    - action_play_tictactoe
-    - form{"name":null}
-    - utter_did_that_help
-* affirm
-    - utter_happy 
-    
-## tic_tac_toe_story_sad
-* play_tic_tac_toe
-    - action_play_tictactoe
-    - form{"name":null}
-    - utter_did_that_help
-* deny
-    - utter_sorry  
-    
-## interactive_story_3
-* greet
-    - utter_greet
-* mood_great{"Mood": "fine"}
-    - action_set_sentiment
-    - slot{"Mood": "fine"}
-    - utter_happy
-* mood_unhappy{"Mood": "not fine"}
-    - action_set_sentiment
-    - slot{"Mood": "not fine"}
-    - utter_cheer_up
-    - action_cheer_up_gif
-    - utter_did_that_help
-* deny
-    - action_play_music
-    - utter_did_that_help
-* affirm
-    - utter_happy
-* goodbye
-    - utter_goodbye
+  
 
 ## name_response
 * provide_name
@@ -160,17 +99,8 @@
     - utter_greet
 * mood_great
     - action_set_sentiment
-    - utter_happy
-* mood_unhappy
-    - action_set_sentiment
-    - utter_cheer_up
-    - action_cheer_up_gif
-    - utter_did_that_help
-* deny
-    - action_play_music
-    - utter_did_that_help
-* deny
-    - utter_sorry
+    - utter_happy_pipeline_start
+> check_user_choice
 
 ## thanks_response
 * thank

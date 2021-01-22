@@ -17,8 +17,8 @@ intents:
 - play_tic_tac_toe
 - user_bored:
     triggers: action_cure_boredom
-- user_request_music:
-    triggers: action_play_music
+- user_request_music
+- user_request_games
 
 entities:
 - Mood
@@ -35,8 +35,6 @@ slots:
   Mood:
     type: text
   Person_Name:
-    type: unfeaturized
-  requested_slot:
     type: unfeaturized
   Sentiment:
     type: unfeaturized
@@ -85,6 +83,68 @@ responses:
   - text: Fantastic!
   - text: Fabulous!
   - text: Cool!
+
+
+  utter_happy_pipeline_start:
+    - text: That’s awesome! I’m happy too, just because you are! You know what I like to do when I’m happy?
+      buttons:
+        - title: PLAY SOME GAMES?
+          payload: /user_request_games
+        - title: LISTEN TO SOME TUNES?
+          payload: /user_request_music
+        - title: MAYBE SOME OTHER TIME
+          payload: /deny
+
+  utter_happy_pipeline_games:
+    - text: Yeah, I really want to… But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
+      buttons:
+        - title: YES
+          payload: /affirm
+        - title: NO
+          payload: /deny
+
+  utter_happy_pipeline_games_1:
+    - text: Fantastic ! Did you know that playing any kind of game helps to keep your mood uplifted for long, and also increases brain activity?
+      buttons:
+        - title: WOW
+          payload: /affirm
+        - title: THAT’S SO COOL
+          payload: /affirm
+
+  utter_happy_pipeline_games_2:
+    - text: I know right! I have some cool things that we could do together, whaddya say, shall we get our game face on?
+      buttons:
+        - title: GAME ON!
+          payload: /affirm
+        - title: YEAH! ALRIGHT!
+          payload: /affirm
+
+  utter_happy_pipeline_games_ask_games:
+    - text: What do you want to play?
+      buttons:
+        - title: TIC TAC TOE
+          payload: /play_tic_tac_toe
+        - title: MAD LIBS
+          payload: /play_mad_libs
+
+
+  utter_happy_pipeline_music:
+    - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into oblivion. Wanna join me in the journey?
+      buttons:
+        - title: YUP, TAKE ME
+          payload: /affirm
+        - title: RAIN CHECK ON THAT
+          payload: /deny
+
+  utter_happy_pipeline_music_affirm:
+    - text: Alright, fasten your seatbelt, I’m cooking up an awesome mix now!
+    - text: Alright, brace yourself, I’m cooking up an awesome mix now!
+
+  utter_happy_pipeline_deny:
+    - text: Sure! No problem! Enjoy yourself, and remember that you’re loved!
+    - text: No worries! Have a good one!
+    - text: Gotcha! Have a good day!
+
   utter_ask_Hobby1:
   - text: Let's get to know you a little better... Tell me one of your hobbies
   - text: Awesome! I'd like to know more about you... Type in one of your hobbies

@@ -135,14 +135,6 @@
 - Who are you? [Ved](Name) this side
 - Who's this? I'm [Mihir](Name)
 
-## intent:user_request_music
-- play me some tunes
-- music
-- I want to listen to music
-- I want music
-- Play some songs
-- Play music
-
 ## intent:user_bored
 - Tell me something fun
 - something fun
@@ -193,4 +185,3 @@
 - I'm [Mihir](Name)
 - I'm [Ved](Name)
 - I'm called [Shraddha](Name)
-- I'm [Aditi](Name)

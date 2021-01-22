@@ -15,7 +15,7 @@ from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType, 
 from mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
 from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
 from create_playlist import createplaylist
-from madlibs import generate_text, generate_madlib, generate_audio
+from madlibs import generate_text, generate_madlib
 from tictactoe import *
 
 # Global Variables for Mad Libs
