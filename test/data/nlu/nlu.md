@@ -26,9 +26,12 @@
 - yes
 - indeed
 - of course
+- I guess
+- Maybe  
 - that sounds good
 - correct
 - Yes
+- Got it  
 - Yes Thanks
 - Yup
 - Sure
@@ -57,6 +60,15 @@
 - ❌
 - 🙅
 - 🙅‍♂️
+
+## intent:confused
+- I don't understand
+- I don't get it
+- Huh?
+- What are you talking about?
+- What does that mean?
+- Like?
+
 
 ## intent:thank
 - thanks

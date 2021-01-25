@@ -7,7 +7,7 @@ from datetime import date
 
 
 def fetchgif(query):
-    API_KEY = "API_KEY"
+    API_KEY = "LXbY5N7DLj7jIWWhZoz3nw46KHEHTGGy"
     num = random.randint(1, 10)
     query = query.replace(" ", "+")
     url = "http://api.giphy.com/v1/gifs/search?q={}&api_key={}&offset={}&rating=pg&limit=10".format(query, API_KEY, num)
@@ -58,7 +58,7 @@ def fetchfact():
 
 def fetchtrends():
     # Init
-    newsapi = NewsApiClient(api_key='api_key')
+    newsapi = NewsApiClient(api_key='c968320fc3d441bea38bbccee80c3658')
 
     # /v2/top-headlines
     # top_headlines = newsapi.get_top_headlines(q='bitcoin',
@@ -88,8 +88,8 @@ def fetchspotifyaccesstoken():
     file.close()
     if token == "":
         result = requests.post("https://accounts.spotify.com/api/token", data=
-        {"grant_type": "client_credentials", "client_id": "client_id",
-         "client_secret": "client_secret"},
+        {"grant_type": "client_credentials", "client_id": "e1b138fd248d419bbcb11a2db7e2dd62",
+         "client_secret": "2096188098364e368ee023312ff6d37d"},
                                headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
         token = result["access_token"]
         open("creds.txt", "w").write(token)
@@ -101,8 +101,8 @@ def fetchspotifyaccesstoken():
         code = myresult.status_code
         if code == 401:
             result = requests.post("https://accounts.spotify.com/api/token", data=
-            {"grant_type": "client_credentials", "client_id": "client_id",
-             "client_secret": "client_secret"},
+            {"grant_type": "client_credentials", "client_id": "e1b138fd248d419bbcb11a2db7e2dd62",
+             "client_secret": "2096188098364e368ee023312ff6d37d"},
                                    headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
             token = result["access_token"]
             open("creds.txt", "w").write(token)

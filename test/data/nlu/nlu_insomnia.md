@@ -21,3 +21,21 @@
 - I can't sleep at night
 - I couldn't get to sleep
 - I didn't get much sleep
+
+## intent:user_tensed
+- I'm tensed
+- I'm stressed
+- I'm under a lot of stress
+- I'm constantly worried
+- I feel constant tension
+
+## intent:user_nightmares
+- I usually get a lot of nightmares
+- I get bad dreams
+- I get night terrors
+- I get the worst dreams
+- Bad dreams keep me up
+
+## intent:user_irregular_lifestyle
+- I have an irregular lifestyle
+- I think I have an irregular lifestyle

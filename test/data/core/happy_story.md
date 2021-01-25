@@ -45,6 +45,7 @@
 
 ## user accepts music
 > check_user_music_choice
+> user_choice_music_insomnia
 * affirm
   - utter_happy_pipeline_music_affirm
   - action_play_music

@@ -5,6 +5,7 @@ intents:
 - deny
 - mood_unhappy
 - thank
+- confused
 - provide_name
 - provide_hobby
 - mood_great
@@ -20,6 +21,9 @@ intents:
 - user_request_music
 - user_request_games
 - user_insomnia
+- user_tensed
+- user_nightmares
+- user_irregular_lifestyle
 
 entities:
 - Mood
@@ -34,6 +38,8 @@ slots:
   Hobby3:
     type: unfeaturized
   Mood:
+    type: text
+  Thought:
     type: text
   Person_Name:
     type: unfeaturized
@@ -87,60 +93,238 @@ responses:
 
 
   utter_happy_pipeline_start:
-    - text: That’s awesome! I’m happy too, just because you are! You know what I like to do when I’m happy?
-      buttons:
-        - title: PLAY SOME GAMES?
-          payload: /user_request_games
-        - title: LISTEN TO SOME TUNES?
-          payload: /user_request_music
-        - title: MAYBE SOME OTHER TIME
-          payload: /deny
+  - text: That’s awesome! I’m happy too, just because you are! You know what I like to do when I’m happy?
+    buttons:
+      - title: PLAY SOME GAMES?
+        payload: /user_request_games
+      - title: LISTEN TO SOME TUNES?
+        payload: /user_request_music
+      - title: MAYBE SOME OTHER TIME
+        payload: /deny
 
   utter_happy_pipeline_games:
-    - text: Yeah, I really want to… But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
+  - text: Yeah, I really want to… But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
 
   utter_happy_pipeline_games_1:
-    - text: Fantastic ! Did you know that playing any kind of game helps to keep your mood uplifted for long, and also increases brain activity?
-      buttons:
-        - title: WOW
-          payload: /affirm
-        - title: THAT’S SO COOL
-          payload: /affirm
+  - text: Fantastic ! Did you know that playing any kind of game helps to keep your mood uplifted for long, and also increases brain activity?
+    buttons:
+      - title: WOW
+        payload: /affirm
+      - title: THAT’S SO COOL
+        payload: /affirm
 
   utter_happy_pipeline_games_2:
-    - text: I know right! I have some cool things that we could do together, whaddya say, shall we get our game face on?
+  - text: I know right! I have some cool things that we could do together, whaddya say, shall we get our game face on?
 
   utter_happy_pipeline_games_ask_games:
-    - text: What do you want to play?
-      buttons:
-        - title: TIC TAC TOE
-          payload: /play_tic_tac_toe
-        - title: MAD LIBS
-          payload: /play_mad_libs
+  - text: What do you want to play?
+    buttons:
+      - title: TIC TAC TOE
+        payload: /play_tic_tac_toe
+      - title: MAD LIBS
+        payload: /play_mad_libs
 
   utter_happy_pipeline_music:
-    - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into oblivion. Wanna join me in the journey?
+  - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into oblivion. Wanna join me in the journey?
 
   utter_happy_pipeline_music_affirm:
-    - text: Alright, fasten your seatbelt, I’m cooking up an awesome mix now!
-    - text: Alright, brace yourself, I’m cooking up an awesome mix now!
+  - text: Alright, fasten your seatbelt, I’m cooking up an awesome mix now!
+  - text: Alright, brace yourself, I’m cooking up an awesome mix now!
 
   utter_happy_pipeline_deny:
-    - text: Sure! No problem! Enjoy yourself, and remember that you’re loved!
-    - text: No worries! Have a good one!
-    - text: Gotcha! Have a good day!
+  - text: Sure! No problem! Enjoy yourself, and remember that you’re loved!
+  - text: No worries! Have a good one!
+  - text: Gotcha! Have a good day!
 
 
   utter_insomnia_pipeline_start:
-    - text: "The world looks sunny after a great night's rest doesn’t it? \n\n
-    But it becomes a whole different ball game when your sleep is frequently interrupted.\n\n
-    A lack of Zs makes it harder to think and easier to become irritated and anxious.\n\n
-    No worries tho. \n\n
-    I am here to help you get through it.\n\n
-    Do you think that sleep is a problem for you at the moment?\n\n
-    Is it something that is constantly troubling you, and therefore distracts you from other things?\n\n
-    I simply ask because I have some tools that I can help you with."
+  - text: "The world looks sunny after a great night's rest doesn't it?\n\n
+  But it becomes a whole different ball game when your sleep is frequently interrupted.\n\n
+  A lack of Zs makes it harder to think and easier to become irritated and anxious.\n\n
+  No worries tho. \n\n
+  I am here to help you get through it.\n\n
+  Do you think that sleep is a problem for you at the moment?\n\n
+  Is it something that is constantly troubling you, and therefore distracts you from other things?\n\n
+  I simply ask because I have some tools that I can help you with."
+    buttons:
+      - title: Help me sleep now
+        payload: /deny
+      - title: Let's try the tools
+        payload: /affirm
 
+  utter_insomnia_pipeline_quick_solution:
+  - text: "A quick cure is sometimes all we need.\n\n
+    A glass of warm milk, soft comfy blankets and calm, soothing sounds or even bedtime stories are the perfect combination to get you sleeping in no time."
+    buttons:
+        - title: Relaxing sounds
+          payload: /user_request_music
+        - title: Bedtime story
+          payload: /user_request_music
+
+  utter_insomnia_pipeline_options:
+  - text: Let’s look at some options, shall we?
+    buttons:
+      - title: TENSION 😨
+        payload: /user_tensed
+      - title: NIGHTMARES 😱
+        payload: /user_nightmares
+      - title: LIFESTYLE CHANGES 🚬
+        payload: /user_irregular_lifestyle
+
+  utter_insomnia_anxiety:
+  - text: "Constant anxiety or an endless stream of worries.\n\n
+  Do you have a lot of these?"
+    buttons:
+      - title: ANXIETY?😕
+        payload: /confused
+
+  utter_insomnia_anxiety_explanation:
+  - text: "Yup!\n\n
+  In simple words, anxiety is the uneasiness of mind caused by a fear of danger or misfortune.\n\n
+  It could be the distress caused by very simple things.\n\n
+  For example:"
+
+  utter_insomnia_anxiety_explanation_example:
+  - text: I always get anxious when it's about to rain heavily, as I’m worried the strong downpour may destroy my petunias.
+  - text: My pet cat Moe gets anxious when it’s bath time
+  - text: I’ve seen that humans get very anxious before a job interview
+  - text: I’ve seen that humans get very anxious before a test
+  - text: I’m scared of heights, and therefore climbing a tall tree terrifies me
+
+  utter_insomnia_after_anxiety_explanation:
+  - text: "Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
+  Do you think that you are bugged by such thoughts?"
+  - text: "Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
+  Do you think that you are bothered by such thoughts?"
+
+  utter_insomnia_ask_thoughts:
+  - text: Tell me what's bothering you
+  - text: Tell me what's keeping you up
+  - text: Tell me one such anxious thought that's bothering you
+  - text: Write one such anxious thought that's bothering you
+
+  utter_insomnia_after_listening_to_thoughts:
+  - text: "Worries or a depressed mood may make it hard to fall asleep and stay asleep.\n\n
+  Sometimes we end up staying up constantly turning over these issues in our minds...\n\n
+   ...While in reality we really should be powering off and resting... \n\n
+   Do you think you do this sometimes?"
+
+  utter_insomnia_ask_reason:
+  - text: What do you think might be the reason for this?
+  - text: Why do you think this might be happening?
+  - text: Can you think of a reason for why this might be happening?
+
+  utter_insomnia_introduce_tools:
+  - text: "I understand.\n\n
+   It’s a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
+   But one can’t possibly let their own health take a back seat among these, right?\n\n
+      How 'bout we try some small techniques to help you deal with this?"
+  - text: "I understand.\n\n
+  It’s a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
+  But one can’t possibly let their own health take a back seat among these, right?\n\n
+  How 'bout we look at some ideas to help you retrain yourself to avoid thinking during these hours of sleep?"
+
+  utter_insomnia_anxiety_tool_1:
+  - text: Set aside your worry time well in advance of your bedtime
+    buttons:
+      - title: WORRY TIME?
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_1.1:
+  - text: Worry time is a scheduled period in your day -- perhaps 20 minutes or so -- where you can specifically address worry thoughts.
+    buttons:
+      - title: INTERESTING...
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_1.2:
+  - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
+  Setting time aside to work through your worries can prevent them from keeping you up."
+    buttons:
+    - title: I SEE...
+      payload: /affirm
+  - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
+  Tackle them by challenging them, or problem solving the situation\n\n
+  Setting time aside to work through your worries can prevent them from keeping you up."
+    buttons:
+      - title: I SEE...
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_1.3:
+  - text: Just make sure you don't do this too close to your bedtime!💪 Otherwise, you might activate your evening overthinking...😨
+    buttons:
+      - title: MAKES SENSE
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_2:
+  - text: "That brings me to tip #2\n\n
+  Prepare a to-do list for tomorrow\n\n
+  This way you won't stay up thinking about everything that needs to be done!😇"
+    buttons:
+      - title: EXAMPLE?
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_2.1:
+  - text: "Sure!\n\n
+   A to-do list can be like:\n\n
+   1. Buy milk 🥛\n
+   2. Take pet seagull for a walk 🐦\n
+   3. Return neighbour's unicycle \n\n
+   The point is that these things should be manageable items-- and that you should set the list aside and save it all for the morning 📜"
+  - text: "Sure!\n\n
+  A to-do list can be like:\n\n
+  1. Buy snacks 🥘\n
+  2. Take pet cat for a walk 🐈\n
+  3. Wear shirt that says 'Life'. Hand out lemons on street corner.🍋\n
+  4. Make vanilla pudding.🍮\n\n
+  The point is that these things should be manageable items-- and that you should set the list aside and save it all for the morning 📜"
+
+  utter_insomnia_anxiety_tool_3:
+  - text: "Finally, we have tip #3\n\n
+     Create a buffer zone"
+    buttons:
+      - title: WHAT'S THAT?
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_3.1:
+  - text: "A buffer zone is a period of time right before bed -- maybe 30 minutes or so -- that you can use to unwind from the day and prepare your body for sleep\n\n"
+    buttons:
+      - title: WHAT SHOULD I DO DURING THAT TIME?
+        payload: /affirm
+
+  utter_insomnia_anxiety_tool_3.2:
+  - text: Anything that brings you calm and peace! For example
+  utter_insomnia_anxiety_tool_3.3:
+  - text: Taking a hot bath or shower 🚿
+  - text: Reading a book 📕
+  - text: Listening to some mellow music 🎵
+  - text: Doodling or coloring 🖌
+  - text: Having a warm drink 🍲
+  - text: Looking out a window or let in fresh air 🍃
+  - text: Stretching your body 🧘‍♂️
+  - text: Cuddling a pet 🐈
+  - text: Singing your favorite song 🎤
+  utter_insomnia_anxiety_tool_3.4:
+  - text: Try to pick an offline, no screens activity if possible. Bright devices(or even bright lights in your home!) can keep you alert at bedtime 💡
+    buttons:
+      - title: GOTCHA
+        payload: /affirm
+  utter_insomnia_anxiety_tool_recap:
+  - text: "So, to recap:\n
+  1. Build a worry time\n
+  2. Make to-do lists\n
+  3. Buffer Zones\n
+  Got it?"
+  utter_insomnia_anxiety_tool_pdf_msg:
+  - text: Here’s a handy guide for you to refer.
+  - text: In case you forget, here’s a handy guide for you to refer.
+  - text: We've got you covered! Take this handy reference guide
+
+  utter_good_night:
+  - text: Sweet dreams, and talk to you soon! 💤
+  - text: Sleep tight, and talk to you soon!😴
+  - text: Have a good night! Talk to you soon! 💤
+  - text: Sleep snug as a bug in a rug. Talk to you soon! 😴
+  - text: Let those zzzz's come! Talk to you soon! 😴
 
   utter_ask_Hobby1:
   - text: Let's get to know you a little better... Tell me one of your hobbies
@@ -171,6 +355,14 @@ responses:
   - text: 😁
   - text: 😉
   - text: 😇
+
+  utter_probe:
+  - text: Oh c'mon! You can open up to me!
+  - text: C'mon buddy! Help me help you... We can both overcome this
+  - text: This is a safe space, buddy... I'm here to help!
+  - text: Don't be afraid... I'm always here to lend an ear. Help me help you.
+  - text: This is a safe space, buddy... Talking is what I do best.
+
   utter_sorry:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
@@ -184,16 +376,11 @@ actions:
 - action_custom_fallback
 - action_cheer_up_gif
 - action_cure_boredom
-- utter_cheer_up
-- utter_custom
-- utter_did_that_help
-- utter_goodbye
-- utter_greet
-- utter_happy
-- utter_smile
-- utter_sorry
+- action_get_pdf
+
 forms:
 - submit_name_form
 - submit_hobby_form
 - mad_lib_input
 - tictactoe_input
+- user_thought_input

@@ -4,8 +4,8 @@ import spotipy
 import spotipy.util as util
 from moodmusic import authenticate_spotify, aggregate_top_artists, aggregate_top_tracks, select_tracks, create_playlist
 
-client_id = "client_id"
-client_secret = "client_secret"
+client_id = "e1b138fd248d419bbcb11a2db7e2dd62"
+client_secret = "2096188098364e368ee023312ff6d37d"
 redirect_uri = "https://localhost:8888/callback/"
 
 scope = 'user-library-read user-top-read playlist-modify-public user-follow-read'

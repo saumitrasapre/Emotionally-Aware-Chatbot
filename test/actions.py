@@ -17,6 +17,7 @@ from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
 from create_playlist import createplaylist
 from madlibs import generate_text, generate_madlib
 from tictactoe import *
+from staticpdfs.pdfcreator import get_pdf
 
 # Global Variables for Mad Libs
 y = 0
@@ -583,4 +584,38 @@ class ActionCureBoredom(Action):
                     "It's from an album called {}, performed by {}".format(album_name, artist_name))
             dispatcher.utter_message("Check it out here! {}".format(url))
 
+        return []
+
+
+class UserThoughtInput(FormAction):
+    def name(self) -> Text:
+        return "user_thought_input"
+
+    @staticmethod
+    def required_slots(tracker: "Tracker") -> List[Text]:
+        return ["Thought"]
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return {
+            "Thought": [
+                self.from_text(intent=None)
+            ]
+        }
+
+    def submit(self, dispatcher: CollectingDispatcher,
+               tracker: Tracker,
+               domain: Dict[Text, Any]) -> List[Dict]:
+        return [SlotSet("Thought", None)]
+
+
+class ActionGetPDF(Action):
+
+    def name(self) -> Text:
+        return "action_get_pdf"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        url = get_pdf("Insomnia",1)
+        dispatcher.utter_message(json_message={"document": url})
         return []
