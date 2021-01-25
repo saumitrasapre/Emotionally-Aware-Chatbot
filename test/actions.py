@@ -3,7 +3,6 @@
 #
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/core/actions/#custom-actions/
-import os
 import random
 from typing import Any, Text, Dict, List, Union
 from datetime import date
@@ -12,11 +11,11 @@ from rasa_sdk.events import UserUtteranceReverted
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType, FollowupAction
-from mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
-from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
-from create_playlist import createplaylist
-from madlibs import generate_text, generate_madlib
-from tictactoe import *
+from database.mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
+from misc_utils.chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
+from spotify_utils.create_playlist import createplaylist
+from misc_utils.madlibs import generate_text, generate_madlib
+from misc_utils.tictactoe import *
 from staticpdfs.pdfcreator import get_pdf
 
 # Global Variables for Mad Libs
