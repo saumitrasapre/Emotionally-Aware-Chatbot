@@ -58,7 +58,12 @@
     - utter_happy
 * goodbye
     - utter_goodbye
-
+  
+## ask_bot_scared_story
+* ask_bot_scared
+  - action_set_slot
+  - utter_insomnia_nightmares_joke
+  - action_get_gif
     
 ## initial_challenge_interaction
 * bot_challenge
@@ -110,3 +115,8 @@
 ## thanks_response
 * thank
     - utter_smile
+  
+## goodnight_response
+* goodnight
+    - utter_good_night
+

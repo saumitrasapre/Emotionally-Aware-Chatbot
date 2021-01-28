@@ -1,7 +1,8 @@
 ## insomnia path
 * user_insomnia
+    - utter_insomnia_pipeline_start_1
     - action_set_sentiment
-    - utter_insomnia_pipeline_start
+    - utter_insomnia_pipeline_start_2
 > check_user_choice_insomnia
 
 ## quick solution
@@ -145,6 +146,7 @@
 > check_nightmare_accept_deny_bad_thoughts
   
 ## nightmares_tools
+> check_joke_or_tools
 * affirm
   - utter_insomnia_nightmares_introduce_tools
 > check_nightmare_accept_deny_bad_thoughts
@@ -212,13 +214,31 @@
   - action_get_pdf
   - utter_good_night
   
+## lifestyle
+> check_user_insomnia_pipeline_options
+* user_irregular_lifestyle
+  - action_set_sentiment
+  - action_set_slot
+  - utter_insomnia_lifestyle
+> insomnia_lifestyle_user_affirm_or_deny_test
+
+## lifestyle_test_affirm
+> insomnia_lifestyle_user_affirm_or_deny_test
+* affirm
+  - action_launch_lifestyle_form
+  - form{"name":null}
+
+
+  
   
 ## nightmares_deny_bad_thoughts
 > check_nightmare_accept_deny_bad_thoughts
 > check_nightmare_accept_deny_tools
 > insomnia_nightmare_tools_understood
+> insomnia_lifestyle_user_affirm_or_deny_test
 * deny
   - utter_probe
 > check_nightmare_accept_deny_bad_thoughts  
 > check_nightmare_accept_deny_tools
 > insomnia_nightmare_tools_understood
+> insomnia_lifestyle_user_affirm_or_deny_test

@@ -84,6 +84,23 @@
 - 😉
 - 😇
 
+## intent:goodnight
+- Goodnight
+- GN
+- sweet dreams
+- good night
+- have a good night
+- good night to you
+- bye good night
+- good night bye
+- bye good night
+- good night for now
+- good night see you tomorrow
+- alright goodnight
+- okay have a good night
+- night
+- have a good night
+
 ## intent:provide_hobby
 - I like to [dance](Hobby)
 - I like [reading](Hobby) books
@@ -103,6 +120,10 @@
 - [Listening to music](Hobby)
 - [Playing Guitar](Hobby)
 - [Playing Cricket](Hobby)
+- I like [coding](Hobby)
+- I like to [dance](Hobby)
+- [Gardening](Hobby)
+
 
 ## intent:mood_great
 - [fine](Mood)
@@ -162,6 +183,7 @@
 - Are you a robot? My name is [Shraddha](Name)
 - Who are you? [Ved](Name) this side
 - Who's this? I'm [Mihir](Name)
+
 
 ## intent:user_bored
 - Tell me something fun

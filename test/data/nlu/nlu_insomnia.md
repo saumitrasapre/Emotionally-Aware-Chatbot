@@ -35,7 +35,18 @@
 - I get night terrors
 - I get the worst dreams
 - Bad dreams keep me up
+- I get scary dreams
+
+## intent:ask_bot_scared
+- Do you have nightmares?
+- Are you scared?
+- Do you have bad dreams?
+- Do you get scared?
+- Do you have bad dreams?
+- Do you get scary dreams?
+
 
 ## intent:user_irregular_lifestyle
 - I have an irregular lifestyle
 - I think I have an irregular lifestyle
+- My lifestyle is irregular

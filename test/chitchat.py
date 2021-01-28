@@ -83,7 +83,8 @@ def fetchtrends():
 
 
 def fetchspotifyaccesstoken():
-    file = open("../creds.txt", "r+")
+
+    file = open("creds.txt", "r+")
     token = file.readline()
     file.close()
     if token == "":
@@ -92,7 +93,7 @@ def fetchspotifyaccesstoken():
          "client_secret": "2096188098364e368ee023312ff6d37d"},
                                headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
         token = result["access_token"]
-        open("../creds.txt", "w").write(token)
+        open("creds.txt", "w").write(token)
         return token
     else:
         myresult = requests.get("https://api.spotify.com/v1/browse/new-releases?country=IN&limit=10",
@@ -105,7 +106,7 @@ def fetchspotifyaccesstoken():
              "client_secret": "2096188098364e368ee023312ff6d37d"},
                                    headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
             token = result["access_token"]
-            open("../creds.txt", "w").write(token)
+            open("creds.txt", "w").write(token)
             return token
         else:
             return token
@@ -151,7 +152,8 @@ def fetchmusic(num):
         return mydict
 
 if __name__ == "__main__":
-    fetchgif("scared cat")
+    # fetchgif("scared")
+    fetchmusic(2)
 # fetchtrends()
 # fetchmusic(2)
 # fetchdatefact()

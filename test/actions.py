@@ -12,7 +12,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType, FollowupAction
 from database.mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
-from misc_utils.chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
+from chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
 from spotify_utils.create_playlist import createplaylist
 from madlibs import generate_text, generate_madlib
 from misc_utils.tictactoe import *
@@ -31,6 +31,11 @@ final_sentences = ""
 
 # Global Variables for TicTacToe
 boards = [' ' for x in range(10)]
+
+# Global Variables for Lifestyle form
+qtn_count = 0
+lifestyle_score = 0
+qtns = []
 
 
 class ActionSessionStart(Action):
@@ -116,22 +121,6 @@ class ActionSetSentiment(Action):
         return [SlotSet("Sentiment", value=[model_dict["Text2emotion"]["Emotion"], finalscore])]
 
 
-class ActionGetGif(Action):
-
-    def name(self) -> Text:
-        return "action_get_gif"
-
-    def run(self, dispatcher: CollectingDispatcher,
-            tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        gif_text = tracker.get_slot("Gif")
-        if gif_text == 'nightmares':
-            gif_text = "cute scared"
-        gif = fetchgif(str(gif_text))
-        dispatcher.utter_message(json_message={"animation": gif})
-        return [SlotSet("Gif",value=None)]
-
-
 class ActionSetSlot(Action):
 
     def name(self) -> Text:
@@ -144,7 +133,7 @@ class ActionSetSlot(Action):
         curr_intent = tracker.latest_message['intent'].get('name')
         pdf_slot = None
         gif_slot = None
-        if curr_intent == "user_nightmares":
+        if curr_intent == "user_nightmares" or curr_intent == "ask_bot_scared":
             pdf_slot = "Insomnia 2"
             gif_slot = "nightmares"
         elif curr_intent == "user_tensed":
@@ -509,7 +498,7 @@ class SubmitHobbyForm(FormAction):
         return {
             "Hobby1": [
                 self.from_entity(
-                    entity="Hobby", intent=["provide_hobby"]
+                    entity="Hobby", intent="provide_hobby"
                 ),
             ],
             "Hobby2": [
@@ -521,7 +510,7 @@ class SubmitHobbyForm(FormAction):
                 self.from_entity(
                     entity="Hobby", intent=["provide_hobby"]
                 ),
-            ],
+            ]
 
         }
 
@@ -647,4 +636,91 @@ class ActionGetPDF(Action):
         slot_list = pdf_slot.split(" ")
         url = get_pdf(slot_list[0], slot_list[1])
         dispatcher.utter_message(json_message={"document": url})
-        return [SlotSet("Pdf",value=None)]
+        return [SlotSet("Pdf", value=None)]
+
+
+class ActionGetGif(Action):
+
+    def name(self) -> Text:
+        return "action_get_gif"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        gif_text = tracker.get_slot("Gif")
+        if gif_text == 'nightmares':
+            gif_text = "scared"
+        gif = fetchgif(str(gif_text))
+        dispatcher.utter_message(json_message={"animation": gif})
+        return [SlotSet("Gif", value=None)]
+
+
+class ActionLaunchLifestyleForm(Action):
+
+    def name(self) -> Text:
+        return "action_launch_lifestyle_form"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        global qtn_count, qtns
+        dispatcher.utter_message(text="Okay, so I'm going to ask you a series of simple YES / NO questions")
+        dispatcher.utter_message(text="Be sure to answer them truthfully! 😇")
+        with open("lifestyle_qtns.txt") as file:
+            qtns = [line.rstrip('\n') for line in file]
+        print(qtns)
+        dispatcher.utter_message(text=qtns[qtn_count])
+        qtn_count += 1
+        return [FollowupAction('lifestyle_input'), SlotSet("Lifestyle", None)]
+
+
+class LifestyleInput(FormAction):
+    def name(self) -> Text:
+        return "lifestyle_input"
+
+    @staticmethod
+    def required_slots(tracker: "Tracker") -> List[Text]:
+        return ["Lifestyle"]
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return {
+            "Lifestyle": [self.from_intent(intent='affirm', value="True"),
+                          self.from_intent(intent='deny', value="False")],
+        }
+
+    def validate_Lifestyle(
+            self,
+            value: Text,
+            dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any],
+    ) -> Dict[Text, Any]:
+        global qtns, qtn_count, lifestyle_score
+        print(value)
+        if qtn_count != len(qtns):
+            if value == "True":
+                lifestyle_score += 1
+            dispatcher.utter_message(text=qtns[qtn_count])
+            qtn_count += 1
+            return {"Lifestyle": None}
+        elif qtn_count >= len(qtns):
+            if value == "True":
+                lifestyle_score += 1
+            return {"Lifestyle": value}
+
+    def submit(self, dispatcher: CollectingDispatcher,
+               tracker: Tracker,
+               domain: Dict[Text, Any]) -> List[Dict]:
+        global qtns, qtn_count, lifestyle_score
+        user_score = lifestyle_score
+        if user_score < 2:
+            print("Bad Lifestyle")
+        elif 2 <= user_score < 4:
+            print("Average lifestyle")
+        elif user_score >= 4:
+            print("Awesome lifestyle")
+
+        qtns = []
+        qtn_count = 0
+        lifestyle_score = 0
+        return [SlotSet("Lifestyle", value=None)]
