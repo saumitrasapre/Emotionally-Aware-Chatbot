@@ -41,6 +41,12 @@ slots:
     type: text
   Thought:
     type: text
+  Gif:
+    type: text
+    auto_fill: false
+  Pdf:
+    type: text
+    auto_fill: false
   Person_Name:
     type: unfeaturized
   Sentiment:
@@ -315,10 +321,114 @@ responses:
   2. Make to-do lists\n
   3. Buffer Zones\n
   Got it?"
-  utter_insomnia_anxiety_tool_pdf_msg:
+  utter_insomnia_tool_pdf_msg:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: We've got you covered! Take this handy reference guide
+
+  utter_insomnia_nightmares:
+  - text: Oh no! I’m so sorry to hear that. Don’t worry… I’m here to help with those nightmares!
+    buttons:
+      - title: DO YOU GET 'EM?
+        payload: /deny
+      - title: TOOLS
+        payload: /affirm
+
+  utter_insomnia_nightmares_joke:
+  - text: I'm pretty brave... As long as you don't leave me 😬
+  - text: As long as we're together, I'm ok 😨
+  - text: "Yesterday I had a nightmare that my tiktok account was deleted.\n\n
+  For a second, I was really scared that I had a tiktok account."
+  - text: "Last night I had a dream that I was swimming in an ocean of orange soda.\n\n
+   I guess it was just a Fanta sea."
+  - text: I dreamed I was forced to eat a giant marshmallow, but when I woke up my pillow was gone!
+  - text: "I dreamed someone was shouting “On your marks… Get Set…”.\n\n  I woke with a start."
+  - text: I had a recurring dream once... Geddit? 😂
+
+  utter_insomnia_nightmares_introduce_tools:
+  - text: "Having nightmares is perfectly normal, and they usually indicate the presence of some nagging thought that exists in our subconscious that exhibits the feeling that we’re being pressured in some way.\n\n
+  Do you think that you have such thoughts that constantly trouble you?"
+
+  utter_insomnia_nightmares_after_thoughts:
+  - text: "Most probably nightmares are caused because we constantly worry about these things.\n\n
+   I have some tips which can help you retrain yourself to avoid thinking during these hours of sleep.\n\n
+   Shall we look at some?"
+
+  utter_insomnia_nightmares_tool_1:
+  - text: Set aside your worry time well in advance of your bedtime
+    buttons:
+      - title: WORRY TIME?
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_1.1:
+  - text: Worry time is a scheduled period in your day -- perhaps 20 minutes or so -- where you can specifically address worry thoughts.
+    buttons:
+      - title: INTERESTING...
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_1.2:
+  - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
+Setting time aside to work through your worries can prevent them from keeping you up."
+    buttons:
+      - title: I SEE...
+        payload: /affirm
+  - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
+Tackle them by challenging them, or problem solving the situation\n\n
+Setting time aside to work through your worries can prevent them from keeping you up."
+    buttons:
+      - title: I SEE...
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_1.3:
+  - text: Just make sure you don't do this too close to your bedtime!💪 Otherwise, you might activate your evening overthinking...😨
+    buttons:
+      - title: MAKES SENSE
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_2:
+  - text: "Which brings me to tip #2...\n\n Roam around!\n\n"
+    buttons:
+      - title: HUH?
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_2.1:
+  - text: "Roaming around in pleasant outdoors usually helps you relax. I can maybe play some relaxing sounds while you do so."
+    buttons:
+      - title: SURE!
+        payload: /affirm
+      - title: NAH
+        payload: /deny
+
+  utter_insomnia_nightmares_tool_3:
+  - text: "You see, getting enough sleep is essential for helping you maintain optimal health and well-being.\n\n When it comes to health, sleep is as vital as regular exercise and eating a balanced diet."
+    buttons:
+      - title: I SEE
+        payload: /affirm
+
+
+  utter_insomnia_nightmares_tool_3.1:
+  - text: "It is an essential function that allows your body and mind to recharge, leaving you refreshed and alert when you wake up."
+    buttons:
+      - title: HMMM...
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_3.2:
+  - text: "Healthy sleep also helps the body remain healthy and stave off diseases. Without enough sleep, the brain cannot function properly. This can impair your abilities to concentrate, think clearly, and process memories."
+    buttons:
+      - title: MAKES SENSE
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_3.3:
+  - text: "It is therefore important that you, my friend, are able to tackle this problem of sleep at the earliest"
+    buttons:
+      - title: GOT IT!
+        payload: /affirm
+
+  utter_insomnia_nightmares_tool_recap:
+    - text: "So, to recap:\n
+    1. Build a worry time\n
+    2. Go for a walk\n
+    Got it?"
 
   utter_good_night:
   - text: Sweet dreams, and talk to you soon! 💤
@@ -348,6 +458,7 @@ responses:
       the pizza of life!
   - text: You can call me Whoabot! Think of me as your chat buddy with whom you can
       speak your mind away!
+
   utter_smile:
   - text: 😊
   - text: 😀
@@ -375,7 +486,8 @@ actions:
 - action_check_name
 - action_session_start
 - action_custom_fallback
-- action_cheer_up_gif
+- action_set_slot
+- action_get_gif
 - action_cure_boredom
 - action_get_pdf
 

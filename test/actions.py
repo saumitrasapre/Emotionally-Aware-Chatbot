@@ -14,7 +14,7 @@ from rasa_sdk.events import SlotSet, SessionStarted, ActionExecuted, EventType, 
 from database.mongo_database_connectivity import mongodataupdate, mongodataverify, mongohobbyupdate, mongohobbyretrieve
 from misc_utils.chitchat import fetchfact, fetchjoke, fetchgif, fetchdatefact, fetchmusic
 from spotify_utils.create_playlist import createplaylist
-from misc_utils.madlibs import generate_text, generate_madlib
+from madlibs import generate_text, generate_madlib
 from misc_utils.tictactoe import *
 from staticpdfs.pdfcreator import get_pdf
 
@@ -113,21 +113,48 @@ class ActionSetSentiment(Action):
         else:
             finalscore = model_dict["Text2emotion"]["Score"]
 
-        return [SlotSet("Sentiment", value=[model_dict["Text2emotion"]["Emotion"],finalscore])]
+        return [SlotSet("Sentiment", value=[model_dict["Text2emotion"]["Emotion"], finalscore])]
 
 
-class ActionCheerUpGif(Action):
+class ActionGetGif(Action):
 
     def name(self) -> Text:
-        return "action_cheer_up_gif"
+        return "action_get_gif"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        meow = fetchgif("cute cat")
-        dispatcher.utter_message(json_message={"animation": meow})
-        print(tracker.latest_message['entities'][0]['value'])
-        return []
+        gif_text = tracker.get_slot("Gif")
+        if gif_text == 'nightmares':
+            gif_text = "cute scared"
+        gif = fetchgif(str(gif_text))
+        dispatcher.utter_message(json_message={"animation": gif})
+        return [SlotSet("Gif",value=None)]
+
+
+class ActionSetSlot(Action):
+
+    def name(self) -> Text:
+        return "action_set_slot"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        curr_intent = tracker.latest_message['intent'].get('name')
+        pdf_slot = None
+        gif_slot = None
+        if curr_intent == "user_nightmares":
+            pdf_slot = "Insomnia 2"
+            gif_slot = "nightmares"
+        elif curr_intent == "user_tensed":
+            pdf_slot = "Insomnia 1"
+            gif_slot = "tension"
+        elif curr_intent == "mood_unhappy":
+            gif_slot = "cute cat"
+            pdf_slot = None
+
+        return [SlotSet("Gif", value=gif_slot), SlotSet("Pdf", value=pdf_slot)]
 
 
 class ActionPreMadLibs(Action):
@@ -319,7 +346,8 @@ class TicTacToeInput(FormAction):
                         if not isWinner(boards, 'X'):
                             boards, num = compMove(boards)
                             boards = insertLetter(boards, 'O', num)
-                            dispatcher.utter_message('I placed an \'O\' at position number {}... Your turn! :'.format(str(num)))
+                            dispatcher.utter_message(
+                                'I placed an \'O\' at position number {}... Your turn! :'.format(str(num)))
                             dispatcher.utter_message(printBoard(boards))
                             return {"TicTacToe": None}
                         else:
@@ -353,7 +381,7 @@ class ActionPlayMusic(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         dispatcher.utter_message("Here's a playlist that I've prepared for you!")
         user_sentiment = tracker.slots["Sentiment"]
-        if user_sentiment[0] == 'neg':
+        if str(user_sentiment[0]) == 'neg':
             mood = (1 - user_sentiment[1]) + 0.01
         else:
             mood = float("{:.2f}".format(random.uniform(0.0, 1.0)))
@@ -615,6 +643,8 @@ class ActionGetPDF(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        url = get_pdf("Insomnia",1)
+        pdf_slot = tracker.get_slot("Pdf")
+        slot_list = pdf_slot.split(" ")
+        url = get_pdf(slot_list[0], slot_list[1])
         dispatcher.utter_message(json_message={"document": url})
-        return []
+        return [SlotSet("Pdf",value=None)]

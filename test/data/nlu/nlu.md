@@ -102,6 +102,7 @@
 - [Swimming](Hobby)
 - [Listening to music](Hobby)
 - [Playing Guitar](Hobby)
+- [Playing Cricket](Hobby)
 
 ## intent:mood_great
 - [fine](Mood)

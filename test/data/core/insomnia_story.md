@@ -1,5 +1,6 @@
 ## insomnia path
 * user_insomnia
+    - action_set_sentiment
     - utter_insomnia_pipeline_start
 > check_user_choice_insomnia
 
@@ -18,6 +19,8 @@
 ## tension
 > check_user_insomnia_pipeline_options
 * user_tensed
+  - action_set_sentiment
+  - action_set_slot
   - utter_insomnia_anxiety
 > insomnia_tension_user_affirm_or_confused
 
@@ -107,7 +110,8 @@
 ## Tension tools got it affirm
 > insomnia_tension_tools_understood
 * affirm
-  - utter_insomnia_anxiety_tool_pdf_msg
+  - slot{"Pdf": "Insomnia 1"} 
+  - utter_insomnia_tool_pdf_msg
   - action_get_pdf
   - utter_good_night
 
@@ -115,9 +119,7 @@
 > insomnia_tension_tools_understood
 * deny
   - utter_probe
-> insomnia_tension_tools_understood  
-
-  
+> insomnia_tension_tools_understood
   
   
 ## tension_accept_or_deny tools
@@ -126,3 +128,97 @@
   - utter_probe
 > insomnia_tension_accept_or_deny_tools  
 
+## nightmares
+> check_user_insomnia_pipeline_options
+* user_nightmares
+  - action_set_sentiment
+  - action_set_slot
+  - utter_insomnia_nightmares
+> check_joke_or_tools
+
+## nightmares_joke
+> check_joke_or_tools
+* deny
+  - utter_insomnia_nightmares_joke
+  - action_get_gif  
+  - utter_insomnia_nightmares_introduce_tools
+> check_nightmare_accept_deny_bad_thoughts
+  
+## nightmares_tools
+* affirm
+  - utter_insomnia_nightmares_introduce_tools
+> check_nightmare_accept_deny_bad_thoughts
+
+## nightmares_affirm_bad_thoughts
+> check_nightmare_accept_deny_bad_thoughts
+* affirm
+  - utter_insomnia_ask_thoughts
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_insomnia_nightmares_after_thoughts
+> check_nightmare_accept_deny_tools 
+
+## nightmares_affirm_tools
+> check_nightmare_accept_deny_tools
+* affirm
+  - utter_insomnia_nightmares_tool_1
+* affirm
+  - utter_insomnia_nightmares_tool_1.1
+* affirm
+  - utter_insomnia_nightmares_tool_1.2
+* affirm
+  - utter_insomnia_nightmares_tool_1.3
+* affirm
+  - utter_insomnia_nightmares_tool_2
+* affirm
+  - utter_insomnia_nightmares_tool_2.1
+> nightmares_tools_play_music_or_deny
+
+## nightmares_tools_play_music
+> nightmares_tools_play_music_or_deny
+* affirm
+  - action_play_music
+  - utter_insomnia_nightmares_tool_3
+* affirm
+  - utter_insomnia_nightmares_tool_3.1  
+* affirm
+  - utter_insomnia_nightmares_tool_3.2 
+* affirm
+  - utter_insomnia_nightmares_tool_3.3
+* affirm
+  - utter_insomnia_nightmares_tool_recap
+> insomnia_nightmare_tools_understood  
+
+## nightmares_tools_deny_music
+> nightmares_tools_play_music_or_deny
+* deny
+  - utter_insomnia_nightmares_tool_3
+* affirm
+  - utter_insomnia_nightmares_tool_3.1  
+* affirm
+  - utter_insomnia_nightmares_tool_3.2 
+* affirm
+  - utter_insomnia_nightmares_tool_3.3
+* affirm
+  - utter_insomnia_nightmares_tool_recap
+> insomnia_nightmare_tools_understood  
+  
+## Nightmare tools got it affirm
+> insomnia_nightmare_tools_understood
+* affirm
+  - slot{"Pdf": "Insomnia 2"}
+  - utter_insomnia_tool_pdf_msg
+  - action_get_pdf
+  - utter_good_night
+  
+  
+## nightmares_deny_bad_thoughts
+> check_nightmare_accept_deny_bad_thoughts
+> check_nightmare_accept_deny_tools
+> insomnia_nightmare_tools_understood
+* deny
+  - utter_probe
+> check_nightmare_accept_deny_bad_thoughts  
+> check_nightmare_accept_deny_tools
+> insomnia_nightmare_tools_understood

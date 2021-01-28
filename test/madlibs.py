@@ -12,8 +12,7 @@ import random
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
-driver = webdriver.Chrome(executable_path="../drivers/chromedriver_win32/chromedriver.exe",
-                          options=chrome_options)
+driver = webdriver.Chrome(executable_path="drivers/chromedriver_win32/chromedriver.exe", options=chrome_options)
 config = {
     "apiKey": "AIzaSyB7cTfNmxp_OA9vOKL94O10FRHe_PyyziQ",
     "authDomain": "whoabot-181f2.firebaseapp.com",

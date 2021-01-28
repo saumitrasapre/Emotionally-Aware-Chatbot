@@ -150,10 +150,10 @@ def fetchmusic(num):
                   "genre": mygenre}
         return mydict
 
-# if __name__ == "__main__":
-#     fetchtrends()
+if __name__ == "__main__":
+    fetchgif("scared cat")
+# fetchtrends()
 # fetchmusic(2)
-# fetchgif("cute cat")
 # fetchdatefact()
 # fetchjoke()
 # fetchfact()

@@ -2,9 +2,10 @@
 * greet
   - utter_greet
 * mood_unhappy
+  - action_set_slot
   - action_set_sentiment
   - utter_cheer_up
-  - action_cheer_up_gif
+  - action_get_gif
   - utter_did_that_help
 * affirm
   - utter_happy
@@ -14,9 +15,10 @@
 * greet
   - utter_greet
 * mood_unhappy
+  - action_set_slot
   - action_set_sentiment
   - utter_cheer_up
-  - action_cheer_up_gif
+  - action_get_gif
   - utter_did_that_help
 * deny
   - action_play_music
@@ -28,9 +30,10 @@
 * greet
   - utter_greet
 * mood_unhappy
+  - action_set_slot
   - action_set_sentiment
   - utter_cheer_up
-  - action_cheer_up_gif
+  - action_get_gif
   - utter_did_that_help
 * deny
   - action_play_music
@@ -46,9 +49,10 @@
 * greet
     - utter_greet
 * mood_unhappy
+    - action_set_slot
     - action_set_sentiment
     - utter_cheer_up
-    - action_cheer_up_gif
+    - action_get_gif
     - utter_did_that_help
 * affirm
     - utter_happy
@@ -72,10 +76,11 @@
 * greet
     - utter_greet
 * mood_unhappy{"Mood": "uneasy"}
+    - action_set_slot
     - action_set_sentiment
     - slot{"Mood": "uneasy"}
     - utter_cheer_up
-    - action_cheer_up_gif
+    - action_get_gif
     - utter_did_that_help
 * deny
     - action_play_music
