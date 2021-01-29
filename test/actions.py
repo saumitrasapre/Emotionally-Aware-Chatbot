@@ -138,7 +138,10 @@ class ActionSetSlot(Action):
             gif_slot = "nightmares"
         elif curr_intent == "user_tensed":
             pdf_slot = "Insomnia 1"
-            gif_slot = "tension"
+            gif_slot = "@seizetheawkward mental health"
+        elif curr_intent == "user_irregular_lifestyle":
+            pdf_slot = "Insomnia 3"
+            gif_slot = "@seizetheawkward mental health"
         elif curr_intent == "mood_unhappy":
             gif_slot = "cute cat"
             pdf_slot = None
@@ -670,7 +673,6 @@ class ActionLaunchLifestyleForm(Action):
             qtns = [line.rstrip('\n') for line in file]
         print(qtns)
         dispatcher.utter_message(text=qtns[qtn_count])
-        qtn_count += 1
         return [FollowupAction('lifestyle_input'), SlotSet("Lifestyle", None)]
 
 
@@ -684,10 +686,11 @@ class LifestyleInput(FormAction):
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         return {
-            "Lifestyle": [self.from_intent(intent='affirm', value="True"),
-                          self.from_intent(intent='deny', value="False")],
+            "Lifestyle": [self.from_text(intent=None)]
         }
 
+    # "Lifestyle": [self.from_intent(intent='affirm', value="True"),
+    #               self.from_intent(intent='deny', value="False")],
     def validate_Lifestyle(
             self,
             value: Text,
@@ -697,30 +700,41 @@ class LifestyleInput(FormAction):
     ) -> Dict[Text, Any]:
         global qtns, qtn_count, lifestyle_score
         print(value)
-        if qtn_count != len(qtns):
-            if value == "True":
-                lifestyle_score += 1
+        print(qtn_count)
+        print(tracker.latest_message['intent'].get('name'))
+        text_intent = tracker.latest_message['intent'].get('name')
+        if text_intent == "affirm" or text_intent == "deny":
+            if qtn_count != len(qtns)-1:
+                if text_intent == "affirm":
+                    lifestyle_score += 1
+                qtn_count += 1
+                dispatcher.utter_message(text=qtns[qtn_count])
+                return {"Lifestyle": None}
+            elif qtn_count >= len(qtns)-1:
+                if text_intent == "affirm":
+                    lifestyle_score += 1
+                return {"Lifestyle": text_intent}
+        else:
             dispatcher.utter_message(text=qtns[qtn_count])
-            qtn_count += 1
             return {"Lifestyle": None}
-        elif qtn_count >= len(qtns):
-            if value == "True":
-                lifestyle_score += 1
-            return {"Lifestyle": value}
+
 
     def submit(self, dispatcher: CollectingDispatcher,
                tracker: Tracker,
                domain: Dict[Text, Any]) -> List[Dict]:
         global qtns, qtn_count, lifestyle_score
-        user_score = lifestyle_score
-        if user_score < 2:
-            print("Bad Lifestyle")
-        elif 2 <= user_score < 4:
-            print("Average lifestyle")
-        elif user_score >= 4:
-            print("Awesome lifestyle")
-
         qtns = []
         qtn_count = 0
-        lifestyle_score = 0
-        return [SlotSet("Lifestyle", value=None)]
+
+        if lifestyle_score < 2:
+            print("Bad Lifestyle")
+            lifestyle_score = 0
+            return [SlotSet("Lifestyle_Type", value="Bad lifestyle")]
+        elif 2 <= lifestyle_score < 4:
+            print("Average lifestyle")
+            lifestyle_score = 0
+            return [ SlotSet("Lifestyle_Type", value="Average lifestyle")]
+        elif lifestyle_score >= 4:
+            print("Good lifestyle")
+            lifestyle_score = 0
+            return [ SlotSet("Lifestyle_Type", value="Good lifestyle")]

@@ -114,6 +114,7 @@
   - slot{"Pdf": "Insomnia 1"} 
   - utter_insomnia_tool_pdf_msg
   - action_get_pdf
+  - action_get_gif  
   - utter_good_night
 
 ## Tension tools got it deny
@@ -227,18 +228,90 @@
 * affirm
   - action_launch_lifestyle_form
   - form{"name":null}
+> lifestyle results
 
+## lifestyle_bad
+> lifestyle results
+  - slot{"Lifestyle_Type":"Bad lifestyle"}
+  - utter_insomnia_lifestyle_quote
+  - utter_insomnia_lifestyle_bad  
+  - utter_insomnia_lifestyle_introduce_tools
+> insomnia_lifestyle_user_affirm_or_deny_tools
 
+## lifestyle_test_affirm_bad_tools_show
+> insomnia_lifestyle_user_affirm_or_deny_tools
+* affirm
+  - utter_insomnia_lifestyle_tools_1
+* affirm
+  - utter_insomnia_lifestyle_tools_2
+  - utter_insomnia_lifestyle_tools_2.1
+> insomnia_lifestyle_user_affirm_or_deny_sounds
+
+## lifestyle_test_affirm_bad_tools_affirm_sounds
+> insomnia_lifestyle_user_affirm_or_deny_sounds
+* affirm
+  - action_play_music
+  - utter_insomnia_lifestyle_tools_3
+  - utter_insomnia_lifestyle_tools_3.1
+> insomnia_lifestyle_user_affirm_or_deny_stories 
+
+## lifestyle_test_affirm_bad_tools_deny_sounds
+> insomnia_lifestyle_user_affirm_or_deny_sounds
+* deny
+  - utter_insomnia_lifestyle_tools_3
+  - utter_insomnia_lifestyle_tools_3.1 
+> insomnia_lifestyle_user_affirm_or_deny_stories 
+
+## lifestyle_test_affirm_bad_tools_affirm_stories
+> insomnia_lifestyle_user_affirm_or_deny_stories
+* affirm
+  - action_play_music
+  - utter_insomnia_lifestyle_tool_recap
+  - slot{"Pdf": "Insomnia 3"}
+  - utter_insomnia_tool_pdf_msg
+  - action_get_pdf
+  - action_get_gif  
+  - utter_good_night
+
+## lifestyle_test_affirm_bad_tools_deny_stories
+> insomnia_lifestyle_user_affirm_or_deny_stories
+* deny
+  - utter_insomnia_lifestyle_tool_recap
+  - slot{"Pdf": "Insomnia 3"}
+  - utter_insomnia_tool_pdf_msg
+  - action_get_pdf
+  - action_get_gif  
+  - utter_good_night  
+
+## lifestyle_average
+> lifestyle results
+  - slot{"Lifestyle_Type":"Average lifestyle"}
+  - utter_insomnia_lifestyle_quote
+  - utter_insomnia_lifestyle_average
+  - utter_insomnia_lifestyle_tools_3.1
+> insomnia_lifestyle_user_affirm_or_deny_stories  
+
+## lifestyle_test_affirm_good
+> lifestyle results
+  - slot{"Lifestyle_Type":"Good lifestyle"}
+  - utter_insomnia_lifestyle_good 
+  - slot{"Pdf": "Insomnia 3"}
+  - utter_insomnia_tool_pdf_msg
+  - action_get_pdf
+  - action_get_gif  
+  - utter_good_night
   
-  
-## nightmares_deny_bad_thoughts
+
+## insomnia_deny_things
 > check_nightmare_accept_deny_bad_thoughts
 > check_nightmare_accept_deny_tools
 > insomnia_nightmare_tools_understood
 > insomnia_lifestyle_user_affirm_or_deny_test
+> insomnia_lifestyle_user_affirm_or_deny_tools
 * deny
   - utter_probe
 > check_nightmare_accept_deny_bad_thoughts  
 > check_nightmare_accept_deny_tools
 > insomnia_nightmare_tools_understood
 > insomnia_lifestyle_user_affirm_or_deny_test
+> insomnia_lifestyle_user_affirm_or_deny_tools

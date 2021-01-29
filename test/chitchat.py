@@ -152,8 +152,8 @@ def fetchmusic(num):
         return mydict
 
 if __name__ == "__main__":
-    # fetchgif("scared")
-    fetchmusic(2)
+     fetchgif("@seizetheawkward mental health")
+    # fetchmusic(2)
 # fetchtrends()
 # fetchmusic(2)
 # fetchdatefact()

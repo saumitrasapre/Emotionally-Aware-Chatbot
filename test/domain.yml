@@ -63,6 +63,12 @@ slots:
   Lifestyle:
     type: text
     auto_fill: false
+  Lifestyle_Type:
+    type: categorical
+    values:
+      - Bad lifestyle
+      - Average lifestyle
+      - Good lifestyle
 responses:
   utter_ask_Person_Name:
   - text: By the way, what's your name?
@@ -437,6 +443,65 @@ Setting time aside to work through your worries can prevent them from keeping yo
   - text: "Did you know that one of the common causes of disrupted sleep is lifestyle? 😲\n\n
   Turns out, around 70% people usually suffer from insomnia due to a haphazard lifestyle. 😓\n\n
   Let's take a short test, shall we? 📜"
+
+  utter_insomnia_lifestyle_quote:
+  - text: '"It is health that is real wealth and not pieces of gold and silver." \n- Mahatma Gandhi'
+  - text: '" Every human being is the author of his own health or disease. "\n-Buddhist Quote'
+
+
+  utter_insomnia_lifestyle_bad:
+  - text: "Well, the bad news is that it appears as though your lifestyle and habits could use several major changes.\n\n
+   Nevertheless, the fact that you took this test indicates that you are interested in turning things around."
+
+  utter_insomnia_lifestyle_average:
+  - text: "Well, it could be better...but then again, it could be worse.\n\n
+  Although your well-being isn't as high on the priority list as it should be, you still seem to pay attention to several major aspects of your health and put in some effort to improve or maintain them. \n\n
+  Nevertheless, your lifestyle and health-related behavior could use some minor changes."
+
+  utter_insomnia_lifestyle_good:
+  - text: "Wow! You're doing great!\n\n
+  You seem to be paying attention to most of the major aspects of your health and, when necessary, put in the effort to maintain and improve your lifestyle.\n\n
+  You should definitely see the pay off in your energy levels, resilience to illness and overall wellbeing.\n\n
+  Keep it up!\n\n"
+
+  utter_insomnia_lifestyle_introduce_tools:
+  - text: "There's no need to live with the burden of disrupted sleep. I think I might have some ideas for you to try. Wanna see?"
+
+  utter_insomnia_lifestyle_tools_1:
+  - text: "Wake up at the same time each day"
+    buttons:
+      - title: Okay
+        payload: /affirm
+
+  utter_insomnia_lifestyle_tools_2:
+  - text: "Avoid electronic devices (which emit light and stimulate the brain) at least two hours before bed.\n\n
+   I can help you do that."
+  utter_insomnia_lifestyle_tools_2.1:
+  - text: I’ll play some relaxing sounds while you turn off the screen, close your eyes and then try to not think of anything else other than the sounds.
+    buttons:
+      - title: Sure
+        payload: /affirm
+      - title: Maybe not
+        payload: /deny
+
+  utter_insomnia_lifestyle_tools_3:
+  - text: "Sleep in a quiet, dark, cool space.\n\n
+   Make yourself comfortable, and think about some cozy place in your mind."
+
+  utter_insomnia_lifestyle_tools_3.1:
+  - text: I can maybe tell you a bedtime story. Close your eyes and relax.
+    buttons:
+      - title: Okay
+        payload: /affirm
+      - title: Naw
+        payload: /deny
+
+  utter_insomnia_lifestyle_tool_recap:
+    - text: "Remember these things:\n
+  1. Wake up at constant times\n
+  2. Avoid electronic devices\n
+  3. Sleep Comfortably\n
+  Got it?"
 
 
   utter_insomnia_tool_pdf_msg:
