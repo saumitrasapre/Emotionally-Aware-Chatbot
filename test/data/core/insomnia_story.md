@@ -227,16 +227,27 @@
 > insomnia_lifestyle_user_affirm_or_deny_test
 * affirm
   - action_launch_lifestyle_form
+  - lifestyle_input
+  - form{"name":"lifestyle_input"}  
   - form{"name":null}
-> lifestyle results
-
-## lifestyle_bad
-> lifestyle results
-  - slot{"Lifestyle_Type":false}
+  - slot{"Lifestyle_Type":"Bad lifestyle"}
   - utter_insomnia_lifestyle_quote
   - utter_insomnia_lifestyle_bad  
   - utter_insomnia_lifestyle_introduce_tools
 > insomnia_lifestyle_user_affirm_or_deny_tools
+
+## lifestyle_test_affirm
+> insomnia_lifestyle_user_affirm_or_deny_test
+* affirm
+  - action_launch_lifestyle_form
+  - lifestyle_input
+  - form {"name":"lifestyle_input"}  
+  - form{"name":null}
+  - slot{"Lifestyle_Type":"Average lifestyle"}
+  - utter_insomnia_lifestyle_quote
+  - utter_insomnia_lifestyle_average
+  - utter_insomnia_lifestyle_tools_3.1
+> insomnia_lifestyle_user_affirm_or_deny_stories
 
 ## lifestyle_test_affirm_bad_tools_show
 > insomnia_lifestyle_user_affirm_or_deny_tools
@@ -283,10 +294,14 @@
   - action_get_gif  
   - utter_good_night  
   
-
-## lifestyle_test_affirm_good
-> lifestyle results
-  - slot{"Lifestyle_Type":true}
+## lifestyle_test_affirm
+> insomnia_lifestyle_user_affirm_or_deny_test
+* affirm
+  - action_launch_lifestyle_form
+  - lifestyle_input
+  - form{"name":"lifestyle_input"}  
+  - form{"name":null}
+  - slot{"Lifestyle_Type":"Good lifestyle"}
   - utter_insomnia_lifestyle_good 
   - slot{"Pdf": "Insomnia 3"}
   - utter_insomnia_tool_pdf_msg

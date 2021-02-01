@@ -673,7 +673,7 @@ class ActionLaunchLifestyleForm(Action):
             qtns = [line.rstrip('\n') for line in file]
         print(qtns)
         dispatcher.utter_message(text=qtns[qtn_count])
-        return [FollowupAction('lifestyle_input'), SlotSet("Lifestyle", None)]
+        return [SlotSet("Lifestyle", None)]
 
 
 class LifestyleInput(FormAction):
@@ -704,20 +704,19 @@ class LifestyleInput(FormAction):
         print(tracker.latest_message['intent'].get('name'))
         text_intent = tracker.latest_message['intent'].get('name')
         if text_intent == "affirm" or text_intent == "deny":
-            if qtn_count != len(qtns)-1:
+            if qtn_count != len(qtns) - 1:
                 if text_intent == "affirm":
                     lifestyle_score += 1
                 qtn_count += 1
                 dispatcher.utter_message(text=qtns[qtn_count])
                 return {"Lifestyle": None}
-            elif qtn_count >= len(qtns)-1:
+            elif qtn_count >= len(qtns) - 1:
                 if text_intent == "affirm":
                     lifestyle_score += 1
                 return {"Lifestyle": text_intent}
         else:
             dispatcher.utter_message(text=qtns[qtn_count])
             return {"Lifestyle": None}
-
 
     def submit(self, dispatcher: CollectingDispatcher,
                tracker: Tracker,
@@ -729,12 +728,12 @@ class LifestyleInput(FormAction):
         if lifestyle_score < 2:
             print("Bad Lifestyle")
             lifestyle_score = 0
-            return [SlotSet("Lifestyle_Type", value=False)]
+            return [SlotSet("Lifestyle_Type", value="Bad lifestyle")]
         elif 2 <= lifestyle_score < 4:
             print("Average lifestyle")
             lifestyle_score = 0
-            return [ SlotSet("Lifestyle_Type", value=True)]
+            return [SlotSet("Lifestyle_Type", value="Average lifestyle")]
         elif lifestyle_score >= 4:
             print("Good lifestyle")
             lifestyle_score = 0
-            return [ SlotSet("Lifestyle_Type", value=True)]
+            return [SlotSet("Lifestyle_Type", value="Good lifestyle")]
