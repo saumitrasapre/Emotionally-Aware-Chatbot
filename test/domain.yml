@@ -64,11 +64,7 @@ slots:
     type: text
     auto_fill: false
   Lifestyle_Type:
-    type: categorical
-    values:
-      - Bad lifestyle
-      - Average lifestyle
-      - Good lifestyle
+      type: bool
 responses:
   utter_ask_Person_Name:
   - text: By the way, what's your name?

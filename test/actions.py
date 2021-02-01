@@ -729,12 +729,12 @@ class LifestyleInput(FormAction):
         if lifestyle_score < 2:
             print("Bad Lifestyle")
             lifestyle_score = 0
-            return [SlotSet("Lifestyle_Type", value="Bad lifestyle")]
+            return [SlotSet("Lifestyle_Type", value=False)]
         elif 2 <= lifestyle_score < 4:
             print("Average lifestyle")
             lifestyle_score = 0
-            return [ SlotSet("Lifestyle_Type", value="Average lifestyle")]
+            return [ SlotSet("Lifestyle_Type", value=True)]
         elif lifestyle_score >= 4:
             print("Good lifestyle")
             lifestyle_score = 0
-            return [ SlotSet("Lifestyle_Type", value="Good lifestyle")]
+            return [ SlotSet("Lifestyle_Type", value=True)]

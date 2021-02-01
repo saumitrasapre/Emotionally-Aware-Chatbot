@@ -232,7 +232,7 @@
 
 ## lifestyle_bad
 > lifestyle results
-  - slot{"Lifestyle_Type":"Bad lifestyle"}
+  - slot{"Lifestyle_Type":false}
   - utter_insomnia_lifestyle_quote
   - utter_insomnia_lifestyle_bad  
   - utter_insomnia_lifestyle_introduce_tools
@@ -282,18 +282,11 @@
   - action_get_pdf
   - action_get_gif  
   - utter_good_night  
-
-## lifestyle_average
-> lifestyle results
-  - slot{"Lifestyle_Type":"Average lifestyle"}
-  - utter_insomnia_lifestyle_quote
-  - utter_insomnia_lifestyle_average
-  - utter_insomnia_lifestyle_tools_3.1
-> insomnia_lifestyle_user_affirm_or_deny_stories  
+  
 
 ## lifestyle_test_affirm_good
 > lifestyle results
-  - slot{"Lifestyle_Type":"Good lifestyle"}
+  - slot{"Lifestyle_Type":true}
   - utter_insomnia_lifestyle_good 
   - slot{"Pdf": "Insomnia 3"}
   - utter_insomnia_tool_pdf_msg
