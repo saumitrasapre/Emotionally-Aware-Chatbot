@@ -12,6 +12,13 @@ options = {
     'margin-bottom': '0in',
     'margin-left': '0.8in',
 }
+
+# pdfkit.from_file("source_html_path","dest_pdf_path",options = options)
+# pdfkit.from_file("D:\Misc Practice\Chatbot\Rasa Projects\webpages\page2.html", './staticpdfs/myfile.pdf', options=options)
+
+
+
+###-------------IGNORE THESE-----------------------------------------###
 config = {
     "apiKey": "AIzaSyB7cTfNmxp_OA9vOKL94O10FRHe_PyyziQ",
     "authDomain": "whoabot-181f2.firebaseapp.com",
@@ -22,8 +29,6 @@ config = {
     "appId": "1:437598146366:web:b36b6702a749b7466da66f",
     "measurementId": "G-LCRZ7MP631"
 }
-
-# pdfkit.from_file("D:\Misc Practice\Chatbot\Rasa Projects\webpages\page2.html", './staticpdfs/myfile.pdf', options=options)
 def upload_pdf():
     firebase = pyrebase.initialize_app(config)
     storage = firebase.storage()
@@ -39,7 +44,7 @@ def get_pdf(story,number):
     print(storage.child(path_on_cloud).get_url(path_on_cloud))
     return storage.child(path_on_cloud).get_url(path_on_cloud)
 
-if __name__ == "__main__":
-    upload_pdf()
+# if __name__ == "__main__":
+#     upload_pdf()
 #     # get_pdf("Insomnia",1)
 
