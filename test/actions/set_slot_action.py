@@ -21,10 +21,10 @@ class ActionSetSlot(Action):
             gif_slot = "nightmares"
         elif curr_intent == "user_tensed":
             pdf_slot = "Insomnia 1"
-            gif_slot = "@seizetheawkward mental health"
+            gif_slot = "night" #"@seizetheawkward mental health"
         elif curr_intent == "user_irregular_lifestyle":
             pdf_slot = "Insomnia 3"
-            gif_slot = "@seizetheawkward mental health"
+            gif_slot = "night" #"@seizetheawkward mental health"
         elif curr_intent == "mood_unhappy":
             gif_slot = "cute cat"
             pdf_slot = None

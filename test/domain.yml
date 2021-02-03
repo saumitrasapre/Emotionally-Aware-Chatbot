@@ -46,6 +46,7 @@ slots:
     type: text
   Gif:
     type: text
+    initial_value: "@seizetheawkward mental health"
     auto_fill: false
   Pdf:
     type: text
