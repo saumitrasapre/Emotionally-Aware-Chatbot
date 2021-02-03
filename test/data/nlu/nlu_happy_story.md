@@ -12,3 +12,9 @@
 - Play some songs
 - Play music
 
+## intent:user_request_story
+- Tell me a story
+- Could you tell me a story
+- Tell me a bedtime story
+- Tell me a story to make me sleep
+

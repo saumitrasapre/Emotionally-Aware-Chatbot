@@ -3,7 +3,7 @@ from typing import Any, Text, Dict, List
 from datetime import date
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from chitchat import fetchfact, fetchjoke,fetchdatefact, fetchmusic
+from chitchat import fetchfact, fetchjoke, fetchdatefact, fetchmusic
 
 
 class ActionCureBoredom(Action):

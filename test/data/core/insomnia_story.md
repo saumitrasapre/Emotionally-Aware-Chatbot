@@ -9,7 +9,6 @@
 > check_user_choice_insomnia
 * deny
   - utter_insomnia_pipeline_quick_solution
-> user_choice_music_insomnia  
 
 ## sleep tools
 > check_user_choice_insomnia
@@ -276,7 +275,7 @@
 ## lifestyle_test_affirm_bad_tools_affirm_stories
 > insomnia_lifestyle_user_affirm_or_deny_stories
 * affirm
-  - action_play_music
+  - action_get_stories
   - utter_insomnia_lifestyle_tool_recap
   - slot{"Pdf": "Insomnia 3"}
   - utter_insomnia_tool_pdf_msg

@@ -22,6 +22,7 @@ intents:
     triggers: action_cure_boredom
 - user_request_music
 - user_request_games
+- user_request_story
 - user_insomnia
 - user_tensed
 - user_nightmares
@@ -178,7 +179,7 @@ responses:
         - title: Relaxing sounds
           payload: /user_request_music
         - title: Bedtime story
-          payload: /user_request_music
+          payload: /user_request_story
 
   utter_insomnia_pipeline_options:
   - text: Let’s look at some options, shall we?
@@ -552,7 +553,7 @@ Setting time aside to work through your worries can prevent them from keeping yo
   - text: C'mon buddy! Help me help you... We can both overcome this
   - text: This is a safe space, buddy... I'm here to help!
   - text: Don't be afraid... I'm always here to lend an ear. Help me help you.
-  - text: This is a safe space, buddy... Talking is what I do best.
+  - text: This is a safe space, buddy... Talking is what I do best. Help me help you.
 
   utter_sorry:
   - text: I'm sorry to hear that...
@@ -569,6 +570,7 @@ actions:
 - action_get_gif
 - action_cure_boredom
 - action_get_pdf
+- action_get_stories
 - action_launch_lifestyle_form
 
 forms:

@@ -35,7 +35,14 @@
 * play_tic_tac_toe
     - action_play_tictactoe
     - form{"name":null}
+
+## bedtime_story
+* user_request_story
+    - action_get_stories
  
+## user chooses music free will
+* user_request_music
+  - action_play_music
 
 ## user chooses music
 > check_user_choice_happy
@@ -45,7 +52,6 @@
 
 ## user accepts music
 > check_user_music_choice
-> user_choice_music_insomnia
 * affirm
   - utter_happy_pipeline_music_affirm
   - action_play_music
@@ -57,3 +63,4 @@
 > confirm_user_ready_for_game
 * deny
   - utter_happy_pipeline_deny
+  

@@ -1,5 +1,4 @@
 import random
-
 import spotipy.util as util
 from spotify_utils.moodmusic import authenticate_spotify, aggregate_top_artists, aggregate_top_tracks, select_tracks, create_playlist
 

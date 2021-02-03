@@ -1,8 +1,9 @@
 import random
-from typing import Any, Text, Dict, List, Union
+from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from spotify_utils.create_playlist import createplaylist
+
 
 class ActionPlayMusic(Action):
 

@@ -8,13 +8,14 @@ options = {
     'disable-smart-shrinking': '',
     'margin-top': '0in',
     'dpi': 900,
-    'margin-right': '0.8in',
+    'margin-right': '0.27in',
     'margin-bottom': '0in',
-    'margin-left': '0.8in',
+    'margin-left': '0.27in',
 }
 
 # pdfkit.from_file("source_html_path","dest_pdf_path",options = options)
-# pdfkit.from_file("D:\Misc Practice\Chatbot\Rasa Projects\webpages\page2.html", './staticpdfs/myfile.pdf', options=options)
+
+# pdfkit.from_file("C:/Users/Saumitra/Desktop/page1.html", 'heartbreak.pdf', options=options)
 
 
 
