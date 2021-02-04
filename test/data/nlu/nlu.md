@@ -61,15 +61,6 @@
 - 🙅
 - 🙅‍♂️
 
-## intent:confused
-- I don't understand
-- I don't get it
-- Huh?
-- What are you talking about?
-- What does that mean?
-- Like?
-
-
 ## intent:thank
 - thanks
 - thank you
@@ -141,7 +132,7 @@
 - I'm feeling [happy](Mood)
 - I'm [fine](Mood)
 
-## intent:mood_unhappy
+## intent:user_unhappy
 - [sad](Mood)
 - [very sad](Mood)
 - [unhappy](Mood)

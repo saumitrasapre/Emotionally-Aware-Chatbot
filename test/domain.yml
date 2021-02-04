@@ -3,9 +3,9 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - deny
-- mood_unhappy
+- user_unhappy
 - thank
-- confused
+- user_confused
 - goodnight
 - provide_name
 - provide_hobby
@@ -16,6 +16,7 @@ intents:
 - bot_challenge
 - ask_bot_scared
 - out_of_domain
+- user_heartbroken
 - play_mad_libs
 - play_tic_tac_toe
 - user_bored:
@@ -71,6 +72,12 @@ slots:
       - Bad lifestyle
       - Average lifestyle
       - Good lifestyle
+  Heartbreak_Intensity:
+    type: categorical
+    values:
+      - 1
+      - 2
+      - 3
 responses:
   utter_ask_Person_Name:
   - text: By the way, what's your name?
@@ -505,6 +512,39 @@ Setting time aside to work through your worries can prevent them from keeping yo
   3. Sleep Comfortably\n
   Got it?"
 
+  utter_heartbreak_pipeline_start:
+  - text: I’m sorry to hear that. How are you feeling?
+    buttons:
+      - title: I'm OK
+        payload: /affirm
+      - title: I wanna talk
+        payload: /user_vent
+      - title: I'd rather not talk
+        payload: /user_no_talk
+      - title: I'm not sure
+        payload: /user_confused
+
+  utter_heartbreak_vent:
+  - text: "Hang in there my friend.. I’m here to help and be your patient listener. Let’s face this together.\n\n
+  On a scale of 1-3 how upset are you right now? \n\n
+  And I need you to be honest. \n\n
+  First step of learning to get through things is to be honest about the emotions that you're feeling."
+
+  utter_heartbreak_vent_mild:
+  - text: Mildly upset
+
+  utter_heartbreak_vent_moderate:
+  - text: Moderately upset
+
+  utter_heartbreak_vent_extreme:
+  - text: Extremely upset
+
+
+
+
+
+
+
 
   utter_insomnia_tool_pdf_msg:
   - text: Here’s a handy guide for you to refer.
@@ -581,3 +621,4 @@ forms:
 - tictactoe_input
 - user_thought_input
 - lifestyle_input
+- user_heartbreak_intensity_input
