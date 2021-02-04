@@ -1,7 +1,7 @@
 ## heartbreak/sad path
 * user_heartbroken OR user_unhappy
     - utter_heartbreak_pipeline_start
-> check heartbreak branches
+> check_heartbreak_branches
 
 # user_okay
 > check_heartbreak_branches
@@ -39,8 +39,6 @@
   - utter_heartbreak_vent_mild_better
   - action_cure_boredom
 
-
-
 # user_vent_1_not_better
 > check_vent_1_user_feels_better
 * deny
@@ -64,7 +62,7 @@
 
 
 # user_vent_2
-> check heartbreak branches
+> check_heartbreak_branches
 * user_vent
     - utter_heartbreak_vent
     - user_heartbreak_intensity_input
@@ -75,7 +73,7 @@
     
     
 # user_vent_3
-> check heartbreak branches
+> check_heartbreak_branches
 * user_vent
     - utter_heartbreak_vent
     - user_heartbreak_intensity_input
