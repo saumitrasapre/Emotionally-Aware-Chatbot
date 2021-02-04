@@ -11,7 +11,7 @@ class UserHBIntensityInput(FormAction):
 
     @staticmethod
     def required_slots(tracker: "Tracker") -> List[Text]:
-        return ["Thought"]
+        return ["Heartbreak_Intensity"]
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         return {
@@ -28,6 +28,7 @@ class UserHBIntensityInput(FormAction):
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
         user_input = tracker.latest_message.get('text')
+        print(user_input)
         if '1' <= user_input <= '3':
             return {"Heartbreak_Intensity": user_input}
         else:

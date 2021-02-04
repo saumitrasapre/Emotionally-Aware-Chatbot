@@ -532,7 +532,43 @@ Setting time aside to work through your worries can prevent them from keeping yo
   First step of learning to get through things is to be honest about the emotions that you're feeling."
 
   utter_heartbreak_vent_mild:
-  - text: Mildly upset
+  - text: Okay. First things first. What exactly happened?
+
+  utter_heartbreak_vent_mild_1:
+  - text: "I see. That’s unfortunate.But I need you to do one little thing. \n\n
+  Take a moment and think. What exactly about the whole thing made you upset?"
+
+  utter_heartbreak_vent_mild_2:
+  - text: "Many times we're upset due to various incidents that unfolded and never go to the root of what specific moment or behaviour was it that made us feel this way.\n\n
+    We sometimes simply respond with overgeneralizations, and tend to make assumptions that are not necessarily true.\n\n
+    Our thoughts sometimes are clouded by emotions, making us think in 'all-or-nothings'.\n\n
+    Is this the case right now? Are you thinking with distortions?\n\n
+    Take a moment and gather your thoughts.  Gimme a 👍 when you're done! "
+
+  utter_heartbreak_vent_mild_3:
+  - text: So, my friend, try to rephrase your thoughts without these distortions...
+
+  utter_heartbreak_vent_mild_4:
+  - text: Now that you know why, do you feel slightly better? The first step of emotional recovery is acknowledging your reasons and emotions.
+
+  utter_heartbreak_vent_mild_better:
+  - text: "Good. That’s good. That was a lot of serious talk wasn’t it?\n\n
+   Lets make it a tad bit lighter, shall we? \n\n
+   How ‘bout a lil something to cheer you up ? 😜"
+
+  utter_heartbreak_vent_mild_not_better:
+  - text: Okay so let’s talk more.. Is there some missing piece that could contribute to the same?
+
+  utter_heartbreak_vent_mild_not_better_1:
+  - text: "So how about we try a slightly different way?\n\n
+    Here’s an idea- Walking in nature or just being there and soaking in the fresh air and beautiful sights often helps one think with greater clarity and helps in looking at these with more of an equanimity.\n\n
+    So how about going for a walk outside and soaking in nature?🌳 🌅 🌇"
+
+  utter_heartbreak_vent_mild_not_better_2:
+  - text: Guess what I might have something nice to take along with you as well.
+
+
+
 
   utter_heartbreak_vent_moderate:
   - text: Moderately upset
