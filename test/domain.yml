@@ -28,6 +28,7 @@ intents:
 - user_tensed
 - user_nightmares
 - user_irregular_lifestyle
+- user_vent
 
 entities:
 - Mood
@@ -204,7 +205,7 @@ responses:
   Do you have a lot of these?"
     buttons:
       - title: Anxiety?😕
-        payload: /confused
+        payload: /user_confused
 
   utter_insomnia_anxiety_explanation:
   - text: "Yup!\n\n

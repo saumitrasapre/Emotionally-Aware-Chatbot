@@ -26,7 +26,7 @@
 
 ## tension_confused
 > insomnia_tension_user_affirm_or_confused
-* confused
+* user_confused
   - utter_insomnia_anxiety_explanation
   - utter_insomnia_anxiety_explanation_example
   - utter_insomnia_after_anxiety_explanation
