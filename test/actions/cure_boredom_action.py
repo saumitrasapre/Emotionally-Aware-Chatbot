@@ -3,7 +3,7 @@ from typing import Any, Text, Dict, List
 from datetime import date
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from chitchat import fetchfact, fetchjoke, fetchdatefact, fetchmusic
+from chitchat import fetchfact, fetchjoke, fetchdatefact, fetchmusic, fetchgif
 
 
 class ActionCureBoredom(Action):
@@ -14,7 +14,7 @@ class ActionCureBoredom(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        num = random.randint(1, 4)
+        num = random.randint(1, 5)
         if num == 1:
             dispatcher.utter_message("Did you know?")
             dispatcher.utter_message(fetchfact())
@@ -26,6 +26,12 @@ class ActionCureBoredom(Action):
             dispatcher.utter_message("Today is {} isn't it?".format(today))
             dispatcher.utter_message(fetchdatefact())
         elif num == 4:
+            happy_list = ["cute cat", "kitten", "puppy", "cute racoon"]
+            gif_num = random.randint(0, len(happy_list))
+            gif = fetchgif(str(happy_list[gif_num]))
+            dispatcher.utter_message(json_message={"animation": gif})
+            dispatcher.utter_message("Ain't that cute? 🤗")
+        elif num == 5:
             dispatcher.utter_message("In the mood for some songs?")
             mydict = fetchmusic(2)
             album_name = mydict["album_name"]

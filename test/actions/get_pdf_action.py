@@ -4,6 +4,7 @@ from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from staticpdfs.pdfcreator import get_pdf
 
+
 class ActionGetPDF(Action):
 
     def name(self) -> Text:

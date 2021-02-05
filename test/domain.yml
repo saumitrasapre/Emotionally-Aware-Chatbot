@@ -85,20 +85,9 @@ responses:
   - text: That was me... How 'bout you? What's your name?
   - text: What do other humans know you by?
   - text: What shall I call you, dearest human?
-  utter_cheer_up:
-  - text: "Here is something to cheer your {Mood} mood up:"
-  - text: "Feeling {Mood}, are we? Here is something to cheer you up:"
-  - text: "{Mood}? That's too bad... Here's something to cheer you right up:"
   utter_custom:
   - text: I'm sorry, but I didnt get that... I'm learning, you see. Could you try again?
   - text: I'm sorry, but I couldn't understand what you're trying to say...
-  utter_did_that_help:
-  - buttons:
-    - payload: Yes
-      title: Yes
-    - payload: No
-      title: No
-    text: Was that awesome?
   utter_goodbye:
   - text: Bye!
   - text: Goodbye!
@@ -531,7 +520,7 @@ Setting time aside to work through your worries can prevent them from keeping yo
   And I need you to be honest. \n\n
   First step of learning to get through things is to be honest about the emotions that you're feeling."
 
-  utter_heartbreak_vent_mild:
+  utter_heartbreak_vent_1:
   - text: Okay. First things first. What exactly happened?
 
   utter_heartbreak_vent_mild_1:
@@ -565,25 +554,92 @@ Setting time aside to work through your worries can prevent them from keeping yo
     So how about going for a walk outside and soaking in nature?🌳 🌅 🌇"
 
   utter_heartbreak_vent_mild_not_better_2:
-  - text: Guess what I might have something nice to take along with you as well.
+  - text: Guess what? I might have something nice to take along with you as well!
 
+  utter_heartbreak_vent_moderate_1:
+  - text: "I see. That’s unfortunate.\n\n
+   But I need you to do one little thing. Take a moment and think.\n\n
+   What exactly about the whole thing made you upset?\n\n
+   Many times we're upset due to various incidents that unfolded and never go to the root of what specific moment or behaviour was it that made us feel this way.\n\n
+   So take a moment and ponder over it. Gimme a 👍 when you're done!"
 
+  utter_heartbreak_vent_moderate_2:
+  - text: So, tell me my friend, what was it that made you feel this way?
 
+  utter_heartbreak_vent_moderate_3:
+  - text: Now that you're in a slightly better place,let’s talk more. What activity usually cheers you up?
 
-  utter_heartbreak_vent_moderate:
-  - text: Moderately upset
+  utter_heartbreak_vent_moderate_4:
+  - text: "That's awesome! Doing things that keep your mind engaged make you feel satisfied when you complete them! This helps you moderate your emotions better.\n\n
+   Try doing something non-competitive yet focus-based. For instance:"
+
+  utter_heartbreak_vent_moderate_5:
+  - text: I like to paint a portrait of my cat! 😸
+  - text: I like to knit a sweater for my cat! 🐱‍🚀
+  - text: I like to take my pet seagull for a walk! 🐥
+  - text: I like to cook an awesome dinner for myself! 🥘
+  - text: I like to ride my unicycle around the block! 🚲
+  - text: I love folding paper to make origami ducks! 🐥
+
+  utter_heartbreak_vent_moderate_not_better_1:
+  - text: Is this missing piece something you’ve secretly held on for a long time?
+
+  utter_heartbreak_vent_moderate_not_better_2:
+  - text: "Either way, things that we keep to ourselves often find a way out and consequently affect relationships negatively.\n\n
+   Not only do they do that, but also affect us for feeling trapped because of all the time that’s spent in keeping it all to ourselves."
+
+  utter_heartbreak_vent_moderate_not_better_tool_1:
+  - text: "Here are some things you could do:\n\n
+  Talk it out. Nothing's better than having an open and honest conversation about things."
+    buttons:
+      - title: 🤔
+        payload: /affirm
+
+  utter_heartbreak_vent_moderate_not_better_tool_1.1:
+  - text: "Like, I once had a nasty fight with my neighbour Doug the pug. He always used to steal my newspapers.\n\n
+   I told him that stealing papers is not cool at all. An honest conversation was all it took...\n\n
+   We're the best of chums now! 😁"
+    buttons:
+      - title: Awesome!
+        payload: /affirm
+  - text: "Like, I once had a nasty fight with my friend Duncan the pelican. He always used to sneak and steal my fish.\n\n
+   I told him that stealing fish is not cool at all. An honest conversation was all it took...\n\n
+   We're the best of chums now! 😁"
+    buttons:
+      - title: Wohoo!
+        payload: /affirm
+  - text: "Like, I once had a nasty fight with my mate Larry the canary. He always used to steal my cookies.
+   I told him that stealing cookies is not cool at all. An honest conversation was all it took...
+   We're the best of chums now! 😁"
+    buttons:
+      - title: Great!
+        payload: /affirm
+  utter_heartbreak_vent_moderate_not_better_tool_2:
+  - text: Document your feelings and take charge of them. This gives clarity of thought. I always pen down my thoughts in my diary! 📔
+    buttons:
+      - title: Sure
+        payload: /affirm
+
+  utter_heartbreak_vent_moderate_not_better_3:
+  - text: Redirect these feelings into something productive. Channel your emotions in order to achieve something positive.
+    buttons:
+      - title: Okay
+        payload: /affirm
+
+  utter_heartbreak_vent_moderate_not_better_tool_3:
+    - text: "Haha I suppose the above conversation was rather heavy wasn’t it?😬\n\n
+     Here’s an idea to lift your spirits-\n\n
+     Walking in nature or just being there, soaking in the fresh air and beautiful sights often helps one think with greater clarity and helps in looking at things rationally.\n\n
+     So how 'bout going for a walk outside? 🌳 🌅 🌇"
 
   utter_heartbreak_vent_extreme:
   - text: Extremely upset
 
+  utter_heartbreak_conclusion:
+  - text: Well, I hope this session helped you feel a tad bit better than you felt earlier.
 
 
-
-
-
-
-
-  utter_insomnia_tool_pdf_msg:
+  utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: I've got you covered! Take this handy reference guide

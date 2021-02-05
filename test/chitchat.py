@@ -89,8 +89,8 @@ def fetchspotifyaccesstoken():
     file.close()
     if token == "":
         result = requests.post("https://accounts.spotify.com/api/token", data=
-        {"grant_type": "client_credentials", "client_id": "e1b138fd248d419bbcb11a2db7e2dd62",
-         "client_secret": "2096188098364e368ee023312ff6d37d"},
+        {"grant_type": "client_credentials", "client_id": "f96db491f72947628c928e1e43f3cc09",
+         "client_secret": "eb6851c2ae894a17a1bbbbe687f1a8f3"},
                                headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
         token = result["access_token"]
         open("creds.txt", "w").write(token)
@@ -102,8 +102,8 @@ def fetchspotifyaccesstoken():
         code = myresult.status_code
         if code == 401:
             result = requests.post("https://accounts.spotify.com/api/token", data=
-            {"grant_type": "client_credentials", "client_id": "e1b138fd248d419bbcb11a2db7e2dd62",
-             "client_secret": "2096188098364e368ee023312ff6d37d"},
+            {"grant_type": "client_credentials", "client_id": "f96db491f72947628c928e1e43f3cc09",
+             "client_secret": "eb6851c2ae894a17a1bbbbe687f1a8f3"},
                                    headers={"Content-Type": "application/x-www-form-urlencoded"}).json()
             token = result["access_token"]
             open("creds.txt", "w").write(token)
@@ -130,7 +130,7 @@ def fetchmusic(num):
 
     if num == 2:
         # Gets a random track of a random genre
-        mynum = random.randint(1, 10)
+        mynum = random.randint(0, 9)
         mygenrenum = random.randint(0, 21)
         genre = ["acoustic", "ambient", "blues", "chill", "club", "dance", "disney", "disco", "drum-and-bass",
                  "dubstep", "edm",

@@ -3,8 +3,8 @@ import random
 import spotipy
 import spotipy.util as util
 
-client_id = "e1b138fd248d419bbcb11a2db7e2dd62"
-client_secret = "2096188098364e368ee023312ff6d37d"
+client_id = "f96db491f72947628c928e1e43f3cc09"
+client_secret = "eb6851c2ae894a17a1bbbbe687f1a8f3"
 redirect_uri = "https://localhost:8888/callback/"
 username = "WhoaBot"
 scope = 'user-library-read'
@@ -72,9 +72,9 @@ def get_podcasts(input_list):
     return name, description, publisher, podcast_url
 
 
-# if __name__ == "__main__":
-#     name, publisher, description, podcast_url = get_podcasts(['sleep stories', 'bedtime stories'])
-#     print(name)
-#     print(publisher)
-#     print(description)
-#     print(podcast_url)
+if __name__ == "__main__":
+    name, publisher, description, podcast_url = get_podcasts(['sleep stories', 'bedtime stories'])
+    print(name)
+    print(publisher)
+    print(description)
+    print(podcast_url)

@@ -38,7 +38,17 @@
 - yuppers
 - okay
 - 👍
-- 👌
+- 👍🏻
+- 👍🏼
+- 👍🏽
+- 👍🏾
+- 👍🏿
+- 👌                  
+- 👌🏻 
+- 👌🏼
+- 👌🏽
+- 👌🏾
+- 👌🏿
 - 🆗
 
 ## intent:deny
@@ -78,8 +88,10 @@
 ## intent:goodnight
 - Goodnight
 - GN
+- gnyt  
 - sweet dreams
 - good night
+- Good nyt  
 - have a good night
 - good night to you
 - bye good night
@@ -89,7 +101,7 @@
 - good night see you tomorrow
 - alright goodnight
 - okay have a good night
-- night
+- night!
 - have a good night
 
 ## intent:provide_hobby
@@ -97,6 +109,7 @@
 - I like [reading](Hobby) books
 - [Dancing](Hobby)
 - [Painting](Hobby)
+- I like to [Paint](Hobby)  
 - [Cooking](Hobby)
 - [Photography](Hobby)
 - [Trekking](Hobby)
@@ -114,6 +127,7 @@
 - I like [coding](Hobby)
 - I like to [dance](Hobby)
 - [Gardening](Hobby)
+- I like [Origami](Hobby)
 
 
 ## intent:mood_great

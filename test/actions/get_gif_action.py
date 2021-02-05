@@ -14,8 +14,6 @@ class ActionGetGif(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         gif_text = tracker.get_slot("Gif")
-        if gif_text == 'nightmares':
-            gif_text = "scared"
         gif = fetchgif(str(gif_text))
         dispatcher.utter_message(json_message={"animation": gif})
         return [SlotSet("Gif", value=None)]

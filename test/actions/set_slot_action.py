@@ -18,15 +18,15 @@ class ActionSetSlot(Action):
         gif_slot = None
         if curr_intent == "user_nightmares" or curr_intent == "ask_bot_scared":
             pdf_slot = "Insomnia 2"
-            gif_slot = "nightmares"
+            gif_slot = "scared"
         elif curr_intent == "user_tensed":
             pdf_slot = "Insomnia 1"
-            gif_slot = "night" #"@seizetheawkward mental health"
+            gif_slot = "night"  # "@seizetheawkward mental health"
         elif curr_intent == "user_irregular_lifestyle":
             pdf_slot = "Insomnia 3"
-            gif_slot = "night" #"@seizetheawkward mental health"
-        elif curr_intent == "mood_unhappy":
+            gif_slot = "night"  # "@seizetheawkward mental health"
+        elif curr_intent == "user_unhappy" or curr_intent == "user_heartbroken":
             gif_slot = "cute cat"
-            pdf_slot = None
+            pdf_slot = "Heartbreak heartbreak"
 
         return [SlotSet("Gif", value=gif_slot), SlotSet("Pdf", value=pdf_slot)]

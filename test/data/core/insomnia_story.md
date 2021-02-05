@@ -111,7 +111,7 @@
 > insomnia_tension_tools_understood
 * affirm
   - slot{"Pdf": "Insomnia 1"} 
-  - utter_insomnia_tool_pdf_msg
+  - utter_pdf_msg
   - action_get_pdf
   - action_get_gif  
   - utter_good_night
@@ -210,7 +210,7 @@
 > insomnia_nightmare_tools_understood
 * affirm
   - slot{"Pdf": "Insomnia 2"}
-  - utter_insomnia_tool_pdf_msg
+  - utter_pdf_msg
   - action_get_pdf
   - utter_good_night
   
@@ -278,7 +278,7 @@
   - action_get_stories
   - utter_insomnia_lifestyle_tool_recap
   - slot{"Pdf": "Insomnia 3"}
-  - utter_insomnia_tool_pdf_msg
+  - utter_pdf_msg
   - action_get_pdf
   - action_get_gif  
   - utter_good_night
@@ -288,7 +288,7 @@
 * deny
   - utter_insomnia_lifestyle_tool_recap
   - slot{"Pdf": "Insomnia 3"}
-  - utter_insomnia_tool_pdf_msg
+  - utter_pdf_msg
   - action_get_pdf
   - action_get_gif  
   - utter_good_night  
@@ -303,7 +303,7 @@
   - slot{"Lifestyle_Type":"Good lifestyle"}
   - utter_insomnia_lifestyle_good 
   - slot{"Pdf": "Insomnia 3"}
-  - utter_insomnia_tool_pdf_msg
+  - utter_pdf_msg
   - action_get_pdf
   - action_get_gif  
   - utter_good_night

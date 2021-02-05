@@ -33,8 +33,8 @@ config = {
 def upload_pdf():
     firebase = pyrebase.initialize_app(config)
     storage = firebase.storage()
-    path_local = "./Insomnia/3.pdf"
-    path_on_cloud = "pdfs/Insomnia/3.pdf"
+    path_local = "./Heartbreak/1.pdf"
+    path_on_cloud = "pdfs/Heartbreak/heartbreak.pdf"
     storage.child(path_on_cloud).put(path_local)
     print(storage.child(path_on_cloud).get_url(path_on_cloud))
 
@@ -45,7 +45,7 @@ def get_pdf(story,number):
     print(storage.child(path_on_cloud).get_url(path_on_cloud))
     return storage.child(path_on_cloud).get_url(path_on_cloud)
 
-# if __name__ == "__main__":
-#     upload_pdf()
-#     # get_pdf("Insomnia",1)
+if __name__ == "__main__":
+    upload_pdf()
+    # get_pdf("Insomnia","1")
 
