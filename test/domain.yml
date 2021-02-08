@@ -32,7 +32,6 @@ intents:
 
 entities:
 - Mood
-- Name
 - Hobby
 - Sentiment
 slots:
@@ -53,7 +52,11 @@ slots:
   Pdf:
     type: text
     auto_fill: false
-  Person_Name:
+  Person_First_Name:
+    type: unfeaturized
+  Person_Last_Name:
+    type: unfeaturized
+  Person_ID:
     type: unfeaturized
   Sentiment:
     type: unfeaturized
@@ -108,8 +111,11 @@ responses:
   - text: Cool!
 
 
-  utter_happy_pipeline_start:
-  - text: That’s awesome! I’m happy too, just because you are! You know what I like to do when I’m happy?
+  utter_happy_pipeline_start_1:
+  - text: That’s awesome! I’m happy too, just because you are!
+
+  utter_happy_pipeline_start_2:
+  - text: You know what I like to do when I’m happy?
     buttons:
       - title: Games? 🎮
         payload: /user_request_games
@@ -117,9 +123,8 @@ responses:
         payload: /user_request_music
       - title: Maybe later
         payload: /deny
-
   utter_happy_pipeline_games:
-  - text: Yeah, I really want to… But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
+  - text: Yeah, I really want to... But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
 
   utter_happy_pipeline_games_1:
   - text: Fantastic ! Did you know that playing any kind of game helps to keep your mood uplifted for long, and also increases brain activity?
@@ -708,7 +713,6 @@ actions:
 - action_launch_lifestyle_form
 
 forms:
-- submit_name_form
 - submit_hobby_form
 - mad_lib_input
 - tictactoe_input

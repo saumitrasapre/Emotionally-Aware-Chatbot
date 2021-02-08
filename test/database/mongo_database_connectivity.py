@@ -14,16 +14,15 @@ from pymongo import MongoClient, errors
 #     print(x)
 
 
-def mongodataupdate(name):
-    name = name.lower()
-    if name != 'none':
+def mongodataupdate(per_id, fname, lname):
+    # name = name.lower()
+    if per_id != 'none':
         myclient = MongoClient('localhost', 27017)
         mydb = myclient["rasa"]
         mycollection = mydb["users"]
-
-        name_list = {"name": name}
+        person_list = {"_id": per_id, "First_Name": fname, "Last_Name": lname}
         try:
-            mycollection.insert_one(name_list)
+            mycollection.insert_one(person_list)
         except errors.DuplicateKeyError as e:
             print("Error: {}".format(e))
             return
@@ -32,31 +31,24 @@ def mongodataupdate(name):
             print(x)
 
 
-def mongodataverify(name):
-    name = name.lower()
-    if name != 'none':
-        myclient = MongoClient('localhost', 27017)
-        mydb = myclient["rasa"]
-        mycollection = mydb["users"]
-
-        count = mycollection.count_documents({"name": name})
-        print(count)
-        return count
-    else:
-        return 1
+def mongodataverify(per_id):
+    myclient = MongoClient('localhost', 27017)
+    mydb = myclient["rasa"]
+    mycollection = mydb["users"]
+    count = mycollection.count_documents({"_id": per_id})
+    return count
 
 
-def mongohobbyupdate(hobby1,hobby2,hobby3, name):
+def mongohobbyupdate(per_id, hobby1, hobby2, hobby3):
     hobby1 = hobby1.lower()
     hobby2 = hobby2.lower()
     hobby3 = hobby3.lower()
-    name = name.lower()
-    if hobby1 != 'none' or hobby2!='none' or hobby3!='none':
+    if hobby1 != 'none' or hobby2 != 'none' or hobby3 != 'none':
         myclient = MongoClient('localhost', 27017)
         mydb = myclient["rasa"]
         mycollection = mydb["users"]
-        query = {"name": name}
-        values = {"$set": {"hobby1": hobby1,"hobby2":hobby2,"hobby3":hobby3}}
+        query = {"_id": per_id}
+        values = {"$set": {"hobby1": hobby1, "hobby2": hobby2, "hobby3": hobby3}}
         try:
             mycollection.update_one(query, values)
         except errors.DuplicateKeyError as e:
@@ -66,26 +58,27 @@ def mongohobbyupdate(hobby1,hobby2,hobby3, name):
             print(x)
 
 
-def mongohobbyretrieve(name):
-    name = name.lower()
-    if name != 'none':
+def mongohobbyretrieve(per_id):
+    if per_id != 'none':
         myclient = MongoClient('localhost', 27017)
         mydb = myclient["rasa"]
         mycollection = mydb["users"]
+        hobby1 = None
+        hobby2 = None
+        hobby3 = None
 
         try:
-            result = mycollection.find_one({"name": name})
-            hobby1 = result["hobby1"]
-            hobby2 = result["hobby2"]
-            hobby3 = result["hobby3"]
+            result = mycollection.find_one({"_id": per_id})
+            if "hobby1" in result:
+                hobby1 = result["hobby1"]
+            if "hobby2" in result:
+                hobby2 = result["hobby2"]
+            if "hobby3" in result:
+                hobby3 = result["hobby3"]
         except errors.DuplicateKeyError as e:
             print("Error: {}".format(e))
             return
         return hobby1, hobby2, hobby3
 
-
 # if __name__ == "__main__":
-#     mongohobbyretrieve("saumitra")
-    # mongohobbyupdate("reading", 2, "Saumitra")
-    # mongodataupdate("Saumitra")
-    # mongodataverify("Saumitra")
+#     print(mongodataverify("1165084016"))

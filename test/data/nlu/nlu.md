@@ -184,10 +184,9 @@
 - What's your name?
 - Who am I speaking to?
 - Identify yourself!
-- Who are you? I'm [Saumitra](Name)
-- Are you a robot? My name is [Shraddha](Name)
-- Who are you? [Ved](Name) this side
-- Who's this? I'm [Mihir](Name)
+- Who are you? I'm Saumitra
+- Are you a robot?
+- Who's this?
 
 
 ## intent:user_bored
@@ -230,13 +229,12 @@
 - I want to play some tictactoe
 
 ## intent:provide_name
-- My name is [Saumitra](Name)
-- My name's [Ved](Name)
-- Oh okay, I'm [Shraddha](Name)
-- You can call me [Mihir](Name)
-- Hey you can call me [Ved](Name)
-- Hi, my name is [Saumitra](Name)
-- I'm [Saumitra](Name)
-- I'm [Mihir](Name)
-- I'm [Ved](Name)
-- I'm called [Shraddha](Name)
+- My name is Saumitra
+- My name's Ved
+- Oh okay, I'm Shraddha
+- You can call me Mihir
+- Hey you can call me Ved
+- Hi, my name is Saumitra
+- I'm Saumitra
+- I'm Mihir
+- I'm Ved

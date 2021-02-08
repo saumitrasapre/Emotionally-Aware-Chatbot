@@ -8,16 +8,14 @@
   - utter_insomnia_nightmares_joke
   - action_get_gif
     
-## initial_challenge_interaction
+## challenge_interaction
 * bot_challenge
     - utter_iamabot
-    - submit_name_form
-    - form{"name":"submit_name_form"}
-    - form{"name":null} 
+    - action_check_name
     - submit_hobby_form
     - form{"name":"submit_hobby_form"}
     - form{"name":null} 
- * thank
+* thank
     - utter_smile
   
 ## out_of_domain
@@ -34,7 +32,11 @@
     - utter_greet
 * mood_great
     - action_set_sentiment
-    - utter_happy_pipeline_start
+    - utter_happy_pipeline_start_1
+    - submit_hobby_form
+    - form{"name":"submit_hobby_form"}
+    - form{"name":null}  
+    - utter_happy_pipeline_start_2
 > check_user_choice_happy
 
 ## thanks_response

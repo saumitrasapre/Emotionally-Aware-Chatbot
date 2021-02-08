@@ -3,7 +3,11 @@
   - utter_greet
 * mood_great
   - action_set_sentiment
-  - utter_happy_pipeline_start
+  - utter_happy_pipeline_start_1
+  - submit_hobby_form
+  - form{"name":"submit_hobby_form"}
+  - form{"name":null}
+  - utter_happy_pipeline_start_2
 > check_user_choice_happy
 
 ## user chooses games
