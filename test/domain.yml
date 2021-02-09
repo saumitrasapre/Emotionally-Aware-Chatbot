@@ -96,6 +96,8 @@ responses:
   - text: Goodbye!
   - text: Arrivederci!
   - text: G'day and bye!
+  - text: Ciao!
+  - text: Cheers and bye!
   utter_greet:
   - text: How are you?
   - text: How's it hanging?
@@ -519,6 +521,21 @@ Setting time aside to work through your worries can prevent them from keeping yo
       - title: I'm not sure
         payload: /user_confused
 
+  utter_heartbreak_okay_1:
+  - text: "Alright...\n\n
+   It’s still quite a change in your life, so hang in there, my friend.\n\n
+   While you may feel okay right now, it's still important to take a step back and reflect.\n\n
+   Take charge of your feelings and try to keep looking forward."
+
+  utter_heartbreak_okay_2:
+  - text: And remember, if you ever want, I’m always here to talk. Just hit me up. Cool?
+
+  utter_heartbreak_okay_3:
+  - text: Anyhow, here’s a playlist that might help you get through it better...
+
+  utter_heartbreak_okay_4:
+  - text: I hope you’re feeling good. Like I mentioned earlier, the tiniest bit of frustration, and you can immediately talk here.
+
   utter_heartbreak_vent:
   - text: "Hang in there my friend.. I’m here to help and be your patient listener. Let’s face this together.\n\n
   On a scale of 1-3 how upset are you right now? \n\n
@@ -543,7 +560,7 @@ Setting time aside to work through your worries can prevent them from keeping yo
   - text: So, my friend, try to rephrase your thoughts without these distortions...
 
   utter_heartbreak_vent_mild_4:
-  - text: Now that you know why, do you feel slightly better? The first step of emotional recovery is acknowledging your reasons and emotions.
+  - text: Now, do you feel slightly better? The first step of emotional recovery is acknowledging your reasons and emotions.
 
   utter_heartbreak_vent_mild_better:
   - text: "Good. That’s good. That was a lot of serious talk wasn’t it?\n\n
@@ -637,8 +654,72 @@ Setting time aside to work through your worries can prevent them from keeping yo
      Walking in nature or just being there, soaking in the fresh air and beautiful sights often helps one think with greater clarity and helps in looking at things rationally.\n\n
      So how 'bout going for a walk outside? 🌳 🌅 🌇"
 
-  utter_heartbreak_vent_extreme:
-  - text: Extremely upset
+  utter_heartbreak_vent_extreme_1:
+  - text: "The first step of emotional recovery is acknowledging your reasons and emotions.\n But it is crucial to do so without playing any kind of blame game.\nLooking at it objectively always helps."
+    buttons:
+      - title: Hmmm 🤔
+        payload: /affirm
+
+  utter_heartbreak_vent_extreme_2:
+  - text: It is natural to feel wronged in some way. That your idea of this didn’t go down the ideal path. Some expectations weren’t met. Something didn’t go right. Isn't it?
+
+  utter_heartbreak_vent_extreme_3:
+  - text: Yet, more often than not we tend to blame ourselves for the same and thus go downhill... Because somewhere, at the back of our mind, we know we aren’t to blame...😐
+
+  utter_heartbreak_vent_extreme_4:
+  - text: So the most important thing is to not blame yourself for feeling wronged. Acknowledge it and think about it. Whaddya say?
+
+  utter_heartbreak_vent_extreme_5:
+  - text: "Tell me this....\n\n
+   Were the emotions you felt before all this, strongly positive emotions? Were they always strong emotions towards the matter at hand?"
+
+  utter_heartbreak_vent_extreme_6:
+  - text: Sometimes the reason why we get greatly upset is because we're knocked down into a strongly negative phase from an equally strong positive side of the spectrum.
+
+  utter_heartbreak_vent_extreme_7:
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/39wBF8ZtAwIXvDnI23/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/4NmnQ2QScBM7AK50fM/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/kigSWAJRhvkQXbA4fT/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/1wPC7WSiRq6pEpcBOo/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/9S3FT1Lt3iaCQoUXEn/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/9S3FT1Lt3iaCQoUXEn/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/TDLOSxLyT8B6PQojqj/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/xT39D1EeVKRGotU7o4/giphy.gif"
+  - custom:
+      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
+      animation: "https://media.giphy.com/media/xT39Die1W3jmsVdHQk/giphy.gif"
+
+  utter_heartbreak_vent_extreme_8:
+  - text: "Absolutely nothing wrong with that. It is only natural.\n\n
+   Yet one must think objectively at times. Here are some things you could try for the same-"
+
+  utter_heartbreak_vent_extreme_tool_1:
+  - text: Document your reasons in writing. It gives clarity
+    buttons:
+      - title: Okay 😐
+        payload: /affirm
+
+  utter_heartbreak_vent_extreme_tool_2:
+  - text: Before jumping to conclusions, look at things objectively from an entirely third person view.
+    buttons:
+      - title: Hmmm 😶
+        payload: /affirm
 
   utter_heartbreak_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better than you felt earlier.

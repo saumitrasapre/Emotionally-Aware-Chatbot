@@ -31,7 +31,7 @@ class ActionSessionStart(Action):
             message_metadata = []
             events = tracker.current_state()['events']
             for e in events:
-                if e['event'] == 'user':
+                if e['event'] == 'user' or e['event'] == 'session_started':
                     message_metadata.append(e)
             meta = message_metadata[-1]["metadata"]["metadata"]
             meta_dict = ast.literal_eval(meta)
@@ -62,18 +62,17 @@ class ActionSessionStart(Action):
         message_metadata = []
         events = tracker.current_state()['events']
         for e in events:
-            if e['event'] == 'user':
+            if e['event'] == 'user' or e['event'] == 'session_started':
                 message_metadata.append(e)
         meta = message_metadata[-1]["metadata"]["metadata"]
         meta_dict = ast.literal_eval(meta)
         per_id = meta_dict["id"]
         fname = meta_dict["first_name"]
         lname = meta_dict["last_name"]
+        events = [SessionStarted()]
         dispatcher.utter_message(template="utter_iamabot")
         dispatcher.utter_message("Pleased to meet you, {}!".format(fname))
         dispatcher.utter_message("How're you doing today?")
-        events = [SessionStarted()]
-
         # any slots that should be carried over should come after the
         # `session_started` event
         events.extend(self.fetch_slots(dispatcher, tracker))

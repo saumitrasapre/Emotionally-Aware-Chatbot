@@ -8,8 +8,18 @@
 # user_okay
 > check_heartbreak_branches
 * affirm
-    - utter_happy_pipeline_deny
-
+    - utter_heartbreak_okay_1
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_heartbreak_okay_2
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_heartbreak_okay_3
+    - action_play_music
+    - utter_heartbreak_okay_4
+    - utter_goodbye
 # user_vent_1
 > check_heartbreak_branches
 * user_vent
@@ -143,5 +153,37 @@
     - form{"name":"user_heartbreak_intensity_input"}  
     - form{"name":null}
     - slot{"Heartbreak_Intensity":"3"}
-    - utter_heartbreak_vent_extreme
-    
+    - utter_heartbreak_vent_1
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_heartbreak_vent_moderate_1
+* affirm
+    - utter_heartbreak_vent_moderate_2
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_heartbreak_vent_extreme_1
+* affirm
+    - utter_heartbreak_vent_extreme_2
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_heartbreak_vent_extreme_3
+    - utter_heartbreak_vent_extreme_4
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_heartbreak_vent_extreme_5
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_heartbreak_vent_extreme_6
+    - utter_heartbreak_vent_extreme_7
+    - utter_heartbreak_vent_extreme_8
+    - utter_heartbreak_vent_extreme_tool_1
+* affirm
+    - utter_heartbreak_vent_extreme_tool_2
+* affirm
+    - utter_heartbreak_vent_mild_4
+> check_vent_2_user_feels_better
