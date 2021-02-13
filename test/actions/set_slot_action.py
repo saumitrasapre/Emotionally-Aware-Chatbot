@@ -28,5 +28,11 @@ class ActionSetSlot(Action):
         elif curr_intent == "user_unhappy" or curr_intent == "user_heartbroken":
             gif_slot = "cute cat"
             pdf_slot = "Heartbreak heartbreak"
+        elif curr_intent == "user_vent":
+            gif_slot = "@looneytunes fall"
+            pdf_slot = "Heartbreak heartbreak"
+        elif curr_intent == "user_no_talk":
+            gif_slot = "@seizetheawkward mental health"
+            pdf_slot = "Heartbreak heartbreak"
 
         return [SlotSet("Gif", value=gif_slot), SlotSet("Pdf", value=pdf_slot)]

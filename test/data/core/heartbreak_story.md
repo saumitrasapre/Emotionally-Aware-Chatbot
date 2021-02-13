@@ -22,7 +22,10 @@
     - utter_goodbye
 # user_vent_1
 > check_heartbreak_branches
+> check_if_user_wants_to_talk
 * user_vent
+    - action_set_slot
+    - slot{"Gif": "@looneytunes fall"}
     - utter_heartbreak_vent
     - user_heartbreak_intensity_input
     - form{"name":"user_heartbreak_intensity_input"}  
@@ -86,7 +89,10 @@
   
 # user_vent_2
 > check_heartbreak_branches
+> check_if_user_wants_to_talk
 * user_vent
+    - action_set_slot
+    - slot{"Gif": "@looneytunes fall"}
     - utter_heartbreak_vent
     - user_heartbreak_intensity_input
     - form{"name":"user_heartbreak_intensity_input"}  
@@ -147,7 +153,10 @@
   
 # user_vent_3
 > check_heartbreak_branches
-* user_vent 
+> check_if_user_wants_to_talk
+* user_vent
+    - action_set_slot
+    - slot{"Gif": "@looneytunes fall"} 
     - utter_heartbreak_vent
     - user_heartbreak_intensity_input
     - form{"name":"user_heartbreak_intensity_input"}  
@@ -180,6 +189,7 @@
     - form{"name":null}
     - utter_heartbreak_vent_extreme_6
     - utter_heartbreak_vent_extreme_7
+    - action_get_gif  
     - utter_heartbreak_vent_extreme_8
     - utter_heartbreak_vent_extreme_tool_1
 * affirm
@@ -187,3 +197,33 @@
 * affirm
     - utter_heartbreak_vent_mild_4
 > check_vent_2_user_feels_better
+
+
+
+# user_no_talk
+> check_heartbreak_branches
+* user_no_talk
+  - action_set_slot
+  - slot{"Gif": "@seizetheawkward mental health"}
+  - utter_heartbreak_no_talk_1
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_heartbreak_no_talk_2
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - action_get_gif  
+  - utter_heartbreak_no_talk_3
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_heartbreak_no_talk_4
+> check_if_user_wants_to_talk 
+
+# user_no_talk_no_talk
+> check_if_user_wants_to_talk
+* affirm 
+  - utter_heartbreak_vent_mild_not_better_2
+  - action_play_music
+

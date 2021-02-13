@@ -83,7 +83,6 @@ def fetchtrends():
 
 
 def fetchspotifyaccesstoken():
-
     file = open("creds.txt", "r+")
     token = file.readline()
     file.close()
@@ -151,9 +150,10 @@ def fetchmusic(num):
                   "genre": mygenre}
         return mydict
 
+
 if __name__ == "__main__":
-     fetchgif("@seizetheawkward mental health")
-    # fetchmusic(2)
+    fetchgif("@seizetheawkward mental health")
+# fetchmusic(2)
 # fetchtrends()
 # fetchmusic(2)
 # fetchdatefact()

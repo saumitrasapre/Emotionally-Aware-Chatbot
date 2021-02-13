@@ -29,6 +29,7 @@ intents:
 - user_nightmares
 - user_irregular_lifestyle
 - user_vent
+- user_no_talk
 
 entities:
 - Mood
@@ -117,14 +118,17 @@ responses:
   - text: That’s awesome! I’m happy too, just because you are!
 
   utter_happy_pipeline_start_2:
-  - text: You know what I like to do when I’m happy?
-    buttons:
-      - title: Games? 🎮
-        payload: /user_request_games
-      - title: Music? 🎷
-        payload: /user_request_music
-      - title: Maybe later
-        payload: /deny
+  - custom:
+      button_type: vertical
+      text: You know what I like to do when I’m happy?
+      buttons:
+        - title: Games? 🎮
+          payload: /user_request_games
+        - title: Music? 🎷
+          payload: /user_request_music
+        - title: Maybe later
+          payload: /deny
+
   utter_happy_pipeline_games:
   - text: Yeah, I really want to... But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
 
@@ -510,7 +514,9 @@ Setting time aside to work through your worries can prevent them from keeping yo
   Got it?"
 
   utter_heartbreak_pipeline_start:
-  - text: I’m sorry to hear that. How are you feeling?
+  - custom:
+    button_type: vertical
+    text: I’m sorry to hear that. How are you feeling?
     buttons:
       - title: I'm OK
         payload: /affirm
@@ -677,33 +683,7 @@ Setting time aside to work through your worries can prevent them from keeping yo
   - text: Sometimes the reason why we get greatly upset is because we're knocked down into a strongly negative phase from an equally strong positive side of the spectrum.
 
   utter_heartbreak_vent_extreme_7:
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/39wBF8ZtAwIXvDnI23/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/4NmnQ2QScBM7AK50fM/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/kigSWAJRhvkQXbA4fT/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/1wPC7WSiRq6pEpcBOo/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/9S3FT1Lt3iaCQoUXEn/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/9S3FT1Lt3iaCQoUXEn/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/TDLOSxLyT8B6PQojqj/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/xT39D1EeVKRGotU7o4/giphy.gif"
-  - custom:
-      text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
-      animation: "https://media.giphy.com/media/xT39Die1W3jmsVdHQk/giphy.gif"
+  - text: The fall from a mountain into a valley hurts more than a fall from the ground to a ditch.
 
   utter_heartbreak_vent_extreme_8:
   - text: "Absolutely nothing wrong with that. It is only natural.\n\n
@@ -721,9 +701,30 @@ Setting time aside to work through your worries can prevent them from keeping yo
       - title: Hmmm 😶
         payload: /affirm
 
+  utter_heartbreak_no_talk_1:
+  - text: "Hey. I understand what you're getting at.\n\n
+  A lot of us need some time and space to deal with the precise emotions that we are going through. When overwhelmed by something, it’s often hard to even comprehend some things in order to put your thoughts together, isn’t it?"
+
+  utter_heartbreak_no_talk_2:
+  - custom:
+      text: It often feels like we don’t even know how to recognise and manage for the sea of emotions that are bubbling underneath all our brave faces. Don't you think?
+      animation: "https://media.giphy.com/media/THgdxkFUCAi9vFfba6/giphy.gif"
+
+  utter_heartbreak_no_talk_3:
+  - text: Yet it helps to talk to someone. Explaining your problems helps in recognising different factors that contribute to feeling a certain way. It also helps gain different perspectives on things. At least I think so... What 'bout you?
+
+  utter_heartbreak_no_talk_4:
+  - text: "But hey, no need to rush into things. Take your time...\n\n
+   And remember you can always come back if you want to talk. I'm right here to be your friend in need. How does that sound?"
+    buttons:
+      - title: Okay 😐
+        payload: /affirm
+      - title: Let's talk 😇
+        payload: /user_vent
+
+
   utter_heartbreak_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better than you felt earlier.
-
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
