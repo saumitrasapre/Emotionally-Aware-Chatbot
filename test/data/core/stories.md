@@ -37,7 +37,7 @@
     - form{"name":"submit_hobby_form"}
     - form{"name":null}  
     - utter_happy_pipeline_start_2
-
+> check_user_choice_happy
 
 ## thanks_response
 * thank

@@ -17,7 +17,7 @@
 - They cannot see how much I love them. I feel [ignored](Mood)
 - I'm [feeling down](Mood). This breakup hasn't gotten the best out of me.
 - I feel [ignored](Mood) by him/her.
-- I'm [rather mad] at my partner for breaking up with me.
+- I'm [rather mad](Mood) at my partner for breaking up with me.
 - I am disappointed with him/her.
 - I just got out of a relationship
 
