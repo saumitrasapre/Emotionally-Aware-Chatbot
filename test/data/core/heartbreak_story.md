@@ -20,6 +20,7 @@
     - action_play_music
     - utter_heartbreak_okay_4
     - utter_goodbye
+
 # user_vent_1
 > check_heartbreak_branches
 > check_if_user_wants_to_talk
@@ -227,3 +228,17 @@
   - utter_heartbreak_vent_mild_not_better_2
   - action_play_music
 
+# user_confused_heartbreak
+> check_heartbreak_branches
+* user_confused
+  - utter_heartbreak_confused_1
+  - utter_heartbreak_vent_1
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null} 
+  - utter_heartbreak_confused_2
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_heartbreak_refined
+> check_heartbreak_branches  

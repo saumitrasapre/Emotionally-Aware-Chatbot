@@ -518,13 +518,13 @@ Setting time aside to work through your worries can prevent them from keeping yo
     button_type: vertical
     text: I’m sorry to hear that. How are you feeling?
     buttons:
-      - title: I'm OK
+      - title: I'm OK 😓
         payload: /affirm
-      - title: I wanna talk
+      - title: I wanna talk 😟
         payload: /user_vent
-      - title: I'd rather not talk
+      - title: I'd rather not talk 🤐
         payload: /user_no_talk
-      - title: I'm not sure
+      - title: I'm not sure 🤔
         payload: /user_confused
 
   utter_heartbreak_okay_1:
@@ -721,6 +721,28 @@ Setting time aside to work through your worries can prevent them from keeping yo
         payload: /affirm
       - title: Let's talk 😇
         payload: /user_vent
+
+  utter_heartbreak_confused_1:
+  - custom:
+      animation: "https://media.giphy.com/media/26tP4gFBQewkLnMv6/giphy.gif"
+      text: "Oh... Okay don’t worry. Most overwhelming events leave us more confused than we were before. It’s natural.😅\n\n
+      But hey, you don’t have to figure it all out by yourself. We can do this together! 👍"
+
+  utter_heartbreak_confused_2:
+  - text: "Sometimes explaining the problem just as it is helps. It helps one pin-point exactly what were the things that led you to feel a certain way.📌\n\n
+  Do you feel like you have a slight clarity upon recalling the incident? 🔍"
+
+  utter_heartbreak_refined:
+  - custom:
+    button_type: vertical
+    text: So how're ya feeling now?
+    buttons:
+      - title: I'm OK 😓
+        payload: /affirm
+      - title: I wanna talk 😟
+        payload: /user_vent
+      - title: I'd rather not talk 🤐
+        payload: /user_no_talk
 
 
   utter_heartbreak_conclusion:
