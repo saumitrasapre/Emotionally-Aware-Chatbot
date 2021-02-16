@@ -16,15 +16,15 @@
 - I'm feeling rather [lonely](Mood). Breakups are hard
 - They cannot see how much I love them. I feel [ignored](Mood)
 - I'm [feeling down](Mood). This breakup hasn't gotten the best out of me.
-- I feel [ignored](Mood) by him/her.
-- I'm [rather mad](Mood) at my partner for breaking up with me.
-- I am [disappointed](Mood) with him/her.
+- I feel [ignored](Mood) by her.
+- I'm [rather mad](Mood) at him for breaking up with me.
+- I'm [rather mad](Mood) at her for breaking up with me.  
+- I am [disappointed](Mood) with him
+- I am [disappointed](Mood) with her.
 - I just got out of a relationship
 - I am suddenly single and I don't like it, okay?
 - I dumped the love of my life today.
-- Breakup. That's what happened. And I'm EXTREMELY upset because of that. More like, it's hard to process.
-
-
+- Breakup. That's what happened. And I'm EXTREMELY [upset](Mood) because of that. More like, it's hard to process.
 
 
 ## intent:user_vent
@@ -44,8 +44,6 @@
 - I don't usually do this but I really want to share my feelings.
 - I'm not a feelings person in the traditional sense but I need to talk right now.
 - Yo gotta talk
-
-
 
 
 ## intent:user_no_talk

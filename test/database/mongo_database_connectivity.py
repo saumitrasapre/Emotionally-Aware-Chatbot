@@ -80,5 +80,5 @@ def mongohobbyretrieve(per_id):
             return
         return hobby1, hobby2, hobby3
 
-    if __name__ == "__main__":
-        print(mongodataverify("1165084016"))
+    # if __name__ == "__main__":
+    #     print(mongodataverify("1165084016"))

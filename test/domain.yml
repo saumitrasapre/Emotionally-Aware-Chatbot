@@ -119,15 +119,15 @@ responses:
 
   utter_happy_pipeline_start_2:
   - custom:
-      button_type: vertical
-      text: You know what I like to do when I’m happy?
-      buttons:
-        - title: Games? 🎮
-          payload: /user_request_games
-        - title: Music? 🎷
-          payload: /user_request_music
-        - title: Maybe later
-          payload: /deny
+    button_type: vertical
+    text: You know what I like to do when I’m happy?
+    buttons:
+      - title: Games? 🎮
+        payload: /user_request_games
+      - title: Music? 🎷
+        payload: /user_request_music
+      - title: Maybe later
+        payload: /deny
 
   utter_happy_pipeline_games:
   - text: Yeah, I really want to... But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
@@ -744,9 +744,54 @@ Setting time aside to work through your worries can prevent them from keeping yo
       - title: I'd rather not talk 🤐
         payload: /user_no_talk
 
-
   utter_heartbreak_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better than you felt earlier.
+
+  utter_anxiety_pipeline:
+  - text: "Heyyy. I’m sure things are going rather tough. 😟 But don’t worry. Let’s figure this out.\n\n
+  Do you feel this uneasy all the time? For a significant portion of the day?"
+
+  utter_anxiety_affirm_worried_1:
+  - text: I see. So how much average time? How often is it on your mind?
+  - text: Hmmm... How often do you feel this worried?
+  - text: Okay.. How often is this constant burden of worry on your mind?
+
+  utter_anxiety_affirm_worried_2:
+  - text: Well, this constant anxiety.. Is it affecting your performance in various walks of life?
+    buttons:
+      - title: Huh? 🤔
+        payload: /user_confused
+
+  utter_anxiety_affirm_worried_explain:
+  - text: "Take my cat Moe for example. He's afraid of balloons 🎈. So when we went to Larry the canary's birthday party, he locked himself in a room, and refused to come out.\n\n
+  In a way, Moe's balloon anxiety made him unable to enjoy the party.🙀 Does something similar happen to you?"
+  - text: "Take my neighbour's guard dog -  Doug the Pug 🐶 for example. He's afraid of the dark.🌃\n\n
+  In a way, Doug's darkness anxiety makes it difficult to guard the neighbour's house at night.🏡 Does something similar happen to you?"
+  - text: "Take Duncan the Pelican, for example. He's a fisher-bird, but he's afraid of water.🌊\n\n
+  In a way, Duncan's hydrophobia makes it difficult for him to gather and sell fish.🐟 Does something similar happen to you?"
+
+  utter_anxiety_affirm_worried_affirm_affect_1:
+  - text: "That’s not a good sign, my friend, as you know it. But hey, we can sort this out. \n\n
+  First of all, tell me how have you figured that this is affecting your performance? Any specific incident?"
+
+  utter_anxiety_affirm_worried_affirm_affect_2:
+  - text: Ah I see. So has this been happening recurrently?
+
+  utter_anxiety_affirm_worried_affirm_affect_3:
+  - text: "Either ways, recurrent or not, a performance drop isn’t ideal or good for health. It could lead to a downhill ride in a lot of areas of life.\n\n
+   So do you agree that there needs to be a change in the way it’s been affecting you, don’t you?"
+
+  utter_anxiety_affirm_worried_affirm_affect_4:
+  - text: Okay, it might sound like a daunting task but it doesn’t have to be, you see. Start small. Here are some ideas you could try
+
+
+  utter_anxiety_affirm_worried_deny_affect:
+  - text: Ah, I see. Well, that’s good But hey, there’s still work to do, don’t you think?
+
+
+
+
+
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
@@ -801,6 +846,7 @@ Setting time aside to work through your worries can prevent them from keeping yo
   utter_sorry:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
+
 actions:
 - action_play_tictactoe
 - action_pre_madlibs

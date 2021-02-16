@@ -5,7 +5,7 @@ language: "en"  # your two-letter language code
 pipeline:
   - name: SpacyNLP
   - name: SpacyTokenizer
-
+  - name: sentiment.SentimentAnalyzer
   - name: SpacyFeaturizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer

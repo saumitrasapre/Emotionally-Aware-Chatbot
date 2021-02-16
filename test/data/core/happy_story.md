@@ -1,6 +1,4 @@
 ## happy path
-* greet
-  - utter_greet
 * mood_great
   - action_set_sentiment
   - utter_happy_pipeline_start_1
