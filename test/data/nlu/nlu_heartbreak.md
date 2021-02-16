@@ -18,8 +18,12 @@
 - I'm [feeling down](Mood). This breakup hasn't gotten the best out of me.
 - I feel [ignored](Mood) by him/her.
 - I'm [rather mad](Mood) at my partner for breaking up with me.
-- I am disappointed with him/her.
+- I am [disappointed](Mood) with him/her.
 - I just got out of a relationship
+- I am suddenly single and I don't like it, okay?
+- I dumped the love of my life today.
+- Breakup. That's what happened. And I'm EXTREMELY upset because of that. More like, it's hard to process.
+
 
 
 
@@ -29,6 +33,20 @@
 - I'm rather [upset](Mood) and need to vent
 - I want to talk
 - I want to share my feelings
+- Can we talk?
+- I really want to talk. You don't mind, do you?
+- Hey, can we talk?
+- I really need to talk
+- I'm losing my mind. Can we talk?
+- AAAAAAAAAAAAAAAAAAAAA. Okay, I need to talk
+- Okay, I need to talk 
+- You there? I NEED to talk, okay?
+- I don't usually do this but I really want to share my feelings.
+- I'm not a feelings person in the traditional sense but I need to talk right now.
+- Yo gotta talk
+
+
+
 
 ## intent:user_no_talk
 - I don't wanna talk
@@ -50,3 +68,7 @@
 - I don't get it
 - What are you talking about?
 - What does that mean?
+- The fuck do you mean?
+- Wtf do you mean?
+- What on earth do you expect me to say? I have NO IDEA what to say to that.
+- I highly doubt that I'm in the right space of mind to really understand what I'm feeling right now.

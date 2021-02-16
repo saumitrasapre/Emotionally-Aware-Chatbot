@@ -10,6 +10,14 @@
 - Howdy
 - Hello
 - Hi
+- Hola
+- Hey, what's up?
+- Yo wassup
+- Hey, Whoabot, what's up?
+- Annyeong!
+- Sup
+- Yo
+
 
 ## intent:goodbye
 - bye
@@ -103,6 +111,10 @@
 - okay have a good night
 - night!
 - have a good night
+- Goodnight, mate!
+- Night, my friend!
+- GNight!
+
 
 ## intent:provide_hobby
 - I like to [dance](Hobby)
@@ -184,10 +196,7 @@
 - [Atlatl](Hobby)
 - [Australian football](Hobby)
 - [Australian handball](Hobby)
-- [Australian rules football](Hobby)
-- [Austus](Hobby)
 - [Auto Race](Hobby)
-- [Auto audiophilia](Hobby)
 - [Auto racing](Hobby)
 - [Autocross](Hobby)
 - [Autograss](Hobby)
@@ -238,7 +247,6 @@
 - [Beadwork](Hobby)
 - [Beagling](Hobby)
 - [Beatboxing](Hobby)
-- [Becoming A Child Advocate](Hobby)
 - [Beekeeping](Hobby)
 - [Beer Pong](Hobby)
 - [Bell Ringing](Hobby)
@@ -1587,6 +1595,7 @@
 - Play tictactoe
 - Let's play some tictactoe
 - I want to play some tictactoe
+- It's tic tac toe time!
 
 ## intent:provide_name
 - My name is Saumitra
