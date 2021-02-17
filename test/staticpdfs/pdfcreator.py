@@ -45,7 +45,6 @@ def get_pdf(story,number):
     print(storage.child(path_on_cloud).get_url(path_on_cloud))
     return storage.child(path_on_cloud).get_url(path_on_cloud)
 
-if __name__ == "__main__":
-    upload_pdf()
-    # get_pdf("Insomnia","1")
+# if __name__ == "__main__":
+#     get_pdf("Anxiety","anxiety1-1")
 

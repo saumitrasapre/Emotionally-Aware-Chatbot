@@ -14,14 +14,21 @@ class ActionSetSlot(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         curr_intent = tracker.latest_message['intent'].get('name')
-        pdf_slot = None
-        gif_slot = None
-        if curr_intent == "user_nightmares" or curr_intent == "ask_bot_scared":
+        pdf_slot = tracker.get_slot("Pdf")
+        gif_slot = tracker.get_slot("Gif")
+        if curr_intent == "user_insomnia":
+            pdf_slot = "Insomnia_pdf_pending"
+            gif_slot = "scared"
+        elif curr_intent == "user_nightmares" or curr_intent == "ask_bot_scared":
             pdf_slot = "Insomnia 2"
             gif_slot = "scared"
         elif curr_intent == "user_tensed":
-            pdf_slot = "Insomnia 1"
-            gif_slot = "night"  # "@seizetheawkward mental health"
+            if pdf_slot == "Insomnia_pdf_pending":
+                pdf_slot = "Insomnia 1"
+                gif_slot = "night"  # "@seizetheawkward mental health"
+            else:
+                gif_slot = "@seizetheawkward mental health"
+                pdf_slot = "Anxiety anxiety1-1"
         elif curr_intent == "user_irregular_lifestyle":
             pdf_slot = "Insomnia 3"
             gif_slot = "night"  # "@seizetheawkward mental health"

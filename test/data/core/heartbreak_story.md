@@ -54,7 +54,7 @@
 * affirm
   - utter_heartbreak_vent_mild_better
   - action_cure_boredom
-  - utter_heartbreak_conclusion
+  - utter_session_conclusion
   - slot {"Pdf":"Heartbreak heartbreak"}
   - utter_pdf_msg
   - action_get_pdf
@@ -74,7 +74,7 @@
 * affirm
   - utter_heartbreak_vent_mild_not_better_2
   - action_play_music
-  - utter_heartbreak_conclusion
+  - utter_session_conclusion
   - slot{"Pdf":"Heartbreak heartbreak"}
   - utter_pdf_msg
   - action_get_pdf  
@@ -83,7 +83,7 @@
 > check_vent_user_walk
 * deny
   - utter_happy_pipeline_deny
-  - utter_heartbreak_conclusion
+  - utter_session_conclusion
   - slot{"Pdf":"Heartbreak heartbreak"}
   - utter_pdf_msg
   - action_get_pdf  
@@ -121,7 +121,7 @@
 * provide_hobby
   - utter_heartbreak_vent_moderate_4
   - utter_heartbreak_vent_moderate_5
-  - utter_heartbreak_conclusion
+  - utter_session_conclusion
   - slot{"Pdf":"Heartbreak heartbreak"}
   - utter_pdf_msg
   - action_get_pdf  

@@ -2,6 +2,7 @@
 * user_insomnia
     - utter_insomnia_pipeline_start_1
     - action_set_sentiment
+    - action_set_slot  
     - utter_insomnia_pipeline_start_2
 > check_user_choice_insomnia
 

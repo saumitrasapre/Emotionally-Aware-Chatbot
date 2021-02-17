@@ -1,6 +1,5 @@
 from pymongo import MongoClient, errors
 
-
 # myclient = MongoClient('localhost', 27017)
 # print(myclient.list_database_names())
 #
@@ -14,12 +13,17 @@ from pymongo import MongoClient, errors
 #     print(x)
 
 
+# myclient = MongoClient('localhost', 27017)
+# mydb = myclient["rasa"]
+# mycollection = mydb["users"]
+
+myclient = MongoClient("mongodb+srv://test:test@whoabotcluster.lv9q9.mongodb.net/<dbname>?retryWrites=true&w=majority")
+mydb = myclient.get_database('rasa')
+mycollection = mydb.users
+
 def mongodataupdate(per_id, fname, lname):
     # name = name.lower()
     if per_id != 'none':
-        myclient = MongoClient('localhost', 27017)
-        mydb = myclient["rasa"]
-        mycollection = mydb["users"]
         person_list = {"_id": per_id, "First_Name": fname, "Last_Name": lname}
         try:
             mycollection.insert_one(person_list)
@@ -32,9 +36,6 @@ def mongodataupdate(per_id, fname, lname):
 
 
 def mongodataverify(per_id):
-    myclient = MongoClient('localhost', 27017)
-    mydb = myclient["rasa"]
-    mycollection = mydb["users"]
     count = mycollection.count_documents({"_id": per_id})
     return count
 
@@ -44,9 +45,6 @@ def mongohobbyupdate(per_id, hobby1, hobby2, hobby3):
     hobby2 = hobby2.lower()
     hobby3 = hobby3.lower()
     if hobby1 != 'none' or hobby2 != 'none' or hobby3 != 'none':
-        myclient = MongoClient('localhost', 27017)
-        mydb = myclient["rasa"]
-        mycollection = mydb["users"]
         query = {"_id": per_id}
         values = {"$set": {"hobby1": hobby1, "hobby2": hobby2, "hobby3": hobby3}}
         try:
@@ -60,9 +58,6 @@ def mongohobbyupdate(per_id, hobby1, hobby2, hobby3):
 
 def mongohobbyretrieve(per_id):
     if per_id != 'none':
-        myclient = MongoClient('localhost', 27017)
-        mydb = myclient["rasa"]
-        mycollection = mydb["users"]
         hobby1 = None
         hobby2 = None
         hobby3 = None
@@ -80,5 +75,6 @@ def mongohobbyretrieve(per_id):
             return
         return hobby1, hobby2, hobby3
 
-    # if __name__ == "__main__":
-    #     print(mongodataverify("1165084016"))
+
+# if __name__ == "__main__":
+#     print(mongodataverify("1"))

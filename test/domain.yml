@@ -113,7 +113,6 @@ responses:
   - text: Fabulous!
   - text: Cool!
 
-
   utter_happy_pipeline_start_1:
   - text: That’s awesome! I’m happy too, just because you are!
 
@@ -387,13 +386,13 @@ responses:
 
   utter_insomnia_nightmares_tool_1.2:
   - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
-Setting time aside to work through your worries can prevent them from keeping you up."
+  Setting time aside to work through your worries can prevent them from keeping you up."
     buttons:
       - title: I See...
         payload: /affirm
   - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
-Tackle them by challenging them, or problem solving the situation\n\n
-Setting time aside to work through your worries can prevent them from keeping you up."
+  Tackle them by challenging them, or problem solving the situation\n\n
+  Setting time aside to work through your worries can prevent them from keeping you up."
     buttons:
       - title: I See...
         payload: /affirm
@@ -744,8 +743,9 @@ Setting time aside to work through your worries can prevent them from keeping yo
       - title: I'd rather not talk 🤐
         payload: /user_no_talk
 
-  utter_heartbreak_conclusion:
-  - text: Well, I hope this session helped you feel a tad bit better than you felt earlier.
+  utter_session_conclusion:
+  - text: Well, I hope this session helped you feel a tad bit better than you felt earlier. 🙈
+  - text: I hope you are feeling slightly better and found my advice useful. 🙈
 
   utter_anxiety_pipeline:
   - text: "Heyyy. I’m sure things are going rather tough. 😟 But don’t worry. Let’s figure this out.\n\n
@@ -778,20 +778,49 @@ Setting time aside to work through your worries can prevent them from keeping yo
   - text: Ah I see. So has this been happening recurrently?
 
   utter_anxiety_affirm_worried_affirm_affect_3:
-  - text: "Either ways, recurrent or not, a performance drop isn’t ideal or good for health. It could lead to a downhill ride in a lot of areas of life.\n\n
-   So do you agree that there needs to be a change in the way it’s been affecting you, don’t you?"
+  - text: "Either ways, recurrent or not, a performance drop isn’t ideal. Nor is it good for health. It could lead to a downhill slide in a lot of areas of life.\n\n
+   You do agree that there needs to be a change in the way the anxiety's been affecting you, don’t you?"
 
   utter_anxiety_affirm_worried_affirm_affect_4:
-  - text: Okay, it might sound like a daunting task but it doesn’t have to be, you see. Start small. Here are some ideas you could try
+  - text: Okay, it might sound like a daunting task but it doesn’t have to be, you see. Start small. Here's some ideas you could try
 
+  utter_anxiety_affirm_worried_affect_tool_1:
+  - text: Try making some small lifestyle changes -- Teeny tiny ones.
+    buttons:
+      - title: Like what? 🤔
+        payload: /user_confused
+
+  utter_anxiety_affirm_worried_affect_tool_1.1:
+  - text: "For example, you could try tackling most of the difficult tasks early in the morning.\n\n
+  One is generally fresh after a good night’s sleep, and feels ready to deal wth the challenges.\n\n
+  Not only that, it also leaves one with a sense of satisfaction of having completed a task, don't you think?"
+
+  utter_anxiety_affirm_worried_affect_tool_2:
+  - text: "That brings me to tip no. 2...\n\nLearn to face up to the smaller tasks that you end up procrastinating.\n\nYou usually tend to temporize because there are other things that're making you anxious."
+    buttons:
+      - title: I see... 😶
+        payload: /affirm
+
+  utter_anxiety_affirm_worried_affect_tool_2.1:
+  - text: "For instance, if you're finding it hard to concentrate on your studies because you're anxious about that discussion you need to have with a loved one, make sure you muster up courage, and have the discussion once and for all.\n\n
+  Doing so will relieve you from your worries for a small amount of time, and will of course, be helpful in the long run. Whaddya think?"
+
+  utter_anxiety_affirm_worried_affect_tool_3:
+  - text: "Finally...Find your 'Me Time'...\n\nIts a small time slot reserved just for you. Here, you can think, reflect and organize thoughts in your head."
+    buttons:
+      - title: Okay... 🤔
+        payload: /affirm
+
+  utter_anxiety_affirm_worried_affect_tool_3.1:
+  - text: "This 'Me Time' is very important, friend! 😅 \n\n
+  Ignoring these introspection sessions might sound like a good thing in the beginning, but will have adverse consequences in the long run.\n\n
+  Do you promise you'll never forget to have your own me time?"
+
+  utter_anxiety_affirm_worried_affect_tool_3.2:
+  - text: It's a pinky swear then! 🤞
 
   utter_anxiety_affirm_worried_deny_affect:
   - text: Ah, I see. Well, that’s good But hey, there’s still work to do, don’t you think?
-
-
-
-
-
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
@@ -816,16 +845,11 @@ Setting time aside to work through your worries can prevent them from keeping yo
   - text: Last one, I promise! Type in another one of your interests!
   - text: Third time's the charm! Gimme another one!
   utter_iamabot:
-  - text: I'm Whoabot, your friendly personal chat buddy! I'm here to help you supercharge
-      your awful mood!
-  - text: Humans call me Whoabot, here to cheer you up! I was developed by humans
-      such as yourself and designed to make your day ever-so brighter!
-  - text: Beep-Boop... I'm whoabot! Your bot-buddy, ever ready to chat your problems
-      away!
-  - text: The name's 'bot'... Whoa-bot! I eliminate the pineapple of sadness from
-      the pizza of life!
-  - text: You can call me Whoabot! Think of me as your chat buddy with whom you can
-      speak your mind away!
+  - text: I'm Whoabot, your friendly personal chat buddy! I'm here to help you supercharge your awful mood!
+  - text: Humans call me Whoabot, here to cheer you up! I was developed by humans such as yourself and designed to make your day ever-so brighter!
+  - text: Beep-Boop... I'm whoabot! Your bot-buddy, ever ready to chat your problems away!
+  - text: The name's 'bot'... Whoa-bot! I eliminate the pineapple of sadness from the pizza of life!
+  - text: You can call me Whoabot! Think of me as your chat buddy with whom you can speak your mind away!
 
   utter_smile:
   - text: 😊

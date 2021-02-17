@@ -1,6 +1,7 @@
 ## anxiety path
 * user_tensed
     - utter_anxiety_pipeline
+    - action_set_slot  
     - action_set_sentiment
 > check_user_uneasy
 
@@ -32,8 +33,60 @@
     - user_thought_input
     - form{"name":"user_thought_input"}
     - form{"name":null}
-     
+    - utter_anxiety_affirm_worried_affirm_affect_3 
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_anxiety_affirm_worried_affirm_affect_4
+    - utter_anxiety_affirm_worried_affect_tool_1
+> check_user_anxiety_tool_confused
 
+## anxiety user affected by anxiety confused
+> check_user_anxiety_tool_confused
+* user_confused
+  - utter_anxiety_affirm_worried_affect_tool_1.1
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_anxiety_affirm_worried_affect_tool_2
+* affirm
+  - utter_anxiety_affirm_worried_affect_tool_2.1  
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}  
+  - utter_anxiety_affirm_worried_affect_tool_3
+* affirm
+  - utter_anxiety_affirm_worried_affect_tool_3.1
+> check_user_anxiety_promise
+
+## anxiety user affected by anxiety not confused
+> check_user_anxiety_tool_confused
+* affirm
+  - utter_anxiety_affirm_worried_affect_tool_2
+* affirm
+  - utter_anxiety_affirm_worried_affect_tool_2.1
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}  
+  - utter_anxiety_affirm_worried_affect_tool_3
+* affirm
+  - utter_anxiety_affirm_worried_affect_tool_3.1
+> check_user_anxiety_promise
+
+## anxiety user affected by anxiety affirm promise
+> check_user_anxiety_promise
+* affirm
+  - utter_anxiety_affirm_worried_affect_tool_3.2
+  - utter_session_conclusion
+  - slot {"Pdf":"Anxiety anxiety1-1"}
+  - utter_pdf_msg
+  - action_get_pdf
+  
+## anxiety user deny path
+> check_user_anxiety_promise
+* deny
+  - utter_probe 
+> check_user_anxiety_promise
 
 ## anxiety user not affected by anxiety
 > check_user_anxiety_affect
