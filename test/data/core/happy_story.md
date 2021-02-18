@@ -29,18 +29,18 @@
   
 ## mad_libs
 * play_mad_libs
-    - utter_happy
-    - action_pre_madlibs
-    - form{"name":null}
+  - utter_happy
+  - action_pre_madlibs
+  - form{"name":null}
 
 ## tic_tac_toe
 * play_tic_tac_toe
-    - action_play_tictactoe
-    - form{"name":null}
+  - action_play_tictactoe
+  - form{"name":null}
 
 ## bedtime_story
 * user_request_story
-    - action_get_stories
+  - action_get_stories
  
 ## user chooses music free will
 * user_request_music

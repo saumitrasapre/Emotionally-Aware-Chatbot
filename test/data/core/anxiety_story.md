@@ -84,12 +84,49 @@
   
 ## anxiety user deny path
 > check_user_anxiety_promise
+> check_user_anxiety_accept_or_deny_tools
 * deny
   - utter_probe 
 > check_user_anxiety_promise
+> check_user_anxiety_accept_or_deny_tools
 
 ## anxiety user not affected by anxiety
 > check_user_anxiety_affect
 * deny
-    - utter_anxiety_affirm_worried_deny_affect
+  - utter_anxiety_affirm_worried_deny_affect_1
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_anxiety_affirm_worried_deny_affect_2
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_anxiety_affirm_worried_deny_affect_3
+> check_user_anxiety_accept_or_deny_tools  
 
+
+## anxiety user not affected by anxiety show tools, check podcast code
+> check_user_anxiety_accept_or_deny_tools
+* affirm
+  - utter_anxiety_affirm_worried_deny_affect_tool_1
+* user_confused OR affirm
+  - utter_anxiety_affirm_worried_deny_affect_tool_1.1
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_anxiety_affirm_worried_deny_affect_tool_1.2
+* deny OR affirm
+  - utter_anxiety_affirm_worried_deny_affect_tool_2
+* user_confused OR affirm
+  - utter_heartbreak_vent_moderate_5
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null}
+  - utter_anxiety_affirm_worried_deny_affect_tool_3
+  - user_thought_input
+  - form{"name":"user_thought_input"}
+  - form{"name":null} 
+  - utter_session_conclusion
+  - slot {"Pdf":"Anxiety anxiety1-1"}
+  - utter_pdf_msg
+  - action_get_pdf

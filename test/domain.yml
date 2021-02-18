@@ -162,8 +162,7 @@ responses:
 
   utter_happy_pipeline_music:
   - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into pure bliss. Wanna join me in the journey?
-  - text: Yes! You're absolutely right! Suit up for the best musical journey of your lifetime( for a while, just kidding, bear with me😁😉)
-    -
+  - text: Yes! You're absolutely right! Suit up for the best musical journey of your lifetime (for a while, just kidding, bear with me 😁😉)
 
   utter_happy_pipeline_music_affirm:
   - text: Okay, your super cool playlist is on it's way! Let's have a look, shall we?
@@ -263,7 +262,7 @@ responses:
   - text: "I understand.\n\n
    It’s a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
    But one can’t possibly let their own health take a back seat among these, right?\n\n
-      How 'bout we try some small techniques to help you deal with this?"
+   How 'bout we try some small techniques to help you deal with this?"
   - text: "I understand.\n\n
   It’s a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
   But one can’t possibly let their own health take a back seat among these, right?\n\n
@@ -326,7 +325,7 @@ responses:
 
   utter_insomnia_anxiety_tool_3:
   - text: "Finally, we have tip #3\n\n
-     Create a buffer zone"
+  Create a buffer zone"
     buttons:
       - title: What's That?
         payload: /affirm
@@ -836,14 +835,55 @@ responses:
   utter_anxiety_affirm_worried_affect_tool_3.2:
   - text: It's a pinky swear then! 🤞
 
-  utter_anxiety_affirm_worried_deny_affect:
-  - text: Ah, I see. Well, that’s good But hey, there’s still work to do, don’t you think?
+  utter_anxiety_affirm_worried_deny_affect_1:
+  - text: Ah, I see. Well, that’s good... But hey, there’s still work to do, don’t you think?
+
+  utter_anxiety_affirm_worried_deny_affect_2:
+  - text: "Even though you might not see any obvious impact on your personal/professional life, anxiety is something that eats away at the back of your head.\n\n
+   I suppose you're not in the best of moods right now, are ya? 🙈"
+  - text: "Even though you might not see any obvious impact on your personal/professional life, anxiety is something that eats away at the back of your head.\n\n
+   I suppose it doesn’t leave you feeling fantastic now, does it? 🙈"
+
+  utter_anxiety_affirm_worried_deny_affect_3:
+  - text: "Having something that's constantly bothering your mind isn’t very healthy.\n\n
+   You become worried, tensed and continuously uneasy. This can later aggravate into something really awful...\n\n
+   So how ‘bout we try some stuff to deal with it?"
+
+  utter_anxiety_affirm_worried_deny_affect_tool_1:
+  - text: "Make time for a chill-peace-of-mind session."
+    buttons:
+      - title: What? 🤔
+        payload: /user_confused
+
+  utter_anxiety_affirm_worried_deny_affect_tool_1.1:
+  - text: "You know... Listen to some tunes or some easy-going podcast where you can immerse yourself...\n\n
+   It'll help you get a slight reprieve from the constant worry plaguing your mind."
+
+  utter_anxiety_affirm_worried_deny_affect_tool_1.2:
+  - text: "In fact, I might have some awesome suggests...😎"
+    buttons:
+      - title: Tunes 🎵
+        payload: /user_request_music
+      - title: Podcasts 🎙
+        payload: /user_request_story
+
+  utter_anxiety_affirm_worried_deny_affect_tool_2:
+  - text: "Moving on...\n\n
+  Pick up a hobby which requires immense concentration. This way you'll find little ways to feel better during the day"
+    buttons:
+      - title: Like? 🤔
+        payload: /user_confused
+
+  utter_anxiety_affirm_worried_deny_affect_tool_3:
+  - text: "Finally...Document your worries precisely, as they are. 📖\n\n
+   Also try to come up with some solutions. Look at their pros and cons. Study them and try to weigh them more objectively.\n\n
+   Whaddya think?"
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: I've got you covered! Take this handy reference guide
-  - text: Don't worry, my friend. I hope there was something about today that made you feel better. Here's a summary in case you want to refer again.
+  - text: Don't worry, my friend. I hope there was something about today that made you feel better. Here's a guide for reference.
 
   utter_good_night:
   - text: Sweet dreams, and talk to you soon! 💤
@@ -855,8 +895,8 @@ responses:
   utter_ask_Hobby1:
   - text: Let's get to know you a little better... Tell me one of your hobbies
   - text: Awesome! I'd like to know more about you... Type in one of your hobbies
-  - text: So, let's get to know you better. First off, what do like to do in your free time? Tell me one of your hobbies. Fire away!
-  -
+  - text: So, let's get to know you better. First off, what do like to do in your free time? Tell me one of your hobbies.
+
   utter_ask_Hobby2:
   - text: That's so cool! Tell me one more!
   - text: Amazing! One more hobby!
@@ -898,7 +938,7 @@ responses:
   utter_sorry:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
-  - text: Damn I'm sorry to hear that
+  - text: Damn... I'm sorry to hear that
 
 actions:
 - action_play_tictactoe
