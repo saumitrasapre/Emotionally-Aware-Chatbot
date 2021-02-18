@@ -89,6 +89,8 @@ responses:
   - text: That was me... How 'bout you? What's your name?
   - text: What do other humans know you by?
   - text: What shall I call you, dearest human?
+  - text: Hey, what's your name?
+  - text: So, dear human, what do I call you?
   utter_custom:
   - text: I'm sorry, but I didnt get that... I'm learning, you see. Could you try again?
   - text: I'm sorry, but I couldn't understand what you're trying to say...
@@ -99,12 +101,18 @@ responses:
   - text: G'day and bye!
   - text: Ciao!
   - text: Cheers and bye!
+  - text: Have a good day!
+  - text: Bye!😊
   utter_greet:
   - text: How are you?
   - text: How's it hanging?
   - text: What's up, buddy?
   - text: Whaddup?
   - text: How ya doin'?
+  - text: Hey, how are you?
+  - text: Hey, what's up? Whatcha upto?
+  - text: How are you doing?
+  - text: Hey, how you doin 😉?
   utter_happy:
   - text: Great!
   - text: Awesome!
@@ -115,6 +123,8 @@ responses:
 
   utter_happy_pipeline_start_1:
   - text: That’s awesome! I’m happy too, just because you are!
+  - text: Hey that's great to know! Guess what, I'm happy too!
+  - text: That's good to know!
 
   utter_happy_pipeline_start_2:
   - custom:
@@ -151,16 +161,23 @@ responses:
         payload: /play_mad_libs
 
   utter_happy_pipeline_music:
-  - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into oblivion. Wanna join me in the journey?
+  - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into pure bliss. Wanna join me in the journey?
+  - text: Yes! You're absolutely right! Suit up for the best musical journey of your lifetime( for a while, just kidding, bear with me😁😉)
+    -
 
   utter_happy_pipeline_music_affirm:
+  - text: Okay, your super cool playlist is on it's way! Let's have a look, shall we?
+  - text: Okay, your own fantastic playlist is on it's way. I'm excited to know how you like it!
   - text: Alright, fasten your seatbelt, I’m cooking up an awesome mix now!
   - text: Alright, brace yourself, I’m cooking up an awesome mix now!
 
   utter_happy_pipeline_deny:
   - text: Sure! No problem! Enjoy yourself, and remember that you’re loved!
-  - text: No worries! Have a good one!
-  - text: Gotcha! Have a good day!
+  - text: No worries! Have a good one!(☞ﾟヮﾟ)☞
+  - text: Gotcha! Have a good day!😊
+  - text: Great! Have a fantastic day! And don't forget, you are loved
+  - text: Good! That's great. Have fun╰(*°▽°*)╯
+  - text: Awesome, hope you're day continues to be great!😁 Don't forget, you are loved.
 
 
   utter_insomnia_pipeline_start_1:
@@ -609,7 +626,7 @@ responses:
   - text: I love folding paper to make origami ducks! 🐥
 
   utter_heartbreak_vent_moderate_not_better_1:
-  - text: Is this missing piece something you’ve secretly held on for a long time?
+  - text: Is this missing piece something you’ve secretly held on to for a long time?
 
   utter_heartbreak_vent_moderate_not_better_2:
   - text: "Either way, things that we keep to ourselves often find a way out and consequently affect relationships negatively.\n\n
@@ -826,6 +843,7 @@ responses:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: I've got you covered! Take this handy reference guide
+  - text: Don't worry, my friend. I hope there was something about today that made you feel better. Here's a summary in case you want to refer again.
 
   utter_good_night:
   - text: Sweet dreams, and talk to you soon! 💤
@@ -837,6 +855,8 @@ responses:
   utter_ask_Hobby1:
   - text: Let's get to know you a little better... Tell me one of your hobbies
   - text: Awesome! I'd like to know more about you... Type in one of your hobbies
+  - text: So, let's get to know you better. First off, what do like to do in your free time? Tell me one of your hobbies. Fire away!
+  -
   utter_ask_Hobby2:
   - text: That's so cool! Tell me one more!
   - text: Amazing! One more hobby!
@@ -859,17 +879,26 @@ responses:
   - text: 😁
   - text: 😉
   - text: 😇
+  - text: :)
+  - text: (❁´◡`❁)
+  - text: :-D
+  - text: :-)
+  - text: :-D
+  - text: :D
 
   utter_probe:
-  - text: Oh c'mon! You can open up to me!
+  - text: Hey, You can open up to me!
   - text: C'mon buddy! Help me help you... We can both overcome this
   - text: This is a safe space, buddy... I'm here to help!
   - text: Don't be afraid... I'm always here to lend an ear. Help me help you.
   - text: This is a safe space, buddy... Talking is what I do best. Help me help you.
+  - text: Hey, it's okay. You can tell me. I 'm always here to help.
+  - text: Don't worry it's okay, its a safe space. I'm only here to help. Take your time.
 
   utter_sorry:
   - text: I'm sorry to hear that...
   - text: I'm so sorry to hear that...
+  - text: Damn I'm sorry to hear that
 
 actions:
 - action_play_tictactoe
