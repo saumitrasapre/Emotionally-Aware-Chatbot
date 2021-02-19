@@ -105,7 +105,7 @@
 > check_user_anxiety_accept_or_deny_tools  
 
 
-## anxiety user not affected by anxiety show tools, check podcast code
+## anxiety user not affected by anxiety show tools
 > check_user_anxiety_accept_or_deny_tools
 * affirm
   - utter_anxiety_affirm_worried_deny_affect_tool_1
@@ -115,8 +115,30 @@
   - form{"name":"user_thought_input"}
   - form{"name":null}
   - utter_anxiety_affirm_worried_deny_affect_tool_1.2
+> check_user_anxiety_music_podcast_or_deny
+
+## anxiety user not affected by anxiety choose music
+> check_user_anxiety_music_podcast_or_deny
+* user_request_music
+  - action_play_music
+  - utter_anxiety_affirm_worried_deny_affect_tool_2
+> check_user_anxiety_continue_tools
+
+## anxiety user not affected by anxiety choose podcast
+> check_user_anxiety_music_podcast_or_deny
+* user_request_story
+  - action_get_stories
+  - utter_anxiety_affirm_worried_deny_affect_tool_2
+> check_user_anxiety_continue_tools
+
+## anxiety user not affected by anxiety deny music or podcast
+> check_user_anxiety_music_podcast_or_deny
 * deny OR affirm
   - utter_anxiety_affirm_worried_deny_affect_tool_2
+> check_user_anxiety_continue_tools
+
+## anxiety user not affected by anxiety continue tools
+> check_user_anxiety_continue_tools
 * user_confused OR affirm
   - utter_heartbreak_vent_moderate_5
   - user_thought_input
