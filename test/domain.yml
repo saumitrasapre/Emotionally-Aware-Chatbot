@@ -879,6 +879,84 @@ responses:
    Also try to come up with some solutions. Look at their pros and cons. Study them and try to weigh them more objectively.\n\n
    Whaddya think?"
 
+  utter_anxiety_deny_worried_1:
+  - text: "Ah, I see...\n\n
+   Well, anxiety is normally experienced when you have something recurring on your mind and you can't seem to find a way out for it.\n\n
+   So tell me, what's bothering you?"
+
+  utter_anxiety_deny_worried_2:
+  - text: "That’s a tough one, my friend.\n\n
+   But here’s the thing. Anxiety is often caused by people not being able to find a satisfying answer to whatever problem they're facing.\n\n
+   So what do you think should be our step 1?"
+
+  utter_anxiety_deny_worried_3:
+  - text: I might have a better idea... Wanna know what it is?
+  - text: Hey hey I have an idea... Care to listen?
+  - text: I have an awesome idea of what we could do... Wanna hear me out?
+
+  utter_anxiety_deny_worried_4:
+  - text: "Okay so here’s the thing.\n\n
+   Often, each complex problem has its origins in something direct and straightforward.\n\n
+   In our attempts to get over or minimize it, we end up building more and more problems till it gets to the point when it gets out of hand."
+
+  utter_anxiety_deny_worried_5:
+  - text: Lemme tell you a story... What say?
+  - text: Wanna hear a story?
+  - text: I'd like to tell you a story... Care to listen?
+
+  utter_anxiety_deny_worried_story_1:
+  - custom:
+      text: "I had this friend - Oliver the beaver.\n\n
+      He'd go to work using the subway, spend many hours at work, and was generally bad-tempered and snappy.\n\n
+      Then tired, he'd return home, concluding his bad day with a weary sigh."
+      animation: "https://media.giphy.com/media/3ohjV6Jeb4i1e4gUg0/giphy.gif"
+
+  utter_anxiety_deny_worried_story_2:
+  - custom:
+      text: He'd always complain that his work was terrible, his colleagues were awful, his boss was dreadful and so on...
+      animation: "https://media.giphy.com/media/26FfiXdmlJAQ5lu7K/giphy.gif"
+  - custom:
+        text: He'd always complain that his work was terrible, his colleagues were awful, his boss was dreadful and so on...
+        animation: "https://media.giphy.com/media/xUNd9CdWxABjtbvlKM/giphy.gif"
+  - custom:
+      text: He'd always complain that his work was terrible, his colleagues were awful, his boss was dreadful and so on...
+      animation: "https://media.giphy.com/media/3ohjULdn0ZecLiZIoE/giphy.gif"
+
+  utter_anxiety_deny_worried_story_3:
+  - custom:
+      text: "One day, a colleague dropped him off to work. Guess what? He felt less nervous and finicky!"
+      animation: "https://i.gifer.com/98bm.gif"
+
+  utter_anxiety_deny_worried_story_4:
+  - custom:
+      text: "Turns out, Oliver was super scared of the metro!\n\n
+       Travelling in it made him super nervous and worried. Thus, the bad overall experience of going to work..."
+      animation: "https://media.giphy.com/media/3ohjV5HdFD9XAazPZC/giphy.gif"
+  - custom:
+      text: "Turns out, Oliver was super scared of the metro!\n\n
+       Travelling in it made him super nervous and worried. Thus, the bad overall experience of going to work..."
+      animation: "https://media.giphy.com/media/l1JojHajIYBUGKXQc/giphy.gif"
+
+  utter_anxiety_deny_worried_after_story_1:
+  - text: "Essentially, what I’m trying to say is that it’s important to find the root of the problem.\n\n
+   Don’t you agree? So take a moment and think what is it that’s REALLY bothering you.\n\n
+   Gimme a 👍 when you're done!"
+
+  utter_anxiety_deny_worried_after_story_2:
+    - text: So now that you’ve thought about it, tell me what is it that's been the cause of your worry
+
+  utter_anxiety_deny_worried_after_story_3:
+    - text: I see... Well, facing up to it, that’s the next step. Whaddya say?
+
+  utter_anxiety_deny_worried_after_story_4:
+    - text: "It doesn’t have to be a drastic action. Take it one bit at a time.\n\n
+     Break it down into smaller, achievable tasks. Using a to-do list usually helps..."
+      buttons:
+        - title: Example? 😕
+          payload: /user_confused
+
+
+
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.

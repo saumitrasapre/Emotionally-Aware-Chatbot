@@ -2,6 +2,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
+import random
 
 
 class ActionSetSlot(Action):
@@ -27,8 +28,10 @@ class ActionSetSlot(Action):
                 pdf_slot = "Insomnia 1"
                 gif_slot = "night"  # "@seizetheawkward mental health"
             else:
+                pdf_list = ["anxiety1-1", "anxiety1-2", "anxiety1-3"]
+                randnum = random.randint(0,len(pdf_list)-1)
                 gif_slot = "@seizetheawkward mental health"
-                pdf_slot = "Anxiety anxiety1-1"
+                pdf_slot = "Anxiety {}".format(pdf_list[randnum])
         elif curr_intent == "user_irregular_lifestyle":
             pdf_slot = "Insomnia 3"
             gif_slot = "night"  # "@seizetheawkward mental health"
