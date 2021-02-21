@@ -140,6 +140,8 @@ responses:
 
   utter_happy_pipeline_games:
   - text: Yeah, I really want to... But I only have moe -- my pet cat as a companion, and he’s too lazy to even get up and wash himself. I have some ideas for something we could play. Do you wanna join me?
+  - text: Yup, I want to. Hey, how about WE play something? A small game, just for fun?
+  - text: Hey, I have an idea... How 'bout we play a little game?
 
   utter_happy_pipeline_games_1:
   - text: Fantastic ! Did you know that playing any kind of game helps to keep your mood uplifted for long, and also increases brain activity?
@@ -150,7 +152,7 @@ responses:
         payload: /affirm
 
   utter_happy_pipeline_games_2:
-  - text: I know right! I have some cool things that we could do together, whaddya say, shall we get our game face on?
+  - text: I know right! I have some cool things that we could do together. What do you say, shall we get our game faces on?
 
   utter_happy_pipeline_games_ask_games:
   - text: What do you want to play?
@@ -227,6 +229,9 @@ responses:
   In simple words, anxiety is the uneasiness of mind caused by a fear of danger or misfortune.\n\n
   It could be the distress caused by very simple things.\n\n
   For example:"
+  - text: Anxiety is basically distress or uneasiness of mind caused by a fear of danger or misfortune. It sometimes may be caused by the smallest of things, for instance,
+
+
 
   utter_insomnia_anxiety_explanation_example:
   - text: I always get anxious when it's about to rain heavily, as I’m worried the strong downpour may destroy my petunias.
@@ -234,6 +239,8 @@ responses:
   - text: I’ve seen that humans get very anxious before a job interview
   - text: I’ve seen that humans get very anxious before a test
   - text: I’m scared of heights, and therefore climbing a tall tree terrifies me
+  - text: I'm usually quite jittery and anxious before confronting someone I'm scared of.
+
 
   utter_insomnia_after_anxiety_explanation:
   - text: "Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
@@ -891,8 +898,10 @@ responses:
 
   utter_anxiety_deny_worried_3:
   - text: I might have a better idea... Wanna know what it is?
-  - text: Hey hey I have an idea... Care to listen?
+  - text: Hey hey I have an idea... Want to check it out?
   - text: I have an awesome idea of what we could do... Wanna hear me out?
+  - text: Hey, I just have the best idea ever, wanna give it a whirl?
+  - text: Guess what I just thought of something. Hear me out.
 
   utter_anxiety_deny_worried_4:
   - text: "Okay so here’s the thing.\n\n
@@ -902,7 +911,7 @@ responses:
   utter_anxiety_deny_worried_5:
   - text: Lemme tell you a story... What say?
   - text: Wanna hear a story?
-  - text: I'd like to tell you a story... Care to listen?
+  - text: I'd like to tell you a story... Cool?
 
   utter_anxiety_deny_worried_story_1:
   - custom:
@@ -946,7 +955,7 @@ responses:
     - text: So now that you’ve thought about it, tell me what is it that's been the cause of your worry
 
   utter_anxiety_deny_worried_after_story_3:
-    - text: I see... Well, facing up to it, that’s the next step. Whaddya say?
+    - text: I see... Well, facing up to it, that’s the next step. Wouldn't you agree?
 
   utter_anxiety_deny_worried_after_story_4:
     - text: "It doesn’t have to be a drastic action. Take it one bit at a time.\n\n
