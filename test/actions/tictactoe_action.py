@@ -2,7 +2,7 @@ from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
-from rasa_sdk.events import SlotSet,FollowupAction
+from rasa_sdk.events import SlotSet, FollowupAction
 from misc_utils.tictactoe import *
 
 # Global Variables for TicTacToe

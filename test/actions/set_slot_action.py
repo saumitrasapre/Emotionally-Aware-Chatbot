@@ -28,7 +28,7 @@ class ActionSetSlot(Action):
                 pdf_slot = "Insomnia 1"
                 gif_slot = "night"  # "@seizetheawkward mental health"
             else:
-                pdf_list = ["anxiety1-1", "anxiety1-2", "anxiety1-3"]
+                pdf_list = ["anxiety1-1", "anxiety1-2", "anxiety2"]
                 randnum = random.randint(0,len(pdf_list)-1)
                 gif_slot = "@seizetheawkward mental health"
                 pdf_slot = "Anxiety {}".format(pdf_list[randnum])

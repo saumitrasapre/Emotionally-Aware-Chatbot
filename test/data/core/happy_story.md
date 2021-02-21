@@ -32,6 +32,14 @@
   - utter_happy
   - action_pre_madlibs
   - form{"name":null}
+  
+## hangman
+* play_hangman
+  - utter_happy
+  - action_play_Hangman
+  - hangman_input
+  - form{"name":"hangman_input"}  
+  - form{"name":null}
 
 ## tic_tac_toe
 * play_tic_tac_toe

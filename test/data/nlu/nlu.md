@@ -1549,6 +1549,12 @@
 - I want to play some tictactoe
 - It's tic tac toe time!
 
+## intent:play_hangman
+- Play hangman
+- Let's play some hangman
+- I want to play some hangman
+- It's hangman time!
+
 ## intent:provide_name
 - My name is Saumitra
 - My name's Ved

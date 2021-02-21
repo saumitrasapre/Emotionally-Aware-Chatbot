@@ -1,5 +1,5 @@
 import random
-from hangman_words import word_list
+from misc_utils.hangman_words import word_list
 
 
 def get_word():
@@ -10,6 +10,7 @@ def get_word():
 def display_hangman(tries):
     stages = [  # final state: head, torso, both arms, and both legs
         """
+        ========
                    --------
                    |      |
                    |      O
@@ -17,9 +18,10 @@ def display_hangman(tries):
                    |      |
                    |     / \\
                    -
-                """,
+========                """,
         # head, torso, both arms, and one leg
         """
+        ========
                    --------
                    |      |
                    |      O
@@ -27,9 +29,10 @@ def display_hangman(tries):
                    |      |
                    |     / 
                    -
-                """,
+========                """,
         # head, torso, and both arms
         """
+        ========
                    --------
                    |      |
                    |      O
@@ -37,9 +40,10 @@ def display_hangman(tries):
                    |      |
                    |      
                    -
-                """,
+========                """,
         # head, torso, and one arm
         """
+        ========
                    --------
                    |      |
                    |      O
@@ -47,9 +51,10 @@ def display_hangman(tries):
                    |      |
                    |     
                    -
-                """,
+========                """,
         # head and torso
         """
+        ========
                    --------
                    |      |
                    |      O
@@ -57,9 +62,10 @@ def display_hangman(tries):
                    |      |
                    |     
                    -
-                """,
+========                """,
         # head
         """
+        ========
                    --------
                    |      |
                    |      O
@@ -67,9 +73,10 @@ def display_hangman(tries):
                    |      
                    |     
                    -
-                """,
+========                """,
         # initial empty state
         """
+        ========
                    --------
                    |      |
                    |      
@@ -77,7 +84,7 @@ def display_hangman(tries):
                    |      
                    |     
                    -
-                """
+========        """
     ]
     return stages[tries]
 
@@ -91,6 +98,7 @@ def play(word):
     print("Let's play Hangman!")
     print(display_hangman(tries))
     print(word_completion)
+    print("❤"*tries)
     print("\n")
 
     while not guessed and tries > 0:
@@ -126,6 +134,7 @@ def play(word):
             print("Not a valid guess.")
         print(display_hangman(tries))
         print(word_completion)
+        print("❤" * tries)
         print("\n")
     if guessed:
         print("Congrats, you guessed the word! You win!")

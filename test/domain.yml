@@ -19,6 +19,7 @@ intents:
 - user_heartbroken
 - play_mad_libs
 - play_tic_tac_toe
+- play_hangman
 - user_bored:
     triggers: action_cure_boredom
 - user_request_music
@@ -66,6 +67,9 @@ slots:
     type: text
     auto_fill: false
   TicTacToe:
+    type: text
+    auto_fill: false
+  Hangman:
     type: text
     auto_fill: false
   Lifestyle:
@@ -1029,6 +1033,7 @@ responses:
 
 actions:
 - action_play_tictactoe
+- action_play_Hangman
 - action_pre_madlibs
 - action_set_sentiment
 - action_play_music
@@ -1046,6 +1051,7 @@ forms:
 - submit_hobby_form
 - mad_lib_input
 - tictactoe_input
+- hangman_input
 - user_thought_input
 - lifestyle_input
 - user_heartbreak_intensity_input
