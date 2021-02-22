@@ -57,9 +57,14 @@
 - No. Absolutely not. I want to be alone
 - No. Just Get lost
 - Can we please just not talk about it?
+- I don't want to talk about it
+- Can we like, not have this conversation?
+- This is going nowhere, this is a worthless conversation
+
 
 ## intent:user_confused
 - I don't understand
+- Idk
 - I don't know
 - I'm not sure
 - I'm not sure of what exactly I feel right now  
@@ -70,3 +75,4 @@
 - Wtf do you mean?
 - What on earth do you expect me to say? I have NO IDEA what to say to that.
 - I highly doubt that I'm in the right space of mind to really understand what I'm feeling right now.
+- I don't know really. Tbh.

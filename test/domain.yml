@@ -257,6 +257,8 @@ responses:
   - text: Tell me what's keeping you up
   - text: Tell me one such anxious thought that's bothering you
   - text: Write one such anxious thought that's bothering you
+  - text: Tell me what's bothering you and in turn keeping you up.
+  - text: Tell me what is that thing that keeps beckoning to you and you up and keeps you up.
 
   utter_insomnia_after_listening_to_thoughts:
   - text: "Worries or a depressed mood may make it hard to fall asleep and stay asleep.\n\n
@@ -561,9 +563,11 @@ responses:
 
   utter_heartbreak_okay_2:
   - text: And remember, if you ever want, I’m always here to talk. Just hit me up. Cool?
+  - text: Also, as I said before, reach out to me whenever you want to. I'm always here. No worries, okay?
 
   utter_heartbreak_okay_3:
   - text: Anyhow, here’s a playlist that might help you get through it better...
+  - text: Anyway, music is often known to be a very helpful tool when it comes to experiencing emotions. It helps you feel better, enjoy the moment or even think. So here's a playlist for you that might help.
 
   utter_heartbreak_okay_4:
   - text: I hope you’re feeling good. Like I mentioned earlier, the tiniest bit of frustration, and you can immediately talk here.
@@ -650,7 +654,7 @@ responses:
         payload: /affirm
 
   utter_heartbreak_vent_moderate_not_better_tool_1.1:
-  - text: "Like, I once had a nasty fight with my neighbour Doug the pug. He always used to steal my newspapers.\n\n
+  - text: "Like, I once had a nasty fight with my neighbour Doug the pug. He would always steal my newspapers.\n\n
    I told him that stealing papers is not cool at all. An honest conversation was all it took...\n\n
    We're the best of chums now! 😁"
     buttons:
@@ -812,7 +816,7 @@ responses:
   - text: Okay, it might sound like a daunting task but it doesn’t have to be, you see. Start small. Here's some ideas you could try
 
   utter_anxiety_affirm_worried_affect_tool_1:
-  - text: Try making some small lifestyle changes -- Teeny tiny ones.
+  - text: Try making some small lifestyle changes -- Teeny tiny ones. Doesn't have to be something major.
     buttons:
       - title: Like what? 🤔
         payload: /user_confused
@@ -957,9 +961,11 @@ responses:
 
   utter_anxiety_deny_worried_after_story_2:
     - text: So now that you’ve thought about it, tell me what is it that's been the cause of your worry
+    - text: Now that you've given it a thought I hope some things are clearer to you. So tell me, what is your exact cause of worry?
 
   utter_anxiety_deny_worried_after_story_3:
     - text: I see... Well, facing up to it, that’s the next step. Wouldn't you agree?
+    - text: I see. Now that you have things slightly clearer in your head, the next step is facing up to it. Don't you agree?
 
   utter_anxiety_deny_worried_after_story_4:
     - text: "It doesn’t have to be a drastic action. Take it one bit at a time.\n\n
@@ -982,6 +988,9 @@ responses:
   - text: Have a good night! Talk to you soon! 💤
   - text: Sleep snug as a bug in a rug. Talk to you soon! 😴
   - text: Let those zzzz's come! Talk to you soon! 😴
+  - text: Goodnight! Talk to you soon.💤 😊
+  - text: Goodnight! Oyasuminasai! Sleep well.
+  - text: Goodnight, and sleep well💤. We shall talk soon, aye?
 
   utter_ask_Hobby1:
   - text: Let's get to know you a little better... Tell me one of your hobbies
