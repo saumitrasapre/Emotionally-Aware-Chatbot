@@ -30,9 +30,9 @@
     - form{"name":"submit_hobby_form"}
     - form{"name":null}
     - utter_greet
-* mood_great
-    - action_set_sentiment
+* user_happy
     - utter_happy_pipeline_start_1
+    - action_set_sentiment  
     - submit_hobby_form
     - form{"name":"submit_hobby_form"}
     - form{"name":null}  

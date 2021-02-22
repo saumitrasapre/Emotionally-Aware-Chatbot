@@ -1450,7 +1450,7 @@
 - [Zumba](Hobby)
 
 
-## intent:mood_great
+## intent:user_happy
 - [fine](Mood)
 - [perfect](Mood)
 - very [good](Mood)

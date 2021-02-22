@@ -5,7 +5,7 @@
     - action_set_sentiment
 > check_heartbreak_branches
 
-# user_okay
+## user_okay
 > check_heartbreak_branches
 * affirm
     - utter_heartbreak_okay_1
@@ -21,7 +21,7 @@
     - utter_heartbreak_okay_4
     - utter_goodbye
 
-# user_vent_1
+## user_vent_1
 > check_heartbreak_branches
 > check_if_user_wants_to_talk
 * user_vent
@@ -49,7 +49,7 @@
     - utter_heartbreak_vent_mild_4
 > check_vent_1_user_feels_better
 
-# user_vent_1_better
+## user_vent_1_better
 > check_vent_1_user_feels_better
 * affirm
   - utter_heartbreak_vent_mild_better
@@ -59,7 +59,7 @@
   - utter_pdf_msg
   - action_get_pdf
 
-# user_vent_1_not_better
+## user_vent_1_not_better
 > check_vent_1_user_feels_better
 * deny
   - utter_heartbreak_vent_mild_not_better
@@ -69,7 +69,7 @@
   - utter_heartbreak_vent_mild_not_better_1
 > check_vent_user_walk 
 
-# user_vent_1_not_better
+## user_vent_1_not_better
 > check_vent_user_walk
 * affirm
   - utter_heartbreak_vent_mild_not_better_2
@@ -79,7 +79,7 @@
   - utter_pdf_msg
   - action_get_pdf  
 
-# user_vent_1_not_better
+## user_vent_1_not_better
 > check_vent_user_walk
 * deny
   - utter_happy_pipeline_deny
@@ -88,7 +88,7 @@
   - utter_pdf_msg
   - action_get_pdf  
   
-# user_vent_2
+## user_vent_2
 > check_heartbreak_branches
 > check_if_user_wants_to_talk
 * user_vent
@@ -112,7 +112,7 @@
     - utter_heartbreak_vent_mild_4
 > check_vent_2_user_feels_better 
 
-# user_vent_2_better
+## user_vent_2_better
 > check_vent_2_user_feels_better
 * affirm
   - utter_heartbreak_vent_mild_better
@@ -126,7 +126,7 @@
   - utter_pdf_msg
   - action_get_pdf  
 
-# user_vent_2_not_better
+## user_vent_2_not_better
 > check_vent_2_user_feels_better
 * deny
   - utter_heartbreak_vent_mild_not_better
@@ -152,7 +152,7 @@
   - utter_heartbreak_vent_moderate_not_better_tool_3 
 > check_vent_user_walk   
   
-# user_vent_3
+## user_vent_3
 > check_heartbreak_branches
 > check_if_user_wants_to_talk
 * user_vent
@@ -201,7 +201,7 @@
 
 
 
-# user_no_talk
+## user_no_talk
 > check_heartbreak_branches
 * user_no_talk
   - action_set_slot
@@ -222,13 +222,13 @@
   - utter_heartbreak_no_talk_4
 > check_if_user_wants_to_talk 
 
-# user_no_talk_no_talk
+## user_no_talk_no_talk
 > check_if_user_wants_to_talk
 * affirm 
   - utter_heartbreak_vent_mild_not_better_2
   - action_play_music
 
-# user_confused_heartbreak
+## user_confused_heartbreak
 > check_heartbreak_branches
 * user_confused
   - utter_heartbreak_confused_1

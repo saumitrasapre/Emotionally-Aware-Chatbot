@@ -43,14 +43,14 @@ def fetchjoke():
 
 def fetchfact():
     """Get a random fact and utter it as a response."""
-    num = random.randint(1, 4)
+    num = random.randint(1,4)
     if num == 1:
         fact = requests.get('https://uselessfacts.jsph.pl/random.json?language=en').json()["text"]
     elif num == 2:
         fact = requests.get('https://catfact.ninja/fact?max_length=140').json()["fact"]
     elif num == 3:
         fact_num = random.randint(0, 3)
-        fact = requests.get('https://cat-fact.herokuapp.com/facts').json()["all"][fact_num]["text"]
+        fact = requests.get('https://cat-fact.herokuapp.com/facts').json()[fact_num]["text"]
     elif num == 4:
         fact = requests.get('http://numbersapi.com/random/trivia').text
     return fact
@@ -151,8 +151,8 @@ def fetchmusic(num):
         return mydict
 
 
-if __name__ == "__main__":
-    fetchgif("@seizetheawkward mental health")
+# if __name__ == "__main__":
+    # fetchgif("@seizetheawkward mental health")
 # fetchmusic(2)
 # fetchtrends()
 # fetchmusic(2)

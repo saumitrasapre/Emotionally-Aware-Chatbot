@@ -1,18 +1,42 @@
 ## intent:user_tensed
-- I'm tensed
-- I'm stressed
-- I'm under a lot of stress
-- I'm constantly worried
-- I feel constant tension
-- I’m anxious.
-- I’m suffering from anxiety.
-- I’ve been feeling rather anxious lately.
-- My anxiety is rather through the roof these days.
-- I’m feeling rather restless
-- I cannot concentrate as I'm worried constantly
-- I'm under immense stress
-- It's been a rough couple of days. VERY stressful
-- I'm quite tensed.
-- There's been quite a few changes in my life. I don't think I am handling them well. It's quite stressful.
-- I find myself worrying about every little detail
+- I'm [tensed](Mood)
+- I'm [stressed](Mood)
+- I'm under a lot of [stress](Mood)
+- I'm constantly [worried](Mood)
+- I feel constant [tension](Mood)
+- I’m [anxious](Mood).
+- I’m suffering from [anxiety](Mood).
+- I’ve been feeling rather [anxious](Mood) lately.
+- My [anxiety](Mood) is rather through the roof these days.
+- I’m feeling rather [restless](Mood)
+- I cannot concentrate as I'm [worried](Mood) constantly
+- I'm under immense [stress](Mood)
+- It's been a rough couple of days. VERY [stressful](Mood)
+- I'm quite [tensed](Mood).
+- There's been quite a few changes in my life. I don't think I am handling them well. It's quite [stressful](Mood).
+- I find myself [worrying](Mood) about every little detail
 - I am a chronic worrier.
+- I am [nervous](Mood)
+- I am [stressed](Mood) out
+- I feel [nervous](Mood)
+- I am [anxious](Mood)
+- I feel [anxious](Mood)
+- This is nerveracking
+- This is nervewracking 
+- This is nerve racking 
+- This is nerve wracking 
+- I feel like I am going to throw up
+- I have a lump in my throat
+- I have butterflies in my stomach
+- I am a bundle of nerves
+- I am breaking out in a cold sweat
+- I am afraid of my own shadow
+- I am like a cat on hot bricks
+- I am jumping out of my skin
+- I am at my wits' end
+- I am tongue tied
+- I am on edge
+- I am very [tense](Mood)
+- I feel [uneasy](Mood)
+- I am [alarmed](Mood)
+- I am [troubled](Mood) 

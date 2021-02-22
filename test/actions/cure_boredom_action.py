@@ -5,6 +5,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from chitchat import fetchfact, fetchjoke, fetchdatefact, fetchmusic, fetchgif
 
+
 class ActionCureBoredom(Action):
 
     def name(self) -> Text:

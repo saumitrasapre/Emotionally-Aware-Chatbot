@@ -64,7 +64,9 @@ class SubmitHobbyForm(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
-        if value == "None":
+        if value is None:
+            return {"Hobby1": None, "Hobby2": None, "Hobby3": None}
+        elif tracker.get_slot("Hobby1") == "fun things":
             return {"Hobby1": None, "Hobby2": None, "Hobby3": None}
         else:
             return {"Hobby1": value, "Hobby2": None, "Hobby3": None}
@@ -79,6 +81,8 @@ class SubmitHobbyForm(FormAction):
 
         if value == tracker.get_slot("Hobby1") or value == tracker.get_slot("Hobby3"):
             return {"Hobby2": None}
+        elif tracker.get_slot("Hobby2") == "fun things":
+            return {"Hobby1": tracker.get_slot("Hobby1"), "Hobby2": None, "Hobby3": None}
         else:
             return {"Hobby1": tracker.get_slot("Hobby1"), "Hobby2": value, "Hobby3": None}
 
@@ -91,5 +95,7 @@ class SubmitHobbyForm(FormAction):
     ) -> Dict[Text, Any]:
         if value == tracker.get_slot("Hobby1") or value == tracker.get_slot("Hobby2"):
             return {"Hobby3": None}
+        elif tracker.get_slot("Hobby3") == "fun things":
+            return {"Hobby1": tracker.get_slot("Hobby1"), "Hobby2": tracker.get_slot("Hobby2"), "Hobby3": None}
         else:
             return {"Hobby1": tracker.get_slot("Hobby1"), "Hobby2": tracker.get_slot("Hobby2"), "Hobby3": value}

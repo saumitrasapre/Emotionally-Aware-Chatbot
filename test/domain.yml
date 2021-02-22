@@ -9,7 +9,6 @@ intents:
 - goodnight
 - provide_name
 - provide_hobby
-- mood_great
 - goodbye
 - affirm
 - greet
@@ -25,8 +24,10 @@ intents:
 - user_request_music
 - user_request_games
 - user_request_story
+- user_happy
 - user_insomnia
 - user_tensed
+- user_angry
 - user_nightmares
 - user_irregular_lifestyle
 - user_vent
@@ -38,10 +39,13 @@ entities:
 - Sentiment
 slots:
   Hobby1:
+    initial_value: "fun things"
     type: unfeaturized
   Hobby2:
+    initial_value: "fun things"
     type: unfeaturized
   Hobby3:
+    initial_value: "fun things"
     type: unfeaturized
   Mood:
     type: text
@@ -126,7 +130,7 @@ responses:
   - text: Cool!
 
   utter_happy_pipeline_start_1:
-  - text: That’s awesome! I’m happy too, just because you are!
+  - text: That’s awesome, {Person_First_Name}! I’m happy too, just because you are!
   - text: Hey that's great to know! Guess what, I'm happy too!
   - text: That's good to know!
 
@@ -235,8 +239,6 @@ responses:
   For example:"
   - text: Anxiety is basically distress or uneasiness of mind caused by a fear of danger or misfortune. It sometimes may be caused by the smallest of things, for instance,
 
-
-
   utter_insomnia_anxiety_explanation_example:
   - text: I always get anxious when it's about to rain heavily, as I’m worried the strong downpour may destroy my petunias.
   - text: My pet cat Moe gets anxious when it’s bath time
@@ -257,8 +259,7 @@ responses:
   - text: Tell me what's keeping you up
   - text: Tell me one such anxious thought that's bothering you
   - text: Write one such anxious thought that's bothering you
-  - text: Tell me what's bothering you and in turn keeping you up.
-  - text: Tell me what is that thing that keeps beckoning to you and you up and keeps you up.
+  - text: Tell me what's bothering ya and keeping you up.
 
   utter_insomnia_after_listening_to_thoughts:
   - text: "Worries or a depressed mood may make it hard to fall asleep and stay asleep.\n\n
@@ -350,7 +351,13 @@ responses:
         payload: /affirm
 
   utter_insomnia_anxiety_tool_3.2:
-  - text: Anything that brings you calm and peace! For example
+  - text: Anything that brings you calm and peace! Like {Hobby1}! You could also try-
+  - text: Anything that brings you calm and peace! Like {Hobby2}! You could also try-
+  - text: Anything that brings you calm and peace! Like {Hobby3}! You could also try-
+  - text: Anything that brings you calm and peace! {Hobby1}, for example! You could also try-
+  - text: Anything that brings you calm and peace! {Hobby2}, for example! You could also try-
+  - text: Anything that brings you calm and peace! {Hobby3}, for example! You could also try-
+
   utter_insomnia_anxiety_tool_3.3:
   - text: Taking a hot bath or shower 🚿
   - text: Reading a book 📕
@@ -361,11 +368,13 @@ responses:
   - text: Stretching your body 🧘‍♂️
   - text: Cuddling a pet 🐈
   - text: Singing your favorite song 🎤
+
   utter_insomnia_anxiety_tool_3.4:
   - text: Try to pick an offline, no screens activity if possible. Bright devices(or even bright lights in your home!) can keep you alert at bedtime 💡
     buttons:
       - title: GOTCHA
         payload: /affirm
+
   utter_insomnia_anxiety_tool_recap:
   - text: "So, to recap:\n
   1. Build a worry time\n
@@ -567,7 +576,8 @@ responses:
 
   utter_heartbreak_okay_3:
   - text: Anyhow, here’s a playlist that might help you get through it better...
-  - text: Anyway, music is often known to be a very helpful tool when it comes to experiencing emotions. It helps you feel better, enjoy the moment or even think. So here's a playlist for you that might help.
+  - text: "Anyway, music is often known to be a very helpful tool when it comes to experiencing emotions. It helps you feel better, enjoy the moment or even think.\n\n
+   So here's a playlist for you that might help."
 
   utter_heartbreak_okay_4:
   - text: I hope you’re feeling good. Like I mentioned earlier, the tiniest bit of frustration, and you can immediately talk here.
@@ -625,7 +635,9 @@ responses:
   - text: So, tell me my friend, what was it that made you feel this way?
 
   utter_heartbreak_vent_moderate_3:
-  - text: Now that you're in a slightly better place,let’s talk more. What activity usually cheers you up?
+  - text: Now that you're in a slightly better place,let’s talk more. What activity usually cheers you up? I'm guessing {Hobby1}...
+  - text: Now that you're in a slightly better place,let’s talk more. What activity usually cheers you up? I'm guessing {Hobby2}...
+  - text: Now that you're in a slightly better place,let’s talk more. What activity usually cheers you up? I'm guessing {Hobby3}...
 
   utter_heartbreak_vent_moderate_4:
   - text: "That's awesome! Doing things that keep your mind engaged make you feel satisfied when you complete them! This helps you moderate your emotions better.\n\n
@@ -668,7 +680,7 @@ responses:
         payload: /affirm
   - text: "Like, I once had a nasty fight with my mate Larry the canary. He always used to steal my cookies.
    I told him that stealing cookies is not cool at all. An honest conversation was all it took...
-   We're the best of chums now! 😁"
+   We're best buddies now! 😁"
     buttons:
       - title: Great!
         payload: /affirm
@@ -961,7 +973,7 @@ responses:
 
   utter_anxiety_deny_worried_after_story_2:
     - text: So now that you’ve thought about it, tell me what is it that's been the cause of your worry
-    - text: Now that you've given it a thought I hope some things are clearer to you. So tell me, what is your exact cause of worry?
+    - text: Now that you've given it a thought, I hope some things are clearer to you. So tell me, what is your exact cause of worry?
 
   utter_anxiety_deny_worried_after_story_3:
     - text: I see... Well, facing up to it, that’s the next step. Wouldn't you agree?
@@ -974,6 +986,70 @@ responses:
         - title: Example? 😕
           payload: /user_confused
 
+  utter_angry_pipeline_1:
+  - text: Hey hey, what’s the matter?
+  - text: Hey buddy, what happened?
+  - text: Oh no! What's the matter?
+
+  utter_angry_pipeline_2:
+  - custom:
+      text: Okay okay... Take a deep breath, first. Close your eyes. Feel your breath slow down. Hit me with a 👍 when you're ready.
+      animation: "https://media.giphy.com/media/1xVc4s9oZrDhO9BOYt/giphy.gif"
+  - custom:
+      text: Okay okay... Take a deep breath, first. Close your eyes. Feel your breath slow down. Hit me with a 👍 when you're ready.
+      animation: "https://media.giphy.com/media/krP2NRkLqnKEg/giphy.gif"
+  - custom:
+      text: Okay okay... Take a deep breath, first. Close your eyes. Feel your breath slow down. Hit me with a 👍 when you're ready.
+      animation: "https://media.giphy.com/media/KAkIahp6EOc4ZJgKDv/giphy.gif"
+  - custom:
+      text: Okay okay... Take a deep breath, first. Close your eyes. Feel your breath slow down. Hit me with a 👍 when you're ready.
+      animation: "https://media.giphy.com/media/26gJAAMpOSizrp9fO/giphy.gif"
+
+  utter_angry_pipeline_3:
+  - text: "There... I hope that helped.😅 At least for the time being.\n\n
+   Now tell me. Would you like to share what the cause of this immense anger is?"
+
+  utter_angry_user_no_share_1:
+  - text: No worries, buddy!
+  - text: No problemo, mi amigo!
+
+  utter_angry_user_no_share_2:
+  - text: Well, that sure was worth a shot. Not sure if that worked tho.
+  - text: Hey, at least I tried cheering you up...😁
+
+  utter_angry_user_no_share_3:
+  - text: Lets talk more, shall we? Now based on what I know about you, you like {Hobby1}. Am I right?
+  - text: Lets talk more, shall we? I know, you like {Hobby2} don't you?
+  - text: Lets talk more, shall we? Now based on what I know about you, you like {Hobby3}. Am I right?
+
+  utter_angry_user_no_share_4:
+  - text: How bout we try something? 10 minutes. That’s all the time that’s needed.
+  - text: How bout we try something? I just need 10 minutes of your time.
+  - text: Let's try something? It won't take more than 10 minutes
+
+  utter_angry_user_no_share_affirm_idea_1:
+  - text: For the next 10 minutes, I want you to close your eyes and imagine that you're doing what you most like. Let the feeling of calmness spread over you. How does that sound?
+
+  utter_angry_user_no_share_affirm_idea_2:
+  - text: "For instance, I like to read poetry.📜 Narrative poetry is something that leaves me in a rather cheery mood.🎙\n\n
+   So when I get worked up over something, I give at least 10 minutes remembering 'The Road not taken' by Robert Frost.\n\n
+   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+   Gimme a 👍 when you're done"
+  - text: "For instance, I like mountain climbing.👟 Imagining beautiful snow-clad foothills is something that leaves me in a rather cheery mood.🗻\n\n
+   So when I get worked up over something, I give at least 10 minutes remembering the Alps.\n\n
+   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+   Gimme a 👍 when you're done"
+  - text: "For instance, I like to play guitar.🎸 Humming some awesome tunes is something that leaves me in a rather cheery mood.🎶\n\n
+   So when I get worked up over something, I give at least 10 minutes remembering the greatest hits of Jimi Hendrix.\n\n
+   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+   Gimme a 👍 when you're done"
+
+  utter_angry_user_no_share_affirm_idea_3:
+  - text: Alright then, how does it feel? Do you feel slightly calm now?
+  - text: Alright! How d'ya feel? Slightly calmer than before?
+
+  utter_angry_user_no_share_deny_idea_1:
+  - text: User denies idea
 
 
   utter_pdf_msg:
@@ -983,19 +1059,19 @@ responses:
   - text: Don't worry, my friend. I hope there was something about today that made you feel better. Here's a guide for reference.
 
   utter_good_night:
-  - text: Sweet dreams, and talk to you soon! 💤
-  - text: Sleep tight, and talk to you soon!😴
-  - text: Have a good night! Talk to you soon! 💤
-  - text: Sleep snug as a bug in a rug. Talk to you soon! 😴
-  - text: Let those zzzz's come! Talk to you soon! 😴
-  - text: Goodnight! Talk to you soon.💤 😊
-  - text: Goodnight! Oyasuminasai! Sleep well.
-  - text: Goodnight, and sleep well💤. We shall talk soon, aye?
+  - text: Sweet dreams {Person_First_Name}, and talk to you soon! 💤
+  - text: Sleep tight {Person_First_Name}, and talk to you soon!😴
+  - text: Have a good night, {Person_First_Name}! Talk to you soon! 💤
+  - text: Sleep snug as a bug in a rug. Talk to you soon, {Person_First_Name}! 😴
+  - text: Let those zzzz's come! Talk to you soon, {Person_First_Name}! 😴
+  - text: Goodnight! Talk to you soon, {Person_First_Name}.💤 😊
+  - text: Goodnight! Oyasuminasai! Sleep well, {Person_First_Name}.
+  - text: Goodnight {Person_First_Name}, and sleep well💤. We shall talk soon, aye ?
 
   utter_ask_Hobby1:
-  - text: Let's get to know you a little better... Tell me one of your hobbies
-  - text: Awesome! I'd like to know more about you... Type in one of your hobbies
-  - text: So, let's get to know you better. First off, what do like to do in your free time? Tell me one of your hobbies.
+  - text: Let's get to know you a little better, {Person_First_Name}... Tell me one of your hobbies
+  - text: Awesome! I'd like to know more about you, {Person_First_Name}... Type in one of your hobbies
+  - text: So {Person_First_Name}, let's get to know you better. First off, what do like to do in your free time? Tell me one of your hobbies.
 
   utter_ask_Hobby2:
   - text: That's so cool! Tell me one more!
@@ -1027,11 +1103,11 @@ responses:
   - text: :D
 
   utter_probe:
-  - text: Hey, You can open up to me!
-  - text: C'mon buddy! Help me help you... We can both overcome this
+  - text: Hey {Person_First_Name}, You can open up to me!
+  - text: C'mon {Person_First_Name}! Help me help you... We can both overcome this
   - text: This is a safe space, buddy... I'm here to help!
-  - text: Don't be afraid... I'm always here to lend an ear. Help me help you.
-  - text: This is a safe space, buddy... Talking is what I do best. Help me help you.
+  - text: Don't be afraid,{Person_First_Name}... I'm always here to lend an ear. Help me help you.
+  - text: This is a safe space, {Person_First_Name}... Talking is what I do best. Help me help you.
   - text: Hey, it's okay. You can tell me. I 'm always here to help.
   - text: Don't worry it's okay, its a safe space. I'm only here to help. Take your time.
 
