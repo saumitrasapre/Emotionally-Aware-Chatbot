@@ -1,4 +1,4 @@
-# from pyrebase import pyrebase
+from pyrebase import pyrebase
 #
 # # from gtts import gTTS
 # #
@@ -18,11 +18,11 @@
 #
 # firebase = pyrebase.initialize_app(config)
 # storage = firebase.storage()
-# path_local = "Hello.mp3"
-# path_on_cloud = "madlibs/audio.mp3"
+# # path_local = "Hello.mp3"
+# path_on_cloud = "pdfs/Insomnia/borthde.gif"
 # # storage.child(path_on_cloud).put(path_local)
 # print(storage.child(path_on_cloud).get_url(path_on_cloud))
 
-str = "Insomnia 1"
-res = str.split(" ")
-print(res)
+# str = "Insomnia 1"
+# res = str.split(" ")
+# print(res)

@@ -179,6 +179,7 @@ responses:
   - text: Okay, your own fantastic playlist is on it's way. I'm excited to know how you like it!
   - text: Alright, fasten your seatbelt, I’m cooking up an awesome mix now!
   - text: Alright, brace yourself, I’m cooking up an awesome mix now!
+  - text: This mix is sure gonna beat your blues. Thank me later 😉
 
   utter_happy_pipeline_deny:
   - text: Sure! No problem! Enjoy yourself, and remember that you’re loved!
@@ -1048,15 +1049,31 @@ responses:
   - text: Alright then, how does it feel? Do you feel slightly calm now?
   - text: Alright! How d'ya feel? Slightly calmer than before?
 
-  utter_angry_user_no_share_deny_idea_1:
-  - text: User denies idea
+  utter_angry_user_no_share_affirm_idea_calm:
+  - text: I’m glad to hear that. Now that you are in a slightly better state of mind, would you like to talk about what happened?
 
+  utter_angry_user_no_share_affirm_idea_no_calm_1:
+  - text: Okay, let’s talk some other time then, shall we? Here’s a suggestion though- don’t neglect your feelings.
+
+  utter_angry_user_no_share_affirm_idea_no_calm_2:
+  - text: You might not feel like sharing at the moment, I completely understand. Yet bottling things inside could bite you back later.
+
+  utter_angry_user_no_share_affirm_idea_no_calm_3:
+  - text: Having said that, I’m always here for you. So if you ever need to talk, all you have to do is hit me up, I WILL respond, no matter the time 😇
+
+  utter_angry_user_no_share_deny_idea_1:
+  - text: How about we go for a walk, then? Somewhere close, preferably quiet, and get a breath of fresh air?
+
+  utter_angry_user_no_share_deny_idea_2:
+  - text: "You see, research has shown that fresh air often helps one feel better owing to the better oxygen content.\n\n
+   Not just that, but the simple task of walking in its own rhythmic patterns has its own way of helping one settle into a calmer mood."
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: I've got you covered! Take this handy reference guide
-  - text: Don't worry, my friend. I hope there was something about today that made you feel better. Here's a guide for reference.
+  - text: So, see you, my friend? Here’s all that we discussed today.
+  - text: Don't worry, friend. I hope there was something about today that made you feel better. Here's a guide for reference.
 
   utter_good_night:
   - text: Sweet dreams {Person_First_Name}, and talk to you soon! 💤
