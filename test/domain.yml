@@ -272,6 +272,7 @@ responses:
   - text: What do you think might be the reason for this?
   - text: Why do you think this might be happening?
   - text: Can you think of a reason for why this might be happening?
+  - text: Is there any specific cause for this, do you know?
 
   utter_insomnia_introduce_tools:
   - text: "I understand.\n\n
@@ -280,7 +281,7 @@ responses:
    How 'bout we try some small techniques to help you deal with this?"
   - text: "I understand.\n\n
   It’s a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
-  But one can’t possibly let their own health take a back seat among these, right?\n\n
+  But one can’t possibly let their all that affect your health, right?\n\n
   How 'bout we look at some ideas to help you retrain yourself to avoid thinking during these hours of sleep?"
 
   utter_insomnia_anxiety_tool_1:
@@ -970,7 +971,7 @@ responses:
   utter_anxiety_deny_worried_after_story_1:
   - text: "Essentially, what I’m trying to say is that it’s important to find the root of the problem.\n\n
    Don’t you agree? So take a moment and think what is it that’s REALLY bothering you.\n\n
-   Gimme a 👍 when you're done!"
+   Give me a 👍 when you're done!"
 
   utter_anxiety_deny_worried_after_story_2:
     - text: So now that you’ve thought about it, tell me what is it that's been the cause of your worry
@@ -991,7 +992,7 @@ responses:
   - text: Hey hey, what’s the matter?
   - text: Hey buddy, what happened?
   - text: Oh no! What's the matter?
-
+  - text: Oh, hey. What happened?
   utter_angry_pipeline_2:
   - custom:
       text: Okay okay... Take a deep breath, first. Close your eyes. Feel your breath slow down. Hit me with a 👍 when you're ready.
@@ -1007,7 +1008,7 @@ responses:
       animation: "https://media.giphy.com/media/26gJAAMpOSizrp9fO/giphy.gif"
 
   utter_angry_pipeline_3:
-  - text: "There... I hope that helped.😅 At least for the time being.\n\n
+  - text: "There... I hope that helped. At least for the time being.\n\n
    Now tell me. Would you like to share what the cause of this immense anger is?"
 
   utter_angry_user_no_share_1:
@@ -1017,6 +1018,7 @@ responses:
   utter_angry_user_no_share_2:
   - text: Well, that sure was worth a shot. Not sure if that worked tho.
   - text: Hey, at least I tried cheering you up...😁
+  -
 
   utter_angry_user_no_share_3:
   - text: Lets talk more, shall we? Now based on what I know about you, you like {Hobby1}. Am I right?
@@ -1032,28 +1034,29 @@ responses:
   - text: For the next 10 minutes, I want you to close your eyes and imagine that you're doing what you most like. Let the feeling of calmness spread over you. How does that sound?
 
   utter_angry_user_no_share_affirm_idea_2:
-  - text: "For instance, I like to read poetry.📜 Narrative poetry is something that leaves me in a rather cheery mood.🎙\n\n
-   So when I get worked up over something, I give at least 10 minutes remembering 'The Road not taken' by Robert Frost.\n\n
-   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+  - text: "For instance, I like to read poetry.📜 But reading narrative poetry is something that leaves me enthralled and in a rather happy mood. \n\n
+   So in an instance of anger, I would give atleast 10 minutes reading my favourite piece of narrative poetry. So I want you to find your little niche and your object of enthrallment and engross yourself in it for at least 10 minutes. That sound okay?\n\n
+
    Gimme a 👍 when you're done"
   - text: "For instance, I like mountain climbing.👟 Imagining beautiful snow-clad foothills is something that leaves me in a rather cheery mood.🗻\n\n
-   So when I get worked up over something, I give at least 10 minutes remembering the Alps.\n\n
-   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+   So when I get worked up over something, I take a break, and imagine myself gazing at the Alps, all serene and quiet.\n\n
+   I want you to try the same.Think of that one thing you love. That thing that calms you. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+   Close your eyes and visualise. Think of the moment atop a mountain that gives you that peace.\n\n
    Gimme a 👍 when you're done"
-  - text: "For instance, I like to play guitar.🎸 Humming some awesome tunes is something that leaves me in a rather cheery mood.🎶\n\n
-   So when I get worked up over something, I give at least 10 minutes remembering the greatest hits of Jimi Hendrix.\n\n
-   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
+  - text: "For instance, I like to play guitar.🎸🎶 It is one of those thongs that really has a soothing effect on my brain\n\n
+   So when I get worked up over something, I pick up my guitar and string along to some of my favourites.\n\n
+   I want you to try the same. Find what gives you joy and a sense of calm.  Engross yourself in your corner of peace for at least 10 minutes.\n\n
    Gimme a 👍 when you're done"
 
   utter_angry_user_no_share_affirm_idea_3:
   - text: Alright then, how does it feel? Do you feel slightly calm now?
-  - text: Alright! How d'ya feel? Slightly calmer than before?
+  - text: Alright! How do you feel? Slightly calmer than before?
 
   utter_angry_user_no_share_affirm_idea_calm:
   - text: I’m glad to hear that. Now that you are in a slightly better state of mind, would you like to talk about what happened?
 
   utter_angry_user_no_share_affirm_idea_no_calm_1:
-  - text: Okay, let’s talk some other time then, shall we? Here’s a suggestion though- don’t neglect your feelings.
+  - text: Okay, let’s talk some other time then, shall we? Here’s a suggestion though- don’t neglect your feelings. You might feel temporarily okay, but in the long run, it's not the most fantastic course of action.
 
   utter_angry_user_no_share_affirm_idea_no_calm_2:
   - text: You might not feel like sharing at the moment, I completely understand. Yet bottling things inside could bite you back later.

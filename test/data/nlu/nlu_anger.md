@@ -31,3 +31,11 @@
 - That made me [angry](Mood)
 - U made me [angry](Mood)
 - I'm still [angry](Mood) about that
+- I am absolutely [frustrated](Mood) and so mad at that scumbag
+- I am seething with rage
+- Infuriating. Absolutely [infuriating](Mood).
+- I was [furious](Mood)!
+- That idiotic person really [made me see red](Mood) with all his stupidity.
+- So annoyed. Sometimes the dumbest of things get me so [riled up](Mood)
+- I'm [crossed](Mood)
+- I'm [vexed](Mood)
