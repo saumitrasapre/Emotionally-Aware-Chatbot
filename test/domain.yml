@@ -91,6 +91,14 @@ slots:
       - 1
       - 2
       - 3
+  Anger_Intensity:
+    type: categorical
+    values:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
 responses:
   utter_ask_Person_Name:
   - text: By the way, what's your name?
@@ -272,7 +280,7 @@ responses:
   - text: What do you think might be the reason for this?
   - text: Why do you think this might be happening?
   - text: Can you think of a reason for why this might be happening?
-  - text: Is there any specific cause for this, do you know?
+  - text: Is there any specific cause for this?
 
   utter_insomnia_introduce_tools:
   - text: "I understand.\n\n
@@ -281,7 +289,7 @@ responses:
    How 'bout we try some small techniques to help you deal with this?"
   - text: "I understand.\n\n
   It’s a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
-  But one can’t possibly let their all that affect your health, right?\n\n
+  But one can’t possibly let all that affect your health, right?\n\n
   How 'bout we look at some ideas to help you retrain yourself to avoid thinking during these hours of sleep?"
 
   utter_insomnia_anxiety_tool_1:
@@ -993,6 +1001,7 @@ responses:
   - text: Hey buddy, what happened?
   - text: Oh no! What's the matter?
   - text: Oh, hey. What happened?
+
   utter_angry_pipeline_2:
   - custom:
       text: Okay okay... Take a deep breath, first. Close your eyes. Feel your breath slow down. Hit me with a 👍 when you're ready.
@@ -1018,7 +1027,6 @@ responses:
   utter_angry_user_no_share_2:
   - text: Well, that sure was worth a shot. Not sure if that worked tho.
   - text: Hey, at least I tried cheering you up...😁
-  -
 
   utter_angry_user_no_share_3:
   - text: Lets talk more, shall we? Now based on what I know about you, you like {Hobby1}. Am I right?
@@ -1034,17 +1042,16 @@ responses:
   - text: For the next 10 minutes, I want you to close your eyes and imagine that you're doing what you most like. Let the feeling of calmness spread over you. How does that sound?
 
   utter_angry_user_no_share_affirm_idea_2:
-  - text: "For instance, I like to read poetry.📜 But reading narrative poetry is something that leaves me enthralled and in a rather happy mood. \n\n
-   So in an instance of anger, I would give atleast 10 minutes reading my favourite piece of narrative poetry. So I want you to find your little niche and your object of enthrallment and engross yourself in it for at least 10 minutes. That sound okay?\n\n
-
+  - text: "For instance, I like to read poetry.📜 Narrative poetry is something that leaves me in a rather happy mood.🎙\n\n
+   So when I get worked up over something, I give at least 10 minutes remembering 'The Road not taken' by Robert Frost.\n\n
+   I want you to try the same. Engross yourself in your corner of peace for at least 10 minutes.\n\n
    Gimme a 👍 when you're done"
   - text: "For instance, I like mountain climbing.👟 Imagining beautiful snow-clad foothills is something that leaves me in a rather cheery mood.🗻\n\n
-   So when I get worked up over something, I take a break, and imagine myself gazing at the Alps, all serene and quiet.\n\n
-   I want you to try the same.Think of that one thing you love. That thing that calms you. Engross yourself in your corner of peace for at least 10 minutes.\n\n
-   Close your eyes and visualise. Think of the moment atop a mountain that gives you that peace.\n\n
+   So when I get worked up over something, I take a break, and imagine myself gazing at the Alps, all serene and quiet.🗻\n\n
+   I want you to try the same. Close your eyes and think of that one thing you love. That thing that calms you. Engross yourself in your corner of peace for at least 10 minutes.\n\n
    Gimme a 👍 when you're done"
-  - text: "For instance, I like to play guitar.🎸🎶 It is one of those thongs that really has a soothing effect on my brain\n\n
-   So when I get worked up over something, I pick up my guitar and string along to some of my favourites.\n\n
+  - text: "For instance, I like country music.🎸🎶 It is one of the things that really soothes me.\n\n
+   So when I get worked up over something, I clear my throat and hum along to some of my favourites.\n\n
    I want you to try the same. Find what gives you joy and a sense of calm.  Engross yourself in your corner of peace for at least 10 minutes.\n\n
    Gimme a 👍 when you're done"
 
@@ -1056,7 +1063,7 @@ responses:
   - text: I’m glad to hear that. Now that you are in a slightly better state of mind, would you like to talk about what happened?
 
   utter_angry_user_no_share_affirm_idea_no_calm_1:
-  - text: Okay, let’s talk some other time then, shall we? Here’s a suggestion though- don’t neglect your feelings. You might feel temporarily okay, but in the long run, it's not the most fantastic course of action.
+  - text: Okay, let’s talk some other time then, shall we? Here’s a suggestion though- don’t neglect your feelings. You might feel temporarily okay, but its not the best course of action to take.
 
   utter_angry_user_no_share_affirm_idea_no_calm_2:
   - text: You might not feel like sharing at the moment, I completely understand. Yet bottling things inside could bite you back later.
@@ -1070,6 +1077,16 @@ responses:
   utter_angry_user_no_share_deny_idea_2:
   - text: "You see, research has shown that fresh air often helps one feel better owing to the better oxygen content.\n\n
    Not just that, but the simple task of walking in its own rhythmic patterns has its own way of helping one settle into a calmer mood."
+
+  utter_angry_user_share_cause:
+  - text: "Ah, I see... But hey, I got your back!😇 Let’s try and figure this out, shall we?\n\n
+   Tell me- on a scale of 1-5, how angry are you?"
+  - text: "Hmmm... So that happened... But don't worry, I got your back!😇 Let’s try to figure this out, shall we?\n\n
+   Tell me- on a scale of 1-5, how furious are you?"
+
+  utter_angry_user_level_1_start_1:
+  - text: Level 1 angry
+
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
@@ -1159,4 +1176,5 @@ forms:
 - hangman_input
 - user_thought_input
 - lifestyle_input
+- user_anger_intensity_input
 - user_heartbreak_intensity_input

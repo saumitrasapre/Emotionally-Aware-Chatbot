@@ -15,6 +15,15 @@
 > check_user_anger_share_cause
 * affirm OR user_confused
     - utter_heartbreak_vent_1
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_angry_user_share_cause
+    - user_anger_intensity_input
+    - form{"name":"user_anger_intensity_input"}  
+    - form{"name":null}
+    - slot{"Anger_Intensity":"1"}
+    - utter_angry_user_level_1_start_1
   
 ## angry path user doesn't share cause
 > check_user_choice_anger_cause 
