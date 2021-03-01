@@ -24,7 +24,58 @@
     - form{"name":null}
     - slot{"Anger_Intensity":"1"}
     - utter_angry_user_level_1_start_1
-  
+> check_user_anger_if_shared_cause
+
+## angry path user shares cause level 1 angry
+> check_user_anger_if_shared_cause
+* affirm OR user_confused
+    - utter_angry_user_level_1_start_2
+* affirm OR user_confused
+    - utter_angry_user_level_1_example_1
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_angry_user_level_1_example_2
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null} 
+    - utter_angry_user_level_1_example_3
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_angry_user_level_1_example_4
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}  
+    - utter_angry_user_level_1_example_5
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_angry_user_level_1_continue_1
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_angry_user_level_1_continue_2
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_angry_user_level_1_continue_3
+    - user_thought_input
+    - form{"name":"user_thought_input"}
+    - form{"name":null}
+    - utter_angry_user_level_1_continue_4
+    - utter_session_conclusion
+    - utter_pdf_msg
+
+## angry deny path    
+> check_user_anger_if_shared_cause
+* deny
+  - utter_probe
+> check_user_anger_if_shared_cause
+
+
+
+
 ## angry path user doesn't share cause
 > check_user_choice_anger_cause 
 * deny OR user_no_talk

@@ -177,7 +177,8 @@ responses:
         payload: /play_tic_tac_toe
       - title: Mad Libs
         payload: /play_mad_libs
-
+      - title: Hnagman
+        payload: /play_hangman
   utter_happy_pipeline_music:
   - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into pure bliss. Wanna join me in the journey?
   - text: Yes! You're absolutely right! Suit up for the best musical journey of your lifetime (for a while, just kidding, bear with me 😁😉)
@@ -797,10 +798,6 @@ responses:
       - title: I'd rather not talk 🤐
         payload: /user_no_talk
 
-  utter_session_conclusion:
-  - text: Well, I hope this session helped you feel a tad bit better than you felt earlier. 🙈
-  - text: I hope you are feeling slightly better and found my advice useful. 🙈
-
   utter_anxiety_pipeline:
   - text: "Heyyy. I’m sure things are going rather tough. 😟 But don’t worry. Let’s figure this out.\n\n
   Do you feel this uneasy all the time? For a significant portion of the day?"
@@ -1021,7 +1018,7 @@ responses:
   - text: "There... I hope that helped. At least for the time being.\n\n
    Now tell me. Would you like to share what the cause of this immense anger is?"
   - text: "There, I hope that helped. At least for the time being.\n\n
-           Let's talk some more. Do you want to talk about what made you so angry?"
+  Let's talk some more. Do you want to talk about what made you so angry?"
 
   utter_angry_user_no_share_1:
   - text: No worries, buddy!
@@ -1073,14 +1070,13 @@ responses:
 
   utter_angry_user_no_share_affirm_idea_no_calm_3:
   - text: Having said that, I’m always here for you. So if you ever need to talk, all you have to do is hit me up, I WILL respond, no matter the time 😇
-  - text: Having said that, you know the rules. Any moment when you feel like talking, get in touch right away, alrught? I'm always going to be here for you. Cool?
+  - text: Having said that, you know the rules. Any moment when you feel like talking, get in touch right away. I'm always going to be here for you. Cool?
 
   utter_angry_user_no_share_deny_idea_1:
   - text: How about we go for a walk, then? Somewhere close, preferably quiet, and get a breath of fresh air?
-  - text: "When in doubt, a walk always helps. \n\n
-           - WhoaBot \n\n
-           😅🤭 \n\n
-           How about we go for a short, peaceful walk among the greens? Sounds like a plan?"
+  - text: "When in doubt, a walk always helps.\n
+  - WhoaBot 😅🤭 \n\n
+  How about we go for a short, peaceful walk among the greens? Sounds like a plan?"
 
   utter_angry_user_no_share_deny_idea_2:
   - text: "You see, research has shown that fresh air often helps one feel better owing to the better oxygen content.\n\n
@@ -1088,15 +1084,70 @@ responses:
 
   utter_angry_user_share_cause:
   - text: "Ah, I see... But hey, I got your back!😇 Let’s try and figure this out, shall we?\n\n
-   Tell me- on a scale of 1-5, how angry are you?"
+  Tell me- on a scale of 1-5, how angry are you?"
   - text: "Hmmm... So that happened... But don't worry, I got your back!😇 Let’s try to figure this out, shall we?\n\n
-   Tell me- on a scale of 1-5, how furious are you?"
+  Tell me- on a scale of 1-5, how furious are you?"
   - text: "Ah, so that's what went down. But don't you worry. We will figure this out together \n\n
-            So tell me- On a scale of 1-5, how angry are you?"
+  So tell me- On a scale of 1-5, how angry are you?"
 
   utter_angry_user_level_1_start_1:
-  - text: Level 1 angry
+  - text: Okay... I need you to think about some stuff. You told me what made you feel annoyed, right?
+  - text: Okay... Now I need you to ponder over some stuff. You told me what made you angry, isn't it?
 
+  utter_angry_user_level_1_start_2:
+  - text: "Often, whenever we're angry about something, we tend to think about it emotionally than logically.\n\nWe begin to form crude stories with our thoughts that are far from the truth..."
+    buttons:
+      - title: Huh? 🤔
+        payload: /user_confused
+
+
+
+
+  utter_angry_user_level_1_example_1:
+  - custom:
+      text: One day, me and Doug the Pug, had made plans to hang out. However, he bailed last minute. I was super annoyed.
+      animation: "https://media.giphy.com/media/3oKIPEeJ11BJaesR6U/giphy.gif"
+  - custom:
+      text: One day, me and Doug the Pug, had made plans to hang out. However, he bailed last minute. On hearing this, I was super annoyed.
+      animation: "https://bit.ly/3r8Vy3e"
+
+  utter_angry_user_level_1_example_2:
+  - custom:
+      text: Now, there could be 2 reasons why he did that...One --  That Doug had been inconsiderate of my time and conveniently bailed, giving our meeting no importance...
+      animation: "https://bit.ly/2NMMYc0"
+
+  utter_angry_user_level_1_example_3:
+  - custom:
+      text: Or, he could've actually been busy tending to some important business that was more important than hanging out with me...
+      animation: "https://bit.ly/3dUQg7V"
+
+  utter_angry_user_level_1_example_4:
+  - custom:
+      text: In the heat of the moment, we are so blinded by rage that we fail to see logical explanations to circumstances, and assume the worst.
+      animation: "https://bit.ly/2ME4sHc"
+
+  utter_angry_user_level_1_example_5:
+  - custom:
+      text: Turns out, he was busy tending to his sick friend, and had to cancel our meeting to help her. The next day, he apologised profusely for bailing...
+      animation: "https://bit.ly/3bN4FjU"
+
+  utter_angry_user_level_1_continue_1:
+  - text: In our fits of annoyance, we tend to forget what exactly triggered our anger. We need to find out what that is. Tell me, what was it that triggered you?
+
+  utter_angry_user_level_1_continue_2:
+  - text: "Okay, now that you have it pinpointed, the next step is to decide what to do with this knowledge.\n\n
+   Do you want to confront said person? Do you want to sit back and reflect on it?"
+
+  utter_angry_user_level_1_continue_3:
+  - text: "Always remember, don’t give in to the viciousness of the emotion.\n\n
+   Very often, it puts our brain and body in overdrive to the point where objective thinking is thrown out of the window. Don't you agree?"
+
+  utter_angry_user_level_1_continue_4:
+  - text: Make sure you think carefully, and then take your next step...😅
+
+  utter_session_conclusion:
+  - text: Well, I hope this session helped you feel a tad bit better than you felt earlier. 🙈
+  - text: I hope you are feeling slightly better and found my advice useful. 🙈
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
