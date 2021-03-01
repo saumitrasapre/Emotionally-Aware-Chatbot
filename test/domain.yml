@@ -625,6 +625,7 @@ responses:
 
   utter_heartbreak_vent_mild_not_better:
   - text: Okay so let’s talk more.. Is there some missing piece that could contribute to the same?
+  - text: Alright, let's talk some more. Do you think there is a missing piece that could be contributing to the same?
 
   utter_heartbreak_vent_mild_not_better_1:
   - text: "So how about we try a slightly different way?\n\n
@@ -787,7 +788,7 @@ responses:
   utter_heartbreak_refined:
   - custom:
     button_type: vertical
-    text: So how're ya feeling now?
+    text: So how're you feeling now?
     buttons:
       - title: I'm OK 😓
         payload: /affirm
@@ -931,7 +932,7 @@ responses:
   - text: Hey hey I have an idea... Want to check it out?
   - text: I have an awesome idea of what we could do... Wanna hear me out?
   - text: Hey, I just have the best idea ever, wanna give it a whirl?
-  - text: Guess what I just thought of something. Hear me out.
+  - text: Guess what, I just thought of something. Hear me out.
 
   utter_anxiety_deny_worried_4:
   - text: "Okay so here’s the thing.\n\n
@@ -1019,10 +1020,12 @@ responses:
   utter_angry_pipeline_3:
   - text: "There... I hope that helped. At least for the time being.\n\n
    Now tell me. Would you like to share what the cause of this immense anger is?"
+  - text: "There, I hope that helped. At least for the time being.\n\n
+           Let's talk some more. Do you want to talk about what made you so angry?"
 
   utter_angry_user_no_share_1:
   - text: No worries, buddy!
-  - text: No problemo, mi amigo!
+  - text: No problem, my friend!
 
   utter_angry_user_no_share_2:
   - text: Well, that sure was worth a shot. Not sure if that worked tho.
@@ -1070,9 +1073,14 @@ responses:
 
   utter_angry_user_no_share_affirm_idea_no_calm_3:
   - text: Having said that, I’m always here for you. So if you ever need to talk, all you have to do is hit me up, I WILL respond, no matter the time 😇
+  - text: Having said that, you know the rules. Any moment when you feel like talking, get in touch right away, alrught? I'm always going to be here for you. Cool?
 
   utter_angry_user_no_share_deny_idea_1:
   - text: How about we go for a walk, then? Somewhere close, preferably quiet, and get a breath of fresh air?
+  - text: "When in doubt, a walk always helps. \n\n
+           - WhoaBot \n\n
+           😅🤭 \n\n
+           How about we go for a short, peaceful walk among the greens? Sounds like a plan?"
 
   utter_angry_user_no_share_deny_idea_2:
   - text: "You see, research has shown that fresh air often helps one feel better owing to the better oxygen content.\n\n
@@ -1083,6 +1091,8 @@ responses:
    Tell me- on a scale of 1-5, how angry are you?"
   - text: "Hmmm... So that happened... But don't worry, I got your back!😇 Let’s try to figure this out, shall we?\n\n
    Tell me- on a scale of 1-5, how furious are you?"
+  - text: "Ah, so that's what went down. But don't you worry. We will figure this out together \n\n
+            So tell me- On a scale of 1-5, how angry are you?"
 
   utter_angry_user_level_1_start_1:
   - text: Level 1 angry
