@@ -27,6 +27,9 @@ class UserHBIntensityInput(FormAction):
             tracker: Tracker,
             domain: Dict[Text, Any],
     ) -> Dict[Text, Any]:
+        slot_value = str(tracker.get_slot("Heartbreak_Intensity"))
+        if '1' <= slot_value <= '5':
+            return {"Heartbreak_Intensity": None}
         user_input = tracker.latest_message.get('text')
         print(user_input)
         if '1' <= user_input <= '3':

@@ -1027,6 +1027,7 @@ responses:
   utter_angry_user_no_share_2:
   - text: Well, that sure was worth a shot. Not sure if that worked tho.
   - text: Hey, at least I tried cheering you up...😁
+  - text: Not my finest try, but I hope that cheered you up ever so slightly...
 
   utter_angry_user_no_share_3:
   - text: Lets talk more, shall we? Now based on what I know about you, you like {Hobby1}. Am I right?
@@ -1100,20 +1101,23 @@ responses:
       - title: Huh? 🤔
         payload: /user_confused
 
-
-
-
   utter_angry_user_level_1_example_1:
   - custom:
       text: One day, me and Doug the Pug, had made plans to hang out. However, he bailed last minute. I was super annoyed.
       animation: "https://media.giphy.com/media/3oKIPEeJ11BJaesR6U/giphy.gif"
   - custom:
-      text: One day, me and Doug the Pug, had made plans to hang out. However, he bailed last minute. On hearing this, I was super annoyed.
+      text: One day, me and Doug the Pug, had made plans to stream one of our favourite movies together. However, he bailed last minute. On hearing this, I was super annoyed.
+      animation: "https://bit.ly/3r8Vy3e"
+  - custom:
+      text: One day, me and Doug the Pug, had made plans to go on a virtual tour of the Alps. However, he bailed last minute. I was furious.
       animation: "https://bit.ly/3r8Vy3e"
 
   utter_angry_user_level_1_example_2:
   - custom:
-      text: Now, there could be 2 reasons why he did that...One --  That Doug had been inconsiderate of my time and conveniently bailed, giving our meeting no importance...
+      text: Now, there could be 2 reasons why he did that...One --  That he had been inconsiderate of my time and conveniently bailed, giving our meeting no importance...
+      animation: "https://bit.ly/2NMMYc0"
+  - custom:
+      text: Now, there could be 2 reasons why he did that...One --  That he had been inconsiderate of my time and conveniently bailed, giving our plan no importance in spite of all the discussions we'd had...
       animation: "https://bit.ly/2NMMYc0"
 
   utter_angry_user_level_1_example_3:
@@ -1123,7 +1127,10 @@ responses:
 
   utter_angry_user_level_1_example_4:
   - custom:
-      text: In the heat of the moment, we are so blinded by rage that we fail to see logical explanations to circumstances, and assume the worst.
+      text: In the heat of the moment, I was so blinded by rage that I failed to see logical explanations to circumstances, and assumed the worst.
+      animation: "https://bit.ly/2ME4sHc"
+  - custom:
+      text: In the heat of the moment, I was so miffed by the fact that my awesome plan had crashed, that I assumed the worst and failed to see a logical explanation.
       animation: "https://bit.ly/2ME4sHc"
 
   utter_angry_user_level_1_example_5:
@@ -1144,6 +1151,51 @@ responses:
 
   utter_angry_user_level_1_continue_4:
   - text: Make sure you think carefully, and then take your next step...😅
+
+  utter_angry_user_level_2_begin_1:
+  - text: Okay, so how bout we get started with a lil cheer-up?
+  - text: Cool, so how bout we get started with a lil cheer-up?
+
+  utter_angry_user_level_2_begin_2:
+  - text: Now, I need you to do something. Do you know what a 'happy place' is?
+  - text: Alright, now I need you to do something. Have you ever heard of a 'happy place'?
+
+  utter_angry_user_level_2_happy_place_explain_1:
+  - text: A happy place is a memory, situation, or activity that makes you feel happy.
+    buttons:
+      - title: Like? 🤨
+        payload: /user_confused
+
+  utter_angry_user_level_2_happy_place_explain_2:
+  - text: "For instance, I like to mentally hum the tune for 'My Favourite Things' from The Sound Of Music...🎶\n\n
+  Raindrops 🌧 on Roses 🌹, and whiskers on kittens 🐱... 🥰 Anyway you get me, right?"
+  - text: "For example, I like to imagine myself deep within a rainforest 🌳...\n\n
+  Listening to the rustling trees 🍃, the cooing birds 🐦... 🥰 Anyway you understand, right?"
+
+  utter_angry_user_level_2_begin_3:
+  - text: Tell me then, what’s your happy place?
+
+  utter_angry_user_level_2_begin_4:
+  - text: Wow! Alright so take a moment, and close your eyes for 5 minutes. Breathe. Experience the feeling of being in your happy place. Give me a 👍 when you're done.
+  - text: That's awesome! Now, take a moment, and close your eyes for 5 minutes. Breathe. Experience the feeling of being in that happy place. Hit me with a 👍 when you're done.
+
+  utter_angry_user_level_3_initiate_1:
+  - text: Take a deep breath, buddy. Close your eyes. Monitor your breathing. Try to bring it to normal.
+
+  utter_angry_user_level_3_initiate_2:
+  - text: Alright. There. We’ve got this, okay? I’m here for you. Let’s get through this together, shall we?
+
+  utter_angry_user_level_3_cont_1:
+  - text: "I now want you to try something. Take a piece of paper 📜 and write down your precise thoughts at the moment.\n\n
+  They don’t have to be very coherent or sensible. Just whatever made you angry. How you felt. Lemme know with a 👍 when done."
+
+  utter_angry_user_level_3_cont_2:
+  - text: "Now, take a deep breath and tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
+  This will help relieve all the pent up frustration in a non-harmful way.\n\nThis will give you enough time to come to terms with the thoughts running in your mind 😇."
+
+  utter_angry_user_level_3_cont_3:
+  - text: That worked, didn't it 😁? Now we can proceed to the next bit. Do you want to confront said person? Do you want to sit back and reflect on it?
+  - text: That worked, aye 😁? Now let's proceed to the next bit. Do you want to confront said person? Do you want to sit back and reflect on it?
 
   utter_session_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better than you felt earlier. 🙈
