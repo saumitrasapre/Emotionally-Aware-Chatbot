@@ -1184,21 +1184,57 @@ responses:
 
   utter_angry_user_level_3_initiate_2:
   - text: Alright. There. We’ve got this, okay? I’m here for you. Let’s get through this together, shall we?
+  - text: Alright. There there, my friend. We'll get through this together. Let's go!
 
   utter_angry_user_level_3_cont_1:
-  - text: "I now want you to try something. Take a piece of paper 📜 and write down your precise thoughts at the moment.\n\n
-  They don’t have to be very coherent or sensible. Just whatever made you angry. How you felt. Lemme know with a 👍 when done."
+  - text: "I now want you to try something. Take a piece of paper 📜 and write down your thoughts at the moment.\n\n
+  They don’t have to be coherent or sensible. Just whatever made you angry. How you felt. Lemme know with a 👍 when done."
 
   utter_angry_user_level_3_cont_2:
   - text: "Now, take a deep breath and tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
-  This will help relieve all the pent up frustration in a non-harmful way.\n\nThis will give you enough time to come to terms with the thoughts running in your mind 😇."
+  This will help relieve all the pent up frustration in a non-harmful way.😇"
+  - text: "Now, take a deep breath and tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
+  This will give you enough time to come to terms with the thoughts running in your mind.😇"
 
   utter_angry_user_level_3_cont_3:
   - text: That worked, didn't it 😁? Now we can proceed to the next bit. Do you want to confront said person? Do you want to sit back and reflect on it?
   - text: That worked, aye 😁? Now let's proceed to the next bit. Do you want to confront said person? Do you want to sit back and reflect on it?
 
+  utter_angry_user_level_4_audio:
+  - custom:
+      text: Let's try a small exercise. I'd suggest you put on your headphones for the best experience. Close your eyes,and listen to this...
+      audio: "https://bit.ly/3kP67Gv"
+  - custom:
+      text: Let's try a small exercise. I'd suggest you put on your headphones for the best experience. Close your eyes,and listen to this...
+      audio: "https://bit.ly/30jf29u"
+
+  utter_angry_user_level_4_beginning_1:
+  - text: Better 😁?  Now, what exactly about the fiasco angered you. You did tell me what went down. But what part of it was the thing that set you off?
+
+  utter_angry_user_level_4_beginning_2:
+  - text: "I understand... Often we end up classifying an entire incident as one thing, and don’t really acknowledge what actually angered us.\n\n
+   Very often it is just one small thing or behaviour which angers us. Do you agree?"
+
+  utter_angry_user_level_4_cont_1:
+  - text: That worked, didn't it 😁? Tell me, now that you know what angered you, what do you feel like doing about it?
+  - text: That worked, aye 😁? Tell me, now that you know what angered you, what do you feel like doing about it?
+
+  utter_angry_user_level_4_cont_2:
+  - text: Before you go and do that thing, its better to calm down. You mentioned you like {Hobby1}, don't you? Try to do it.
+  - text: Before you go and do that thing, its better to calm down. You mentioned you like {Hobby2}, don't you? Try doing some.
+  - text: Before you go and do that thing, its better to calm down. You mentioned you like {Hobby3}, don't you? Try doing it.
+  - text: Hold your horses buddy... Its better to calm down before you proceed. You mentioned you like {Hobby1}, don't you? Try to do it.
+  - text: Hold your horses buddy... Its better to calm down before you proceed. You mentioned you like {Hobby2}, don't you? Try doing some.
+  - text: Hold your horses buddy... Its better to calm down before you proceed. You mentioned you like {Hobby3}, don't you? Try doing it.
+
+  utter_angry_user_level_4_cont_3:
+  - text: "Also, make sure you note down your reflections. Keep a record of what you felt post action.\n\n
+   Often, these prove to be some useful things for self analysis. Write them down, or pen them as a story.\n\n
+   I’m sure it will help you."
+
+
   utter_session_conclusion:
-  - text: Well, I hope this session helped you feel a tad bit better than you felt earlier. 🙈
+  - text: Well, I hope this session helped you feel a tad bit better. 🙈
   - text: I hope you are feeling slightly better and found my advice useful. 🙈
 
   utter_pdf_msg:
@@ -1206,7 +1242,7 @@ responses:
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: I've got you covered! Take this handy reference guide
   - text: So, see you, my friend? Here’s all that we discussed today.
-  - text: Don't worry, friend. I hope there was something about today that made you feel better. Here's a guide for reference.
+  - text: Don't worry, friend. I hope there was something today that made you feel better. Here's a guide for reference.
 
   utter_good_night:
   - text: Sweet dreams {Person_First_Name}, and talk to you soon! 💤
