@@ -1406,7 +1406,6 @@
 - [Yo-yoing](Hobby)
 - [YoYo](Hobby)
 - [Yoga](Hobby)
-- [Yubi lakpi](Hobby)
 - [Yukigassen](Hobby)
 - [Ziplining](Hobby)
 - [Zourkhaneh](Hobby)
