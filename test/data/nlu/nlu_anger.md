@@ -37,5 +37,5 @@
 - I was [furious](Mood)!
 - That idiotic person really [made me see red](Mood) with all his stupidity.
 - So annoyed. Sometimes the dumbest of things get me so [riled up](Mood)
-- I'm [crossed](Mood)
+- I'm [cross](Mood)
 - I'm [vexed](Mood)

@@ -1122,7 +1122,7 @@ responses:
 
   utter_angry_user_level_1_example_3:
   - custom:
-      text: Or, he could've actually been busy tending to some important business that was more important than hanging out with me...
+      text: Or, that he simply didn't bother to inform me even if he was busy and wasted my time.
       animation: "https://bit.ly/3dUQg7V"
 
   utter_angry_user_level_1_example_4:
@@ -1135,7 +1135,7 @@ responses:
 
   utter_angry_user_level_1_example_5:
   - custom:
-      text: Turns out, he was busy tending to his sick friend, and had to cancel our meeting to help her. The next day, he apologised profusely for bailing...
+      text: I was quite mad about the whole business. I believed that he could've atleast told me. I'm quite positive I would've understood.
       animation: "https://bit.ly/3bN4FjU"
 
   utter_angry_user_level_1_continue_1:
@@ -1150,7 +1150,7 @@ responses:
    Very often, it puts our brain and body in overdrive to the point where objective thinking is thrown out of the window. Don't you agree?"
 
   utter_angry_user_level_1_continue_4:
-  - text: Make sure you think carefully, and then take your next step...😅
+  - text: Make sure you think carefully, and then take your next step...😅. Reemember, no spontaneous reactions, always non-violent approaches and a will to have a discussion.
 
   utter_angry_user_level_2_begin_1:
   - text: Okay, so how bout we get started with a lil cheer-up?
@@ -1180,7 +1180,7 @@ responses:
   - text: That's awesome! Now, take a moment, and close your eyes for 5 minutes. Breathe. Experience the feeling of being in that happy place. Hit me with a 👍 when you're done.
 
   utter_angry_user_level_3_initiate_1:
-  - text: Take a deep breath, buddy. Close your eyes. Monitor your breathing. Try to bring it to normal.
+  - text: Take a deep breath. Close your eyes. Monitor your breathing. Try to bring it to normal.
 
   utter_angry_user_level_3_initiate_2:
   - text: Alright. There. We’ve got this, okay? I’m here for you. Let’s get through this together, shall we?
@@ -1195,6 +1195,8 @@ responses:
   This will help relieve all the pent up frustration in a non-harmful way.😇"
   - text: "Now, take a deep breath and tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
   This will give you enough time to come to terms with the thoughts running in your mind.😇"
+  - text: "Now, take a deep breath. Tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
+        This is instrumental in removing the angry, negative thoughts running in your mind."
 
   utter_angry_user_level_3_cont_3:
   - text: That worked, didn't it 😁? Now we can proceed to the next bit. Do you want to confront said person? Do you want to sit back and reflect on it?

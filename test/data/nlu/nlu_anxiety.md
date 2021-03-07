@@ -40,3 +40,5 @@
 - I feel [uneasy](Mood)
 - I am [alarmed](Mood)
 - I am [troubled](Mood) 
+- I'm jumpy.
+- I'm perpetually uneasy. I am always afraid of failure.
