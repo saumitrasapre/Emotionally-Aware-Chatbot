@@ -1428,33 +1428,6 @@
 - I'm feeling [happy](Mood)
 - I'm [fine](Mood)
 
-## intent:user_unhappy
-- [sad](Mood)
-- [very sad](Mood)
-- [unhappy](Mood)
-- [bad](Mood)
-- [very bad](Mood)
-- [awful](Mood)
-- [terrible](Mood)
-- [not very good](Mood)
-- extremely [sad](Mood)
-- so [sad](Mood)
-- Im feeling [down](Mood)
-- I'm feeling [sad](Mood)
-- im [sad](Mood)
-- I'm [sad](Mood)
-- Im feeling [sad](Mood)
-- Im [not okay](Mood)
-- Im feeling [low](Mood)
-- [Not good](Mood)
-- I'm [awful](Mood)
-- I'm feeling [very sad](Mood)
-- [depressed](Mood)
-- I'm [depressed](Mood)
-- I'm [uneasy](Mood)
-- Actually I'm [not fine](Mood)
-- Actually no... I'm [not fine](Mood)
-- I'm [not good](Mood)
 
 ## intent:bot_challenge
 - are you a bot?

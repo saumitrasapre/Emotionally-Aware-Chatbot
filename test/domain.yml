@@ -3,7 +3,6 @@ session_config:
   carry_over_slots_to_new_session: true
 intents:
 - deny
-- user_unhappy
 - thank
 - user_confused
 - goodnight
@@ -25,9 +24,11 @@ intents:
 - user_request_games
 - user_request_story
 - user_happy
+- user_unhappy
 - user_insomnia
 - user_tensed
 - user_angry
+- user_sick
 - user_nightmares
 - user_irregular_lifestyle
 - user_vent
@@ -110,6 +111,7 @@ responses:
   utter_custom:
   - text: I'm sorry, but I didnt get that... I'm learning, you see. Could you try again?
   - text: I'm sorry, but I couldn't understand what you're trying to say...
+
   utter_goodbye:
   - text: Bye!
   - text: Goodbye!
@@ -119,6 +121,7 @@ responses:
   - text: Cheers and bye!
   - text: Have a good day!
   - text: Bye!😊
+
   utter_greet:
   - text: How are you?
   - text: How's it hanging?
@@ -1284,17 +1287,54 @@ responses:
   utter_angry_user_level_5_ask_continue:
   - text: So, whenever you feel like you are reacting impulsively, close your eyes and imagine yourself in your happy place.
 
+  utter_unhappy_user_ask_talk:
+  - text: Do you want to talk about it?
+  - text: Do you want to share more?
+
+  utter_unhappy_user_deny_talk_1:
+  - text: Okay, let’s talk some other time then, shall we? Just HMU when you feel ready!
+  - text: That’s okay... But when you DO feel like talking, just hit me up, okay? I’m right here!
+
+  utter_unhappy_user_deny_talk_2:
+  - text: And oh, please don't dwell on it too much? Experience the emotion for what it is. But make sure you don’t get too lost in it.
+
+  utter_unhappy_user_affirm_talk_1:
+  - text: I see... So what do you feel like doing in this instant?
+  - text: I see... So what do you feel like doing right now?
+
+  utter_unhappy_user_affirm_talk_2:
+  - text: "Absolutely understandable... Sadness is something that each of us experience.\n\n
+  So never be embarrassed to accept that something has made you feel down."
+
+  utter_unhappy_user_affirm_talk_3:
+  - text: "If you want to cry- Go ahead. Cry your heart out. More often than not, it helps you feel better.😇\n\n
+  If you want to scream, scream. You want to run, run. Remember to always embrace your emotions. Whadd'ya think?"
+
+  utter_unhappy_user_affirm_talk_4:
+  - text: "I need you to promise me that you won’t keep your feelings buried in.\n\n
+   Take an oath that you won’t hide or discard your emotions. Do I have your word?"
+    buttons:
+      - title: "🤞"
+        payload: /affirm
+
+  utter_unhappy_user_affirm_talk_5:
+  - text: "I've heard that the best cure for sadness is some wholesome quality time 😇. Seek out your family and friends, or whoever you vibe with and feel happy around.\n\n
+   That way, negative thoughts won’t constantly be on your mind and you'll have newer, happier ones that leave you feeling better. Sounds good?"
+
+  utter_unhappy_user_affirm_talk_6:
+  - text: I’ve also heard that listening to good music helps. Let me fix something up for you.
 
   utter_session_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better. 🙈
   - text: I hope you are feeling slightly better and found my advice useful. 🙈
+  - text: I hope there was something today that made you feel better.
 
   utter_pdf_msg:
   - text: Here’s a handy guide for you to refer.
   - text: In case you forget, here’s a handy guide for you to refer.
   - text: I've got you covered! Take this handy reference guide
   - text: So, see you, my friend? Here’s all that we discussed today.
-  - text: Don't worry, friend. I hope there was something today that made you feel better. Here's a guide for reference.
+  - text: Here's a guide for reference.
 
   utter_good_night:
   - text: Sweet dreams {Person_First_Name}, and talk to you soon! 💤

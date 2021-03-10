@@ -1,5 +1,5 @@
-## heartbreak/sad path
-* user_heartbroken OR user_unhappy
+## heartbreak path
+* user_heartbroken
     - utter_heartbreak_pipeline_start
     - action_set_slot
     - action_set_sentiment
