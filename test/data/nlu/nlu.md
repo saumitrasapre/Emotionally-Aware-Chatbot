@@ -288,7 +288,6 @@
 - [Bringing Food To The Disabled](Hobby)
 - [British baseball](Hobby)
 - [Broomball](Hobby)
-- [Brännboll](Hobby)
 - [Bucketball](Hobby)
 - [Building A House](Hobby)
 - [Building Dollhouses](Hobby)
