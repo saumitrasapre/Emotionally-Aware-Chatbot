@@ -1123,7 +1123,7 @@ responses:
   utter_angry_user_level_1_example_3:
   - custom:
       text: Or, that he simply didn't bother to inform me even if he was busy and wasted my time.
-      animation: "https://bit.ly/3dUQg7V"
+      animation: "https://bit.ly/3t5GYKt"
 
   utter_angry_user_level_1_example_4:
   - custom:
@@ -1150,7 +1150,9 @@ responses:
    Very often, it puts our brain and body in overdrive to the point where objective thinking is thrown out of the window. Don't you agree?"
 
   utter_angry_user_level_1_continue_4:
-  - text: Make sure you think carefully, and then take your next step...😅. Reemember, no spontaneous reactions, always non-violent approaches and a will to have a discussion.
+  - text: "Make sure you think carefully, and then take your next step...😅. \n\n
+  Remember- no spontaneous actions, no knee-jerk blabs,\n
+  Instead, an intent to discuss and peace will be up for grabs!"
 
   utter_angry_user_level_2_begin_1:
   - text: Okay, so how bout we get started with a lil cheer-up?
@@ -1196,7 +1198,7 @@ responses:
   - text: "Now, take a deep breath and tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
   This will give you enough time to come to terms with the thoughts running in your mind.😇"
   - text: "Now, take a deep breath. Tear up that piece of paper! Trash it and throw it away in the garbage 🗑️.\n\n
-        This is instrumental in removing the angry, negative thoughts running in your mind."
+  This is instrumental in removing the angry, negative thoughts running in your mind."
 
   utter_angry_user_level_3_cont_3:
   - text: That worked, didn't it 😁? Now we can proceed to the next bit. Do you want to confront said person? Do you want to sit back and reflect on it?
@@ -1233,6 +1235,54 @@ responses:
   - text: "Also, make sure you note down your reflections. Keep a record of what you felt post action.\n\n
    Often, these prove to be some useful things for self analysis. Write them down, or pen them as a story.\n\n
    I’m sure it will help you."
+
+  utter_angry_user_level_5_story_1:
+  - custom:
+      text: Let me give you an example. I had this friend - Catthew (we all called him 'cat' tho). He'd always act mean to me when we were around certain friends.
+      animation: "https://bit.ly/3l3e8Yu"
+
+  utter_angry_user_level_5_story_2:
+  - custom:
+      text: He'd crack jokes at my expense and humiliate me in front of everyone all the time. One day he dragged my biggest insecurity into a conversation.
+      animation: "https://bit.ly/3bvIdgc"
+
+  utter_angry_user_level_5_story_3:
+  - custom:
+      text: I was really angry at him for doing that. But then I did some thinking...
+      animation: "https://bit.ly/3vdjPrm"
+  - custom:
+      text: I was furious! How could he do that ?! But then I thought about it...
+      animation: "https://bit.ly/3vdjPrm"
+
+  utter_angry_user_level_5_story_4:
+  - custom:
+      text: I found that what HAD set me off, was that my close friend- who knew how strongly I felt about my insecurities, would make jokes about it. We had a huge fight.
+      animation: "https://bit.ly/3v5wYmt"
+  - custom:
+      text: I realised that what HAD set me off, was that my close friend- who knew how strongly I felt about my insecurities, would make jokes about it. We had a huge fight.
+      animation: "https://bit.ly/2N9YuOA"
+  - custom:
+      text: I realised that what HAD set me off, was that my close friend- who knew how strongly I felt about my insecurities, would make jokes about it. We had a huge fight.
+      animation: "https://bit.ly/3t5l0Ht"
+
+  utter_angry_user_level_5_story_5:
+  - custom:
+      text: "Before you go and do that thing, let me tell you what happened after our fight...\n\n
+      We realised that our friendship was much stronger that some petty fight.\n\n
+      Each of us apologised to the other, and now we're tighter than ever!"
+      animation: "https://bit.ly/3t77JhS"
+  - custom:
+      text: "Before you go and do it, let me tell you what happened later in the story...\n\n
+      After our fight, something magical occurred! We realised that our friendship was much stronger that some petty fight.\n\n
+      Each of us apologised to the other, and now we're tighter than ever!"
+      animation: "https://bit.ly/3bxyAxt"
+
+  utter_angry_user_level_5_ask:
+  - text: Would you like some more advice?
+  - text: Would you like me to continue?
+
+  utter_angry_user_level_5_ask_continue:
+  - text: So, whenever you feel like you are reacting impulsively, close your eyes and imagine yourself in your happy place.
 
 
   utter_session_conclusion:
