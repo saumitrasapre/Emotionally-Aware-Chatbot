@@ -38,11 +38,10 @@
 - Hey, can we talk?
 - I really need to talk
 - I'm losing my mind. Can we talk?
-- AAAAAAAAAAAAAAAAAAAAA. Okay, I need to talk
 - Okay, I need to talk 
 - You there? I NEED to talk, okay?
 - I don't usually do this but I really want to share my feelings.
-- I'm not a feelings person in the traditional sense but I need to talk right now.
+- I need to talk right now.
 - Yo gotta talk
 
 

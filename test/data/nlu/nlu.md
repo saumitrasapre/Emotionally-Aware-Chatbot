@@ -42,8 +42,12 @@
 - Got it  
 - Yes Thanks
 - Yup
+- Yip
+- Yus
+- Yaasss  
+- Affirmative  
 - Sure
-- yuppers
+- Yuppers
 - okay
 - 👍
 - 👍🏻
@@ -69,6 +73,10 @@
 - No
 - Nope
 - Nah
+- Nyah
+- Nyop
+- Nop
+- negative  
 - Maybe some other time
 - forget it
 - rain check on that

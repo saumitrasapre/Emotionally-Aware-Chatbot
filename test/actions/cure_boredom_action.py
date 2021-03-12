@@ -32,7 +32,6 @@ class ActionCureBoredom(Action):
             dispatcher.utter_message(json_message={"animation": gif})
             dispatcher.utter_message("Ain't that cute? 🤗")
         elif num == 5:
-            dispatcher.utter_message("In the mood for some songs?")
             mydict = fetchmusic(2)
             album_name = mydict["album_name"]
             artist_name = mydict["artist_name"]
