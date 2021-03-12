@@ -31,7 +31,6 @@
 - I am a bundle of nerves
 - I am breaking out in a cold sweat
 - I am afraid of my own shadow
-- I am like a cat on hot bricks
 - I am jumping out of my skin
 - I am at my wits' end
 - I am tongue tied

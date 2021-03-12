@@ -1096,7 +1096,7 @@ responses:
 
   utter_angry_user_level_1_start_1:
   - text: Okay... I need you to think about some stuff. You told me what made you feel annoyed, right?
-  - text: Okay... Now I need you to ponder over some stuff. You told me what made you angry, isn't it?
+  - text: Okay... Now I need you to ponder over some stuff. You told me what made you angry, haven't you?
 
   utter_angry_user_level_1_start_2:
   - text: "Often, whenever we're angry about something, we tend to think about it emotionally than logically.\n\nWe begin to form crude stories with our thoughts that are far from the truth..."
@@ -1283,20 +1283,23 @@ responses:
   utter_angry_user_level_5_ask:
   - text: Would you like some more advice?
   - text: Would you like me to continue?
+  - text: Do you want to discuss more or know more stuff from me?
 
   utter_angry_user_level_5_ask_continue:
   - text: So, whenever you feel like you are reacting impulsively, close your eyes and imagine yourself in your happy place.
+  - text: So, essentially, when you get the feeling that you might just react impulsively, close your eyes, take a moment and imagine yourself in your happy place.
 
   utter_unhappy_user_ask_talk:
   - text: Do you want to talk about it?
   - text: Do you want to share more?
 
   utter_unhappy_user_deny_talk_1:
-  - text: Okay, let’s talk some other time then, shall we? Just HMU when you feel ready!
-  - text: That’s okay... But when you DO feel like talking, just hit me up, okay? I’m right here!
+  - text: Okay, let’s talk some other time then, shall we? Just send me a 'hey' when you feel ready.
+  - text: That’s okay... But when you DO feel like talking, just hit me up, okay? I’m right here.
 
   utter_unhappy_user_deny_talk_2:
   - text: And oh, please don't dwell on it too much? Experience the emotion for what it is. But make sure you don’t get too lost in it.
+  - text: And oh, make sure you don't dwell on it a lot? Experience it for what it is but don't lose yourself in that process.
 
   utter_unhappy_user_affirm_talk_1:
   - text: I see... So what do you feel like doing in this instant?
@@ -1308,7 +1311,7 @@ responses:
 
   utter_unhappy_user_affirm_talk_3:
   - text: "If you want to cry- Go ahead. Cry your heart out. More often than not, it helps you feel better.😇\n\n
-  If you want to scream, scream. You want to run, run. Remember to always embrace your emotions. Whadd'ya think?"
+  If you want to scream, scream. You want to run, run. Remember to always embrace your emotions. What do you think?"
 
   utter_unhappy_user_affirm_talk_4:
   - text: "I need you to promise me that you won’t keep your feelings buried in.\n\n
@@ -1323,6 +1326,7 @@ responses:
 
   utter_unhappy_user_affirm_talk_6:
   - text: I’ve also heard that listening to good music helps. Let me fix something up for you.
+  - text: Guess what, I have heard somewhere that music solves most woes. And I think I have something that will help you with that.
 
   utter_session_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better. 🙈
