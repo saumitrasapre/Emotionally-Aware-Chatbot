@@ -44,7 +44,7 @@ class ActionPreMadLibs(Action):
             final_sentences += str(texts[count])
             count += 1
             y += 1
-            return [FollowupAction('mad_lib_input'), SlotSet("MadLib", None)]
+            return [SlotSet("MadLib", None)]
 
 
 class MadLibInput(FormAction):

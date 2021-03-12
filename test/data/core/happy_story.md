@@ -30,7 +30,9 @@
 ## mad_libs
 * play_mad_libs
   - utter_happy
-  - action_pre_madlibs
+  - action_pre_madlibs  
+  - mad_lib_input 
+  - form{"name":"mad_lib_input"}  
   - form{"name":null}
   
 ## hangman

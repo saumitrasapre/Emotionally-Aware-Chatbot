@@ -31,6 +31,7 @@ intents:
 - user_tensed
 - user_angry
 - user_sick
+- user_stuck
 - user_nightmares
 - user_irregular_lifestyle
 - user_vent
@@ -182,8 +183,9 @@ responses:
         payload: /play_tic_tac_toe
       - title: Mad Libs
         payload: /play_mad_libs
-      - title: Hnagman
+      - title: Hangman
         payload: /play_hangman
+
   utter_happy_pipeline_music:
   - text: Yup, you guessed it right! Pull out those headphones, crank up the volume, and let the music take us far away into pure bliss. Wanna join me in the journey?
   - text: Yes! You're absolutely right! Suit up for the best musical journey of your lifetime (for a while, just kidding, bear with me 😁😉)
@@ -1446,6 +1448,124 @@ responses:
       text: "Alright, take care, my friend.\n\n
       And if you need some good 'ol ideas for feeling better, I’m always here! Hit me up. Okay?"
       animation: "https://bit.ly/3ez2V0n"
+
+  utter_stuck_pipeline_begin_1:
+  - text: Don’t worry! I’m here to help you out with that. Tell me - What's the cause of this confusion?
+  - text: Alright, first things first. What's the cause of this confusion?
+
+  utter_stuck_pipeline_begin_2:
+  - text: Ah. I see. So that’s the issue...
+    buttons:
+      - title: Yup 😥
+        payload: /affirm
+  - text: Ah. I see. So that’s the issue...
+    buttons:
+      - title: Afraid so 😥
+        payload: /affirm
+
+  utter_stuck_pipeline_begin_3:
+  - text: Well, tell me then, how is this affecting you? Are you angry, irritated or just plain tired of this?
+
+  utter_stuck_pipeline_begin_4:
+  - text: Okay. Now that we've gotten talking, I have some stuff for you to think about. Let’s give it a whirl, shall we?
+  - text: I know you have a lot on your plate already, but I have something that might be helpful. Let’s give try it out, shall we?
+
+  utter_stuck_affirm_idea_1:
+  - text: "Alright, the first thing is acceptance. Accept the fact that you are feeling lost.\n\n
+   Sometimes we grapple with ourselves about it and find it hard to think about the point of confusion."
+  - text: "Alright, the first thing is acceptance. Accept the fact that you are feeling lost.\n\n
+   Sometimes we grapple with ourselves about it and end up spending time on denying it."
+
+  utter_stuck_affirm_idea_2:
+  - text: So, center yourself, clear your throat and shout out loud, “I don’t know what to do, and that is okay!”
+
+  utter_stuck_affirm_idea_3:
+  - text: "Knowing that you are lost because you're growing in life is powerful and empowering.\n\n
+   Own this confusion with a badge of honor. Take on the challenge and know that any path you take will lead to your next opportunity.\n\n
+   There are no wrong turns in life. Think about it. Give a 👍 when you're done."
+
+  utter_stuck_affirm_idea_4:
+  - text: Well, now that you have accepted this to be a very real situation, let’s move on to the next bit, aye?
+
+  utter_stuck_affirm_idea_5:
+  - text: Focus on what you know - When you're confused, it can be easy to get stuck in a cycle of repetitive thoughts that appear to have no beginning and no end.
+
+  utter_stuck_affirm_idea_6:
+  - text: To clear this, start focusing on what you don’t feel confused about. Contemplate on what you know and feel sure about. That way you will find yourself in a better mindspace.
+
+  utter_stuck_affirm_idea_7:
+  - text: Whew, those were some heavy things to think about, weren’t they? 🤯 How 'bout we lighten up the mood a bit?
+
+  utter_stuck_continue_without_games:
+  - text: Okay, then shall we proceed to solve our problem?
+  - text: Then shall we continue solving our problem?
+
+  utter_stuck_return_from_games_1:
+  - text: Shall we now get back to how to solve our problem?
+
+  utter_stuck_return_from_games_2:
+  - text: "Okay, now I want you to create a pro/con list. Close your eyes and create a mental list mentioning the boons and banes of each side.\n\n
+  If you happen to have a sheet of paper, write this mental list down on it.\n\n
+  You DO know what a pro-con list is, don't you?"
+    buttons:
+      - title: What's that? 😕
+        payload: /user_confused
+
+  utter_stuck_return_from_games_example_1:
+  - text: "A pro/con list is a table describing the advantages and disadvantages of something, which you consider carefully to make a sensible decision.\n\n
+  For example:"
+
+  utter_stuck_return_from_games_example_2:
+  - text: Doug the pug made this pro-con list for hiring a contractor to fix his broken roof.
+    image: "https://bit.ly/3vh0xkZ"
+  - text: Larry the canary made this pro-con list when he was taking up a new job.
+    image: "https://bit.ly/3eyWpqw"
+  - text: Duncan the pelican made this pro-con list when he was buying a new TV.
+    image: "https://bit.ly/38zBKPp"
+
+  utter_stuck_return_from_games_example_3:
+  - text: You get the concept now, right?
+  - text: You get what's a pro/con list now, right?
+
+  utter_stuck_return_from_games_3:
+  - text: "So list it all. Don’t leave anything out. Even if you think it is inconsequential. That way it helps you analyse both sides better...\n\n
+   Done?"
+
+  utter_stuck_return_from_games_4:
+  - text: "Okay, now the next step sounds easy but can probably be the toughest bit. It's called - Action, and is the most crucial bit.\n\n
+   Sometimes we are so hung up on the decisions far into the future, that we often end up procrastinating the intermediate steps."
+
+  utter_stuck_return_from_games_5:
+  - text: For example, if you're confused about which college to apply to, talk to alumni first.
+  - text: For instance, if you're confused about where your relationship might end up, talk it out with your partner first.
+
+  utter_stuck_return_from_games_6:
+  - text: So take that intermediate step. More often than not, it will help you clear the clutter a little. Sounds good?
+
+  utter_stuck_return_from_games_7:
+  - text: "Cool. Finally, your environment often plays a large role in your decision making.\n\n
+   Often, being in clustered, busy, noisy areas makes your brain process all these background elements rather than focussing upon the task at hand."
+
+  utter_stuck_return_from_games_8:
+  - text: "So go for a walk in nature, or find a quiet place in your house. Go to your secret spot at the top of your building.\n\n
+   Find your comfortable place, meditate there and ponder over things. It’ll make them easier to manage.\n\n
+   I need your word tho- would you give it a try? It really would help you a lot..."
+
+  utter_stuck_extra_points_1:
+  - text: Aside of whatever we discussed so far I have a few points that I want you to keep in mind, wanna see?
+
+  utter_stuck_extra_points_2:
+  - text: "Firstly, start meditating regularly.\n\n
+   Many researches have shown that meditation is known to give better clarity to your thoughts."
+
+  utter_stuck_extra_points_3:
+  - text: "Secondly, ground yourself in the present moment.\n\n
+   As I told you earlier, people often think way too much into the future. Don’t do that. Focus on the 'Now'."
+
+  utter_stuck_extra_points_4:
+  - text: "Third and most important - Realise that no decision is a bad decision.\n\n
+  When life pushes you to decide, it is pushing you towards valuable life lessons.\n\n
+  Every experience your decision makes you live, is an experience in growth. You will look back and thank the decision later. So never be afraid to decide."
 
   utter_session_conclusion:
   - text: Well, I hope this session helped you feel a tad bit better. 🙈
