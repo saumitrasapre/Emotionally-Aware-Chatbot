@@ -38,8 +38,6 @@
 - Ah, the bad dreams keep me awake.
 - My dreams are pretty messed up. Scary too, sometimes
 
-
-
 ## intent:ask_bot_scared
 - Do you have nightmares?
 - Are you scared?
@@ -51,8 +49,6 @@
 - Do bots get nightmares as well?
 - Wait, so bots get nightmares? Hold on, bots get DREAMS?!
 - Do you have nightmares bro?
-
-
 
 ## intent:user_irregular_lifestyle
 - I have an irregular lifestyle

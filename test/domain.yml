@@ -205,15 +205,20 @@ responses:
   - text: Good! That's great. Have fun╰(*°▽°*)╯
   - text: Awesome, hope you're day continues to be great!😁 Don't forget, you are loved.
 
+  utter_insomnia_pipeline_start_part_1:
+  - text: The world looks sunny after a great night's rest doesn't it?
 
-  utter_insomnia_pipeline_start_1:
-  - text: "The world looks sunny after a great night's rest doesn't it?\n\n
-  But it becomes a whole different ball game when your sleep is frequently interrupted.\n\n
-  A lack of Zs makes it harder to think and easier to become irritated and anxious.\n\n
-  No worries tho. \n\n
-  I am here to help you get through it.\n\n
-  Do you think that sleep is a problem for you at the moment?\n\n
-  Is it something that is constantly troubling you, and therefore distracts you from other things?"
+  utter_insomnia_pipeline_start_part_2:
+  - text: "It becomes a whole different ball game when your sleep is frequently interrupted.\n\n
+  A lack of Zs makes it harder to think and easier to become irritated and anxious, don't you think?"
+
+  utter_insomnia_pipeline_start_part_3:
+  - text: "No worries tho...  I'm here to help you get through it!\n\n
+  Do you think that sleep is a problem for you at the moment?"
+  - text: "No worries tho...  I'm here to help you get through it!\n\n
+  Do you think that lack of sleep is something that is constantly troubling you?"
+  - text: "No worries tho...  I'm here to help you get through it!\n\n
+  Do you think that insomnia is a problem for you and distracts you from other things?"
 
   utter_insomnia_pipeline_start_2:
   - text: "I simply ask because I have some tools that I can help you with."
@@ -225,7 +230,7 @@ responses:
 
   utter_insomnia_pipeline_quick_solution:
   - text: "A quick cure is sometimes all we need.\n\n
-    A glass of warm milk, soft comfy blankets and calm, soothing sounds or even bedtime stories are the perfect combination to get you sleeping in no time."
+    A glass of warm milk, soft blankets and soothing sounds or even bedtime stories are the perfect combination to get you sleeping in no time."
     buttons:
         - title: Relaxing sounds
           payload: /user_request_music
@@ -243,18 +248,14 @@ responses:
         payload: /user_irregular_lifestyle
 
   utter_insomnia_anxiety:
-  - text: "Constant anxiety or an endless stream of worries.\n\n
-  Do you have a lot of these?"
-    buttons:
-      - title: Anxiety?😕
-        payload: /user_confused
+  - text: "Constant anxiety can result in an endless stream of worries.\n\n
+  Do you know what anxiety is?"
 
   utter_insomnia_anxiety_explanation:
-  - text: "Yup!\n\n
-  In simple words, anxiety is the uneasiness of mind caused by a fear of danger or misfortune.\n\n
+  - text: "In simple words, anxiety is the uneasiness of mind caused by a fear of danger or misfortune.\n\n
   It could be the distress caused by very simple things.\n\n
   For example:"
-  - text: Anxiety is basically distress or uneasiness of mind caused by a fear of danger or misfortune. It sometimes may be caused by the smallest of things, for instance,
+  - text: Anxiety is basically distress or uneasiness of mind caused by a fear of danger or misfortune. It may be caused by the smallest of things, for instance-
 
   utter_insomnia_anxiety_explanation_example:
   - text: I always get anxious when it's about to rain heavily, as I'm worried the strong downpour may destroy my petunias.
@@ -264,11 +265,12 @@ responses:
   - text: I'm scared of heights, and therefore climbing a tall tree terrifies me
   - text: I'm usually quite jittery and anxious before confronting someone I'm scared of.
 
-
   utter_insomnia_after_anxiety_explanation:
-  - text: "Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
+  - text: "Awesome!\n\n
+  Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
   Do you think that you are bugged by such thoughts?"
-  - text: "Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
+  - text: "Good!\n\n
+  Some of these thoughts are momentary, while some usually keep bothering us constantly.\n\n
   Do you think that you are bothered by such thoughts?"
 
   utter_insomnia_ask_thoughts:
@@ -280,8 +282,10 @@ responses:
 
   utter_insomnia_after_listening_to_thoughts:
   - text: "Worries or a depressed mood may make it hard to fall asleep and stay asleep.\n\n
-  Sometimes we end up staying up constantly turning over these issues in our minds...\n\n
-   ...While in reality we really should be powering off and resting... \n\n
+  Sometimes we end up staying up constantly turning over these issues in our minds, while we really should be powering off... \n\n
+   Do you think you do this sometimes?"
+  - text: "Worries or a depressed mood may make it hard to fall asleep and stay asleep.\n\n
+  Sometimes we end up staying up constantly turning over these issues in our minds, while we really should be resting... \n\n
    Do you think you do this sometimes?"
 
   utter_insomnia_ask_reason:
@@ -292,75 +296,59 @@ responses:
 
   utter_insomnia_introduce_tools:
   - text: "I understand.\n\n
-   It's a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
+   It's a tough world out there and maneuvering through all these responsibilities is one hard job.\n\n
    But one can't possibly let their own health take a back seat among these, right?\n\n
    How 'bout we try some small techniques to help you deal with this?"
   - text: "I understand.\n\n
-  It's a tough world out there and maneuvering through all these requirements, needs and responsibilities is one hard job.\n\n
+   It's a tough world out there and maneuvering through all these requirements is one hard job.\n\n
+   But one can't possibly let their own health take a back seat among these, right?\n\n
+   How 'bout we try some small techniques to help you deal with this?"
+  - text: "I understand.\n\n
+   It's a tough world out there and maneuvering through all these needs is one hard job.\n\n
+   But one can't possibly let their own health take a back seat among these, right?\n\n
+   How 'bout we try some small techniques to help you deal with this?"
+  - text: "I understand.\n\n
+  It's a tough world out there and maneuvering through all these responsibilities is one hard job.\n\n
   But one can't possibly let all that affect your health, right?\n\n
-  How 'bout we look at some ideas to help you retrain yourself to avoid thinking during these hours of sleep?"
+  How 'bout we look at some ideas to help you?"
 
   utter_insomnia_anxiety_tool_1:
-  - text: Set aside your worry time well in advance of your bedtime
-    buttons:
-      - title: Worry Time?
-        payload: /affirm
-
-  utter_insomnia_anxiety_tool_1.1:
-  - text: Worry time is a scheduled period in your day -- perhaps 20 minutes or so -- where you can specifically address worry thoughts.
-    buttons:
-      - title: Interesting...
-        payload: /affirm
+  - text: "Set aside your 'worry time' well in advance of your bedtime\n\n
+  Worry time is a scheduled period in your day -- perhaps 20 minutes or so -- where you can specifically address worry thoughts."
 
   utter_insomnia_anxiety_tool_1.2:
   - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
   Setting time aside to work through your worries can prevent them from keeping you up."
-    buttons:
-    - title: I See...
-      payload: /affirm
   - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
   Tackle them by challenging them, or problem solving the situation\n\n
   Setting time aside to work through your worries can prevent them from keeping you up."
-    buttons:
-      - title: I See...
-        payload: /affirm
 
   utter_insomnia_anxiety_tool_1.3:
   - text: Just make sure you don't do this too close to your bedtime!💪 Otherwise, you might activate your evening overthinking...😨
-    buttons:
-      - title: Makes Sense
-        payload: /affirm
 
   utter_insomnia_anxiety_tool_2:
-  - text: "That brings me to tip #2\n\n
-  Prepare a to-do list for tomorrow\n\n
-  This way you won't stay up thinking about everything that needs to be done!😇"
-    buttons:
-      - title: Example?
-        payload: /affirm
+  - text: "That brings me to tip #2 - Prepare a to-do list for tomorrow\n\n
+  Do you know what that is?"
 
   utter_insomnia_anxiety_tool_2.1:
-  - text: "Sure!\n\n
-   A to-do list can be like:\n\n
+  - text: "A to-do list can be like:\n\n
    1. Buy milk 🥛\n
    2. Take pet seagull for a walk 🐦\n
    3. Return neighbour's unicycle\n
    4. Buy a turtle. Name it “The Speed of Light.” Tell everyone that I can run faster than The Speed of Light.\n\n
    The point is that these things should be manageable items-- and that you should set the list aside and save it all for the morning 📜"
-  - text: "Sure!\n\n
-  A to-do list can be like:\n\n
+  - text: "A to-do list can be like:\n\n
   1. Buy snacks 🥘\n
   2. Take pet cat for a walk 🐈\n
   3. Wear shirt that says 'Life'. Hand out lemons on street corner.🍋\n
   4. Make vanilla pudding.🍮\n\n
   The point is that these things should be manageable items-- and that you should set the list aside and save it all for the morning 📜"
 
+  utter_insomnia_anxiety_tool_2.2:
+  - text: Great! This way you won't stay up thinking about everything that needs to be done!😇
+
   utter_insomnia_anxiety_tool_3:
-  - text: "Finally, we have tip #3\n\n
-  Create a buffer zone"
-    buttons:
-      - title: What's That?
-        payload: /affirm
+  - text: "Finally, we have tip #3 - Create a buffer zone"
 
   utter_insomnia_anxiety_tool_3.1:
   - text: "A buffer zone is a period of time right before bed -- maybe 30 minutes or so -- that you can use to unwind from the day and prepare your body for sleep\n\n"
@@ -372,9 +360,9 @@ responses:
   - text: Anything that brings you calm and peace! Like {Hobby1}! You could also try-
   - text: Anything that brings you calm and peace! Like {Hobby2}! You could also try-
   - text: Anything that brings you calm and peace! Like {Hobby3}! You could also try-
-  - text: Anything that brings you calm and peace! {Hobby1}, for example! You could also try-
-  - text: Anything that brings you calm and peace! {Hobby2}, for example! You could also try-
-  - text: Anything that brings you calm and peace! {Hobby3}, for example! You could also try-
+  - text: Anything that brings you calm and peace - {Hobby1}, for example! You could also try-
+  - text: Anything that brings you calm and peace - {Hobby2}, for example! You could also try-
+  - text: Anything that brings you calm and peace - {Hobby3}, for example! You could also try-
 
   utter_insomnia_anxiety_tool_3.3:
   - text: Taking a hot bath or shower 🚿
@@ -388,10 +376,7 @@ responses:
   - text: Singing your favorite song 🎤
 
   utter_insomnia_anxiety_tool_3.4:
-  - text: Try to pick an offline, no screens activity if possible. Bright devices(or even bright lights in your home!) can keep you alert at bedtime 💡
-    buttons:
-      - title: GOTCHA
-        payload: /affirm
+  - text: Try to pick an offline, no screens activity if possible. Bright devices(or even bright lights!) can keep you alert at bedtime 💡
 
   utter_insomnia_anxiety_tool_recap:
   - text: "So, to recap:\n
@@ -404,7 +389,7 @@ responses:
   - text: Oh no! I'm so sorry to hear that. Don't worry... I'm here to help with those nightmares!
     buttons:
       - title: Do you get nightmares?
-        payload: /deny
+        payload: /ask_bot_scared
       - title: Tools
         payload: /affirm
 
@@ -428,75 +413,21 @@ responses:
    I have some tips which can help you retrain yourself to avoid thinking during these hours of sleep.\n\n
    Shall we look at some?"
 
-  utter_insomnia_nightmares_tool_1:
-  - text: Set aside your worry time well in advance of your bedtime
-    buttons:
-      - title: Worry time?
-        payload: /affirm
-
-  utter_insomnia_nightmares_tool_1.1:
-  - text: Worry time is a scheduled period in your day -- perhaps 20 minutes or so -- where you can specifically address worry thoughts.
-    buttons:
-      - title: Interesting...
-        payload: /affirm
-
-  utter_insomnia_nightmares_tool_1.2:
-  - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
-  Setting time aside to work through your worries can prevent them from keeping you up."
-    buttons:
-      - title: I See...
-        payload: /affirm
-  - text: "You'll be creating actual space in your daily schedule to tackle those thoughts.\n\n
-  Tackle them by challenging them, or problem solving the situation\n\n
-  Setting time aside to work through your worries can prevent them from keeping you up."
-    buttons:
-      - title: I See...
-        payload: /affirm
-
-  utter_insomnia_nightmares_tool_1.3:
-  - text: Just make sure you don't do this too close to your bedtime!💪 Otherwise, you might activate your evening overthinking...😨
-    buttons:
-      - title: Makes Sense
-        payload: /affirm
-
   utter_insomnia_nightmares_tool_2:
-  - text: "Which brings me to tip #2...\n\n Roam around!\n\n"
-    buttons:
-      - title: Huh?
-        payload: /affirm
+  - text: "Which brings me to tip #2... Roam around!"
 
   utter_insomnia_nightmares_tool_2.1:
-  - text: "Roaming around in pleasant outdoors usually helps you relax. I can maybe play some relaxing sounds while you do so."
-    buttons:
-      - title: Sure!
-        payload: /affirm
-      - title: Nah
-        payload: /deny
+  - text: Roaming around in pleasant outdoors usually helps you relax. I can maybe play some relaxing sounds while you do so. Wanna try?
 
   utter_insomnia_nightmares_tool_3:
-  - text: "You see, getting enough sleep is essential for helping you maintain optimal health and well-being.\n\n When it comes to health, sleep is as vital as regular exercise and eating a balanced diet."
-    buttons:
-      - title: I See
-        payload: /affirm
-
+  - text: "You see, getting enough sleep is essential for helping you maintain optimal health and well-being.\n\n
+   When it comes to health, sleep is as vital as regular exercise and eating a balanced diet."
 
   utter_insomnia_nightmares_tool_3.1:
-  - text: "It is an essential function that allows your body and mind to recharge, leaving you refreshed and alert when you wake up."
-    buttons:
-      - title: Hmmm...
-        payload: /affirm
+  - text: It is an essential function that allows your body and mind to recharge, leaving you refreshed and alert when you wake up.
 
   utter_insomnia_nightmares_tool_3.2:
-  - text: "Healthy sleep also helps the body remain healthy and stave off diseases. Without enough sleep, the brain cannot function properly. This can impair your abilities to concentrate, think clearly, and process memories."
-    buttons:
-      - title: Makes Sense
-        payload: /affirm
-
-  utter_insomnia_nightmares_tool_3.3:
-  - text: "It is therefore important that you, my friend, are able to tackle this problem of sleep at the earliest"
-    buttons:
-      - title: Got It!
-        payload: /affirm
+  - text: It is therefore important that you, my friend, are able to tackle this problem of sleep at the earliest
 
   utter_insomnia_nightmares_tool_recap:
   - text: "So, to recap:\n
@@ -513,7 +444,6 @@ responses:
   - text: '"It is health that is real wealth and not pieces of gold and silver." \n- Mahatma Gandhi'
   - text: '" Every human being is the author of his own health or disease. "\n-Buddhist Quote'
 
-
   utter_insomnia_lifestyle_bad:
   - text: "Well, the bad news is that it appears as though your lifestyle and habits could use several major changes.\n\n
    Nevertheless, the fact that you took this test indicates that you are interested in turning things around."
@@ -526,28 +456,18 @@ responses:
   utter_insomnia_lifestyle_good:
   - text: "Wow! You're doing great!\n\n
   You seem to be paying attention to most of the major aspects of your health and, when necessary, put in the effort to maintain and improve your lifestyle.\n\n
-  You should definitely see the pay off in your energy levels, resilience to illness and overall wellbeing.\n\n
-  Keep it up!\n\n"
+  You should definitely see the pay off in your energy levels, resilience to illness and overall well-being.\n\n
+  Keep it up!"
 
   utter_insomnia_lifestyle_introduce_tools:
   - text: "There's no need to live with the burden of disrupted sleep. I think I might have some ideas for you to try. Wanna see?"
 
   utter_insomnia_lifestyle_tools_1:
   - text: "Wake up at the same time each day"
-    buttons:
-      - title: Okay
-        payload: /affirm
 
   utter_insomnia_lifestyle_tools_2:
-  - text: "Avoid electronic devices (which emit light and stimulate the brain) at least two hours before bed.\n\n
-   I can help you do that."
-  utter_insomnia_lifestyle_tools_2.1:
-  - text: I'll play some relaxing sounds while you turn off the screen, close your eyes and then try to not think of anything else other than the sounds.
-    buttons:
-      - title: Sure
-        payload: /affirm
-      - title: Maybe not
-        payload: /deny
+  - text: "Avoid electronic devices (which emit light and stimulate the brain) at least two hours before bed\n\n
+  I'll play some relaxing sounds while you turn off the screen. Close your eyes and don't think of anything else other than the sounds. Wanna try?"
 
   utter_insomnia_lifestyle_tools_3:
   - text: "Sleep in a quiet, dark, cool space.\n\n
@@ -555,11 +475,6 @@ responses:
 
   utter_insomnia_lifestyle_tools_3.1:
   - text: I can maybe tell you a bedtime story. Close your eyes and relax.
-    buttons:
-      - title: Okay
-        payload: /affirm
-      - title: Naw
-        payload: /deny
 
   utter_insomnia_lifestyle_tool_recap:
     - text: "Remember these things:\n
@@ -1525,7 +1440,7 @@ responses:
 
   utter_stuck_return_from_games_example_3:
   - text: You get the concept now, right?
-  - text: You get what's a pro/con list now, right?
+  - text: You get it now, right?
 
   utter_stuck_return_from_games_3:
   - text: "So list it all. Don’t leave anything out. Even if you think it is inconsequential. That way it helps you analyse both sides better...\n\n
