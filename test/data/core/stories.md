@@ -22,6 +22,13 @@
 * out_of_domain
     - action_custom_fallback
   
+## freestyle_mode_story
+* freestyle_mode
+  - action_freestyle_mode
+  - freestyle_input
+  - form{"name":"freestyle_input"}  
+  - form{"name":null}
+
 
 ## name_response
 * provide_name

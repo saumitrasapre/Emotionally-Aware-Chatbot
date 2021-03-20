@@ -4,6 +4,7 @@ session_config:
 intents:
 - deny
 - thank
+- freestyle_mode
 - user_confused
 - goodnight
 - provide_name
@@ -78,6 +79,9 @@ slots:
     type: text
     auto_fill: false
   Hangman:
+    type: text
+    auto_fill: false
+  Freestyle:
     type: text
     auto_fill: false
   Lifestyle:
@@ -1557,6 +1561,7 @@ responses:
 actions:
 - action_play_tictactoe
 - action_play_Hangman
+- action_freestyle_mode
 - action_pre_madlibs
 - action_set_sentiment
 - action_play_music
@@ -1579,3 +1584,4 @@ forms:
 - lifestyle_input
 - user_anger_intensity_input
 - user_heartbreak_intensity_input
+- freestyle_input

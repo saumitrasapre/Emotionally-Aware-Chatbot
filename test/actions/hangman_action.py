@@ -36,7 +36,7 @@ class ActionPlayHangman(Action):
         return [SlotSet("Hangman", None)]
 
 
-class TicTacToeInput(FormAction):
+class HangmanInput(FormAction):
     def name(self) -> Text:
         return "hangman_input"
 

@@ -18,6 +18,12 @@
 - Sup
 - Yo
 
+## intent:freestyle_mode
+- Launch freestyle mode
+- Start freestyle mode
+- Freestyle mode
+- Lets go freestyle
+- I want to launch freestyle mode
 
 ## intent:goodbye
 - bye
@@ -531,7 +537,6 @@
 - [Fly fishing](Hobby)
 - [Flyak](Hobby)
 - [Flying disc](Hobby)
-- [Flying disc freestyle](Hobby)
 - [Flying trapeze](Hobby)
 - [Folk wrestling](Hobby)
 - [Folkrace](Hobby)
@@ -553,16 +558,16 @@
 - [Freeboard](Hobby)
 - [Freeboating](Hobby)
 - [Freediving](Hobby)
-- [Freestyle BMX](Hobby)
-- [Freestyle Motocross](Hobby)
-- [Freestyle footbag](Hobby)
-- [Freestyle football](Hobby)
-- [Freestyle scootering](Hobby)
-- [Freestyle skiing](Hobby)
-- [Freestyle slalom skating](Hobby)
-- [Freestyle snowboarding](Hobby)
-- [Freestyle swimming](Hobby)
-- [Freestyle wrestling](Hobby)
+- [BMX](Hobby)
+- [Motocross](Hobby)
+- [footbag](Hobby)
+- [football](Hobby)
+- [scootering](Hobby)
+- [skiing](Hobby)
+- [slalom skating](Hobby)
+- [snowboarding](Hobby)
+- [swimming](Hobby)
+- [wrestling](Hobby)
 - [Freshwater Aquariums](Hobby)
 - [Fricket](Hobby)
 - [Frisbee Golf](Hobby)
