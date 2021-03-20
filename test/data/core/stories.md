@@ -1,6 +1,10 @@
 ## say goodbye
 * goodbye
   - utter_goodbye
+
+## greet
+* greet
+  - utter_greet
  
 ## ask_bot_scared_story
 * ask_bot_scared

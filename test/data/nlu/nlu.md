@@ -14,9 +14,9 @@
 - Hey, what's up?
 - Yo wassup
 - Hey, Whoabot, what's up?
-- Annyeong!
 - Sup
 - Yo
+- Hellooooo
 
 ## intent:freestyle_mode
 - Launch freestyle mode

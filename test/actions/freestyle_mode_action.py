@@ -47,9 +47,11 @@ class FreestyleInput(FormAction):
         else:
             reply = get_nmt_response(user_input)
             dispatcher.utter_message(text=reply)
+            return {"Freestyle": None}
 
     def submit(self, dispatcher: CollectingDispatcher,
                tracker: Tracker,
                domain: Dict[Text, Any]) -> List[Dict]:
         user_input = tracker.latest_message.get('text')
+        dispatcher.utter_message(text="Returning to normal mode...")
         return [SlotSet("Freestyle", value=user_input)]
