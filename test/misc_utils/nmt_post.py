@@ -1,6 +1,6 @@
 import requests
 
-API_ENDPOINT = "http://15edc48cb096.ngrok.io"
+API_ENDPOINT = "http://02bbcdf98449.ngrok.io"
 
 
 def get_nmt_response(question):

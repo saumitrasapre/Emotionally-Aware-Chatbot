@@ -118,7 +118,7 @@
   - utter_heartbreak_vent_mild_better
   - action_cure_boredom
   - utter_heartbreak_vent_moderate_3
-* provide_hobby
+* provide_hobby OR affirm
   - utter_heartbreak_vent_moderate_4
   - utter_heartbreak_vent_moderate_5
   - utter_session_conclusion

@@ -1,4 +1,5 @@
 from pymongo import MongoClient, errors
+import ssl
 
 # myclient = MongoClient('localhost', 27017)
 # print(myclient.list_database_names())
@@ -17,7 +18,7 @@ from pymongo import MongoClient, errors
 # mydb = myclient["rasa"]
 # mycollection = mydb["users"]
 
-myclient = MongoClient("mongodb+srv://test:test@whoabotcluster.lv9q9.mongodb.net/<dbname>?retryWrites=true&w=majority")
+myclient = MongoClient("mongodb+srv://test:test@whoabotcluster.lv9q9.mongodb.net/rasa?retryWrites=true&w=majority", ssl_cert_reqs=ssl.CERT_NONE)
 mydb = myclient.get_database('rasa')
 mycollection = mydb.users
 
