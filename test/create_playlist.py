@@ -32,7 +32,7 @@ def createplaylist(mood):
         count = 0
         myplaylisturls = []
         for x in myplaylists:
-            if x["name"].find("Whoabot's") == -1:
+            if x["name"].find("Eric's") == -1:
                 count += 1
                 myplaylisturls.append(x["external_urls"]["spotify"])
         rand2 = random.randint(0, count - 1)

@@ -1002,7 +1002,7 @@ responses:
   utter_angry_user_no_share_deny_idea_1:
   - text: How about we go for a walk, then? Somewhere close, preferably quiet, and get a breath of fresh air?
   - text: "When in doubt, a walk always helps.\n
-  - WhoaBot 😅🤭 \n\n
+  - Eric 😅🤭 \n\n
   How about we go for a short, peaceful walk among the greens? Sounds like a plan?"
 
   utter_angry_user_no_share_deny_idea_2:
@@ -1523,11 +1523,11 @@ responses:
   - text: Last one, I promise! Type in another one of your interests!
   - text: Third time's the charm! Gimme another one!
   utter_iamabot:
-  - text: I'm Whoabot, your friendly personal chat buddy! I'm here to help you supercharge your awful mood!
-  - text: Humans call me Whoabot, here to cheer you up! I was developed by humans such as yourself and designed to make your day ever-so brighter!
-  - text: Beep-Boop... I'm whoabot! Your bot-buddy, ever ready to chat your problems away!
-  - text: The name's 'bot'... Whoa-bot! I eliminate the pineapple of sadness from the pizza of life!
-  - text: You can call me Whoabot! Think of me as your chat buddy with whom you can speak your mind away!
+  - text: I'm Eric, your friendly personal chat buddy! I'm here to help you supercharge your awful mood!
+  - text: Humans call me Eric, here to cheer you up! I was developed by humans such as yourself and designed to make your day ever-so brighter!
+  - text: Beep-Boop... I'm Eric! Your bot-buddy, ever ready to chat your problems away!
+  - text: The name's Eric! I eliminate the pineapple of sadness from the pizza of life!
+  - text: You can call me Eric! Think of me as your chat buddy with whom you can speak your mind away!
 
   utter_smile:
   - text: 😊

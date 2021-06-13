@@ -13,7 +13,7 @@
 - Hola
 - Hey, what's up?
 - Yo wassup
-- Hey, Whoabot, what's up?
+- Hey, Eric, what's up?
 - Sup
 - Yo
 - Hellooooo
