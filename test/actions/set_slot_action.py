@@ -28,10 +28,10 @@ class ActionSetSlot(Action):
                 pdf_slot = "Insomnia 1"
                 gif_slot = "night"  # "@seizetheawkward mental health"
             else:
-                pdf_list = ["anxiety1-1", "anxiety1-2", "anxiety2"]
+                pdf_list = ["Anxiety anxiety1-1", "Anxiety anxiety1-2", "Anxiety anxiety2","Nervousness nervous1","Nervousness nervous2","Nervousness nervous3","Nervousness nervous4"]
                 randnum = random.randint(0,len(pdf_list)-1)
                 gif_slot = "@seizetheawkward mental health"
-                pdf_slot = "Anxiety {}".format(pdf_list[randnum])
+                pdf_slot = "{}".format(pdf_list[randnum])
         elif curr_intent == "user_irregular_lifestyle":
             pdf_slot = "Insomnia 3"
             gif_slot = "night"  # "@seizetheawkward mental health"
@@ -44,5 +44,19 @@ class ActionSetSlot(Action):
         elif curr_intent == "user_no_talk":
             gif_slot = "@seizetheawkward mental health"
             pdf_slot = "Heartbreak heartbreak"
+        elif curr_intent == "user_angry":
+            pdf_list = ["angry1", "angry2"]
+            randnum = random.randint(0, len(pdf_list) - 1)
+            gif_slot = "@seizetheawkward mental health"
+            pdf_slot = "Anger {}".format(pdf_list[randnum])
+        elif curr_intent == "user_stuck":
+            gif_slot = "@seizetheawkward mental health"
+            pdf_slot = "Confused confused"
+        elif curr_intent == "user_sick":
+            pdf_list = ["sickness-1", "sickness-2"]
+            randnum = random.randint(0, len(pdf_list) - 1)
+            gif_slot = "@seizetheawkward mental health"
+            pdf_slot = "Sickness {}".format(pdf_list[randnum])
 
+        print(pdf_slot,gif_slot)
         return [SlotSet("Gif", value=gif_slot), SlotSet("Pdf", value=pdf_slot)]

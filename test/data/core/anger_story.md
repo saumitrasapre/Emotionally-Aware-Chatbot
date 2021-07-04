@@ -1,7 +1,8 @@
 ## angry path
 * user_angry
     - utter_angry_pipeline_1
-    - action_set_sentiment  
+    - action_set_sentiment
+    - action_set_slot  
     - user_thought_input
     - form{"name":"user_thought_input"}
     - form{"name":null} 

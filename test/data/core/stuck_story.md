@@ -1,6 +1,7 @@
 ## stuck path
 * user_stuck
     - utter_stuck_pipeline_begin_1
+    - action_set_slot      
     - user_thought_input
     - form{"name":"user_thought_input"}
     - form{"name":null} 

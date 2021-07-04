@@ -37,6 +37,6 @@ policies:
   - name: MappingPolicy
   - name: FallbackPolicy
     nlu_threshold: 0.4
-    core_threshold: 0.4
+    core_threshold: 0.35
     fallback_action_name: "action_custom_fallback"
 
