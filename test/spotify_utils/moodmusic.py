@@ -98,12 +98,11 @@ def select_tracks(sp, top_tracks_uri, mood):
 # Step 5. From these tracks, create a playlist for user
 
 def create_playlist(sp, selected_tracks_uri, mood):
-    print("...creating playlist")
+    print("...Creating playlist")
     user_all_data = sp.current_user()
     user_id = user_all_data["id"]
 
-    playlist_all_data = sp.user_playlist_create(user_id, "Eric's Curated Music Mix " + str(mood),
-                                                description="A mix of some awesome songs personally curated by yours truly!")
+    playlist_all_data = sp.user_playlist_create(user_id, "Eric's Curated Music Mix " + str(mood), description="A mix of some awesome songs personally curated by yours truly!")
     print(playlist_all_data["external_urls"]["spotify"])
     playlist_id = playlist_all_data["id"]
     playlist_uri = playlist_all_data["uri"]
@@ -113,6 +112,6 @@ def create_playlist(sp, selected_tracks_uri, mood):
     try:
         sp.user_playlist_add_tracks(user_id, playlist_id, selected_tracks_uri[0:30])
     except spotipy.client.SpotifyException as s:
-        print("could not add tracks")
+        print("Could not add tracks")
 
     return playlist_uri, playlist_url
